@@ -1,0 +1,109 @@
+#set savefile="4node_bdd.xml"
+
+module powerflow;
+module generators;
+
+// line configurations
+
+object overhead_line_conductor:100 {
+	geometric_mean_radius 0.0244;
+	resistance 0.306;
+}
+
+object overhead_line_conductor:101 {
+  geometric_mean_radius 0.00814;
+  resistance 0.592;
+}
+
+object line_spacing:200 {
+	distance_AB 2.5;
+	distance_BC 4.5;
+	distance_AC 7.0;
+  distance_AN 5.656854;
+	distance_BN 4.272002;
+	distance_CN 5.0;
+}
+
+object line_configuration:300 {
+	conductor_A overhead_line_conductor:100;
+	conductor_B overhead_line_conductor:100;
+	conductor_C overhead_line_conductor:100;
+	conductor_N overhead_line_conductor:101;
+	spacing line_spacing:200;
+}
+
+// transformer configurations
+
+object transformer_configuration:400 {
+  connect_type 2;
+  power_rating 6000;
+  primary_voltage 12470;
+  secondary_voltage 4160;
+  resistance 0.01;
+  reactance 0.06;
+}
+
+// nodes
+
+object node {
+  name node1;
+  phases ABC;
+  nominal_voltage 12470;
+	voltage_A 7199.56+0j; // 12470/sqrt(3), 0 deg
+  voltage_B -3599.78-6235j; // 12470/sqrt(3), -120 deg
+  voltage_C -3599.78+6235j; // 12470/sqrt(3), +120 deg
+}
+
+object node {
+  name node2;
+  phases ABC;
+  nominal_voltage 12470;
+}
+
+object node {
+  name node3;
+  phases ABC;
+  nominal_voltage 4160;
+}
+
+// load
+
+object load {
+  name load4;
+  phases ABC;
+  nominal_voltage 4160;
+  // S = P/pf; Q = sqrt(S^2-P^2)
+  constant_power_A +1800000.000+871779.789j;
+  constant_power_B +1800000.000+871779.789j;
+  constant_power_C +1800000.000+871779.789j;
+  }
+
+// lines
+
+object overhead_line {
+  name line12;
+  from node1;
+  to node2;
+  phases ABC;
+  length 2000;
+  configuration line_configuration:300;
+}
+
+object overhead_line {
+  name line34;
+  from node3;
+  to load4;
+  phases ABC;
+  length 2500;
+  configuration line_configuration:300;
+}
+
+// transformer
+
+object transformer {
+  name xfmr23;
+  phases ABC;
+  from node2;
+  to node3;
+  configuration transformer_configuration:400;
+}

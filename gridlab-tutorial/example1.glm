@@ -1,0 +1,54 @@
+// Example 1
+
+module powerflow;
+
+object overhead_line_conductor:100 {
+	geometric_mean_radius 0.025;
+	resistance 0.5;
+}
+
+object line_spacing:200 {
+	distance_AB 1;
+	distance_BC 1;
+	distance_AC 1;
+	distance_AN 3.464;
+	distance_BN 3.464;
+	distance_CN 3.464;
+}
+
+object line_configuration:300 {
+	conductor_A overhead_line_conductor:100;
+	conductor_B overhead_line_conductor:100;
+	conductor_C overhead_line_conductor:100;
+	conductor_N overhead_line_conductor:100;
+	spacing line_spacing:200;
+}
+
+object node {
+  name NODE1;
+  phases AN;
+  nominal_voltage 12000;
+}
+
+object overhead_line{
+  name LINE12;
+  from NODE1;
+  to LOAD2;
+  phases AN;
+  length 10000;
+  configuration line_configuration:300;
+}
+
+object load {
+  name LOAD2;
+  phases AN;
+  nominal_voltage 12000;
+	voltage_A 12000;
+  base_power_A 20000;
+  power_fraction_A 0.0032;
+  current_fraction_A 0.4257;
+  impedance_fraction_A 0.5711;
+  power_pf_A 1;
+  current_pf_A 1;
+  impedance_pf_A -1;
+}

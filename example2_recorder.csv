@@ -1,0 +1,9 @@
+# file...... example2_recorder.csv
+# date...... Wed Sep  6 02:06:13 2017
+# user...... ericlinxie
+# host...... (null)
+# trigger... (none)
+# interval.. -1
+# limit..... 0
+# timestamp,LINE12:power_in_A.real,LINE12:power_in_A.imag,LOAD2:voltage_A.real,LOAD2:voltage_A.imag
+2016-03-22 00:00:00 PDT,+45000,+21794.5,+11991.9,-4.66275

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<title>CS194 project 1</title>
+	</head>
+	<body>
+		<h1>CS194 project 1</h1>
+		<h2>Eric Linxie</h2>
+		<p>
+			In this project, we are given .jpg and .tif files of three similar images each. For every file, we have to stack its three greyscale images, so we can align each of their greyscale color values to create one color image. 
+
+			My approach is this: I would compare two greyscale images, the one corresponding to the red channel, and the one corresponding to the blue. For each, I would drop the resolution until each are about 20 pixels tall and wide. I would compare the center of both of these images in this way: I would take the red channel center and move it up, down, left, right, one pixel at a time, in a certain range. Each position, I would compare the red center with the blue center by taking both of the center's normalized cross correlation (ncc). I made both of the images into vectors, normalized each of them, and took their dot product. Out of the many positions, I kept the position that corresponding to the highest (ncc). Then I would increase the resolution by a factor of 2, shift the red channel image by that position times 2 (for resolution), and repeat, all the way until I am checking the full resolution image. 
+
+			I would repeat this method for the green channel and blue channel image. At the end, I have a shifted red channel image, a shifted green channel image, and the original blue channel image. I would merge them together with np.dstack to make one rgb image. 
+
+			I ran into problems on emir.tif and village.tif. emir.tif is a picture of a guy sitting down. His clothes in one picture are completely dark, and his clothes in another are almost all white. When I tried my method above, my three images we shifted really weirdly, so it seemed like there were two of these guys. Instead of looking at his clothes, I decided to look at the door next to him. This meant I compared bottom right of each of the images. There was a similar problem with village.tif, so I selected an area that was similar to all of them and then ran the approach over that place. That place in this file was a bridge. 
+		</p>
+
+	</body>
+</html>

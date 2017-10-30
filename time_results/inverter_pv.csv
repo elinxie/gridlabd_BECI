@@ -1,0 +1,22 @@
+# file...... time_results/inverter_pv.csv
+# date...... Tue Oct 24 17:34:11 2017
+# user...... ericlinxie
+# host...... (null)
+# group..... class=inverter
+# property.. generator_status
+# limit..... 0
+# interval.. 0
+# timestamp,inverter:60
+2000-08-02 00:00:00 HDT,ONLINE
+2000-08-02 01:00:00 HDT,ONLINE
+2000-08-02 02:00:00 HDT,ONLINE
+2000-08-02 03:00:00 HDT,ONLINE
+2000-08-02 04:00:00 HDT,ONLINE
+2000-08-02 05:00:00 HDT,ONLINE
+2000-08-02 06:00:00 HDT,ONLINE
+2000-08-02 07:00:00 HDT,ONLINE
+2000-08-02 08:00:00 HDT,ONLINE
+2000-08-02 09:00:00 HDT,ONLINE
+2000-08-02 10:00:00 HDT,ONLINE
+2000-08-02 11:00:00 HDT,ONLINE
+2000-08-02 12:00:00 HDT,ONLINE

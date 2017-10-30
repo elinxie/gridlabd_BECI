@@ -1,0 +1,4188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="http://www.gridlabd.org/gridlabd-4_0.xsl" type="text/xsl"?>
+<gridlabd>
+	<version.major>4</version.major>
+	<version.minor>0</version.minor>
+	<version.patch>0</version.patch>
+	<version.build>17403</version.build>
+	<version.branch>Keeler</version.branch>
+	<command_line>"/usr/local/bin/gridlabd.bin -o IEEE-13-original.xml -v IEEE-13-original.glm"</command_line>
+	<environment>batch</environment>
+	<quiet>FALSE</quiet>
+	<warn>FALSE</warn>
+	<debugger>FALSE</debugger>
+	<gdb>FALSE</gdb>
+	<debug>FALSE</debug>
+	<test>FALSE</test>
+	<verbose>TRUE</verbose>
+	<iteration_limit>100000</iteration_limit>
+	<workdir>/Users/ericlinxie/gridlabd/gridlab-d</workdir>
+	<dumpfile>gridlabd.xml</dumpfile>
+	<savefile>IEEE-13-original.xml</savefile>
+	<dumpall>FALSE</dumpall>
+	<runchecks>FALSE</runchecks>
+	<threadcount>1</threadcount>
+	<profiler>TRUE</profiler>
+	<pauseatexit>FALSE</pauseatexit>
+	<testoutputfile>test.txt</testoutputfile>
+	<xml_encoding>8</xml_encoding>
+	<clock>2013-12-31 19:02:00 EST</clock>
+	<starttime>2013-12-31 19:00:00 EST</starttime>
+	<stoptime>NEVER</stoptime>
+	<double_format>%+lg</double_format>
+	<complex_format>%+lg%+lg%c</complex_format>
+	<object_format>%s:%d</object_format>
+	<object_scan>%[^:]:%d</object_scan>
+	<object_tree_balance>FALSE</object_tree_balance>
+	<kmlfile>""</kmlfile>
+	<modelname>IEEE-13-original.glm</modelname>
+	<execdir>/usr/local/bin</execdir>
+	<strictnames>TRUE</strictnames>
+	<website>http://www.gridlabd.org/</website>
+	<urlbase>http://www.gridlabd.org/</urlbase>
+	<randomseed>257091278</randomseed>
+	<include>""</include>
+	<trace>""</trace>
+	<gdb_window>FALSE</gdb_window>
+	<tmp>/Users/ericlinxie/.gridlabd/tmp</tmp>
+	<force_compile>0</force_compile>
+	<nolocks>FALSE</nolocks>
+	<skipsafe>FALSE</skipsafe>
+	<dateformat>ISO</dateformat>
+	<init_sequence>DEFERRED</init_sequence>
+	<minimum_timestep>1</minimum_timestep>
+	<platform>MACOSX</platform>
+	<suppress_repeat_messages>TRUE</suppress_repeat_messages>
+	<maximum_synctime>60</maximum_synctime>
+	<run_realtime>FALSE</run_realtime>
+	<enter_realtime>NEVER</enter_realtime>
+	<realtime_metric>+0</realtime_metric>
+	<no_deprecate>TRUE</no_deprecate>
+	<streaming_io>FALSE</streaming_io>
+	<compileonly>FALSE</compileonly>
+	<relax_naming_rules>TRUE</relax_naming_rules>
+	<browser>safari</browser>
+	<server_portnum>0</server_portnum>
+	<server_quit_on_close>FALSE</server_quit_on_close>
+	<client_allowed>""</client_allowed>
+	<autoclean>TRUE</autoclean>
+	<technology_readiness_level>UNKNOWN</technology_readiness_level>
+	<show_progress>TRUE</show_progress>
+	<checkpoint_type>NONE</checkpoint_type>
+	<checkpoint_file>""</checkpoint_file>
+	<checkpoint_seqnum>0</checkpoint_seqnum>
+	<checkpoint_interval>0</checkpoint_interval>
+	<checkpoint_keepall>FALSE</checkpoint_keepall>
+	<check_version>FALSE</check_version>
+	<random_number_generator>RNG3</random_number_generator>
+	<mainloop_state>DONE</mainloop_state>
+	<pauseat>NEVER</pauseat>
+	<infourl>http://gridlab-d.sourceforge.net/info.php?title=Special:Search/</infourl>
+	<hostname>localhost</hostname>
+	<hostaddr>127.0.0.1</hostaddr>
+	<autostart_gui>TRUE</autostart_gui>
+	<master>""</master>
+	<master_port>0</master_port>
+	<multirun_mode>STANDALONE</multirun_mode>
+	<multirun_conn>NONE</multirun_conn>
+	<signal_timeout>5000</signal_timeout>
+	<slave_port>6267</slave_port>
+	<slave_id>0</slave_id>
+	<return_code>0</return_code>
+	<exit_code>0</exit_code>
+	<module_compiler_flags>NONE</module_compiler_flags>
+	<init_max_defer>64</init_max_defer>
+	<mt_analysis>FALSE</mt_analysis>
+	<inline_block_size>1048576</inline_block_size>
+	<validate>TSTD|RALL</validate>
+	<sanitize>NAMES|POSITIONS</sanitize>
+	<sanitize_prefix>GLD_</sanitize_prefix>
+	<sanitize_index>.txt</sanitize_index>
+	<sanitize_offset>""</sanitize_offset>
+	<simulation_mode>EVENT</simulation_mode>
+	<deltamode_timestep>10000000</deltamode_timestep>
+	<deltamode_maximumtime>3600000000000</deltamode_maximumtime>
+	<deltaclock>0</deltaclock>
+	<delta_current_clock>+0</delta_current_clock>
+	<deltamode_updateorder>powerflow,tape</deltamode_updateorder>
+	<deltamode_iteration_limit>10</deltamode_iteration_limit>
+	<run_powerworld>FALSE</run_powerworld>
+	<bigranks>TRUE</bigranks>
+	<exename>/usr/local/bin/gridlabd.bin</exename>
+	<wget_options>"maxsize:100MB;update:newer"</wget_options>
+	<svnroot>http://gridlab-d.svn.sourceforge.net/svnroot/gridlab-d</svnroot>
+	<allow_reinclude>FALSE</allow_reinclude>
+	<timezone>EST5EDT</timezone>
+	<sync-order>
+		<pass>
+			<name>pretopdown</name>
+			<rank>
+				<ordinal>6</ordinal>
+				<object>
+					<name>Node650</name>
+					<id>35</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>5</ordinal>
+				<object>
+					<name>Node633</name>
+					<id>32</id>
+				</object>
+				<object>
+					<name>Node630</name>
+					<id>33</id>
+				</object>
+				<object>
+					<name>Node632</name>
+					<id>34</id>
+				</object>
+				<object>
+					<name>Node680</name>
+					<id>36</id>
+				</object>
+				<object>
+					<name>Node684</name>
+					<id>37</id>
+				</object>
+				<object>
+					<name>Load634</name>
+					<id>38</id>
+				</object>
+				<object>
+					<name>Load645</name>
+					<id>39</id>
+				</object>
+				<object>
+					<name>Load646</name>
+					<id>40</id>
+				</object>
+				<object>
+					<name>Load652</name>
+					<id>41</id>
+				</object>
+				<object>
+					<name>Load671</name>
+					<id>42</id>
+				</object>
+				<object>
+					<name>Load675</name>
+					<id>43</id>
+				</object>
+				<object>
+					<name>Load692</name>
+					<id>44</id>
+				</object>
+				<object>
+					<name>Load611</name>
+					<id>45</id>
+				</object>
+				<object>
+					<name>Load6321</name>
+					<id>47</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>4</ordinal>
+				<object>
+					<name>Load6711</name>
+					<id>46</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>2</ordinal>
+				<object>
+					<name>switch1</name>
+					<id>48</id>
+				</object>
+				<object>
+					<name>overhead_line5</name>
+					<id>25</id>
+				</object>
+				<object>
+					<name>overhead_line6</name>
+					<id>26</id>
+				</object>
+				<object>
+					<name>overhead_line7</name>
+					<id>27</id>
+				</object>
+				<object>
+					<name>overhead_line11</name>
+					<id>31</id>
+				</object>
+				<object>
+					<name>overhead_line9</name>
+					<id>29</id>
+				</object>
+				<object>
+					<name>overhead_line8</name>
+					<id>28</id>
+				</object>
+				<object>
+					<name>overhead_line2</name>
+					<id>22</id>
+				</object>
+				<object>
+					<name>overhead_line1</name>
+					<id>21</id>
+				</object>
+				<object>
+					<name>overhead_line10</name>
+					<id>30</id>
+				</object>
+				<object>
+					<name>overhead_line3</name>
+					<id>23</id>
+				</object>
+				<object>
+					<name>XFMR1</name>
+					<id>49</id>
+				</object>
+				<object>
+					<name>overhead_line4</name>
+					<id>24</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>1</ordinal>
+				<object>
+					<name>Reg1</name>
+					<id>50</id>
+				</object>
+			</rank>
+		</pass>
+		<pass>
+			<name>bottomup</name>
+			<rank>
+				<ordinal>0</ordinal>
+				<object>
+					<name>(voltdump:51)</name>
+					<id>51</id>
+				</object>
+				<object>
+					<name>(currdump:52)</name>
+					<id>52</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>1</ordinal>
+				<object>
+					<name>Reg1</name>
+					<id>50</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>2</ordinal>
+				<object>
+					<name>overhead_line1</name>
+					<id>21</id>
+				</object>
+				<object>
+					<name>overhead_line5</name>
+					<id>25</id>
+				</object>
+				<object>
+					<name>overhead_line7</name>
+					<id>27</id>
+				</object>
+				<object>
+					<name>switch1</name>
+					<id>48</id>
+				</object>
+				<object>
+					<name>overhead_line9</name>
+					<id>29</id>
+				</object>
+				<object>
+					<name>overhead_line2</name>
+					<id>22</id>
+				</object>
+				<object>
+					<name>overhead_line6</name>
+					<id>26</id>
+				</object>
+				<object>
+					<name>XFMR1</name>
+					<id>49</id>
+				</object>
+				<object>
+					<name>overhead_line3</name>
+					<id>23</id>
+				</object>
+				<object>
+					<name>overhead_line8</name>
+					<id>28</id>
+				</object>
+				<object>
+					<name>overhead_line10</name>
+					<id>30</id>
+				</object>
+				<object>
+					<name>overhead_line11</name>
+					<id>31</id>
+				</object>
+				<object>
+					<name>overhead_line4</name>
+					<id>24</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>4</ordinal>
+				<object>
+					<name>Load6711</name>
+					<id>46</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>5</ordinal>
+				<object>
+					<name>Load611</name>
+					<id>45</id>
+				</object>
+				<object>
+					<name>Node630</name>
+					<id>33</id>
+				</object>
+				<object>
+					<name>Load692</name>
+					<id>44</id>
+				</object>
+				<object>
+					<name>Load675</name>
+					<id>43</id>
+				</object>
+				<object>
+					<name>Node633</name>
+					<id>32</id>
+				</object>
+				<object>
+					<name>Load646</name>
+					<id>40</id>
+				</object>
+				<object>
+					<name>Load652</name>
+					<id>41</id>
+				</object>
+				<object>
+					<name>Node680</name>
+					<id>36</id>
+				</object>
+				<object>
+					<name>Load6321</name>
+					<id>47</id>
+				</object>
+				<object>
+					<name>Load671</name>
+					<id>42</id>
+				</object>
+				<object>
+					<name>Load645</name>
+					<id>39</id>
+				</object>
+				<object>
+					<name>Node632</name>
+					<id>34</id>
+				</object>
+				<object>
+					<name>Load634</name>
+					<id>38</id>
+				</object>
+				<object>
+					<name>Node684</name>
+					<id>37</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>6</ordinal>
+				<object>
+					<name>Node650</name>
+					<id>35</id>
+				</object>
+			</rank>
+		</pass>
+		<pass>
+			<name>posttopdown</name>
+			<rank>
+				<ordinal>6</ordinal>
+				<object>
+					<name>Node650</name>
+					<id>35</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>5</ordinal>
+				<object>
+					<name>Load634</name>
+					<id>38</id>
+				</object>
+				<object>
+					<name>Load652</name>
+					<id>41</id>
+				</object>
+				<object>
+					<name>Load6321</name>
+					<id>47</id>
+				</object>
+				<object>
+					<name>Load645</name>
+					<id>39</id>
+				</object>
+				<object>
+					<name>Load646</name>
+					<id>40</id>
+				</object>
+				<object>
+					<name>Node684</name>
+					<id>37</id>
+				</object>
+				<object>
+					<name>Node630</name>
+					<id>33</id>
+				</object>
+				<object>
+					<name>Load692</name>
+					<id>44</id>
+				</object>
+				<object>
+					<name>Node633</name>
+					<id>32</id>
+				</object>
+				<object>
+					<name>Node632</name>
+					<id>34</id>
+				</object>
+				<object>
+					<name>Load671</name>
+					<id>42</id>
+				</object>
+				<object>
+					<name>Load611</name>
+					<id>45</id>
+				</object>
+				<object>
+					<name>Node680</name>
+					<id>36</id>
+				</object>
+				<object>
+					<name>Load675</name>
+					<id>43</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>4</ordinal>
+				<object>
+					<name>Load6711</name>
+					<id>46</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>2</ordinal>
+				<object>
+					<name>overhead_line9</name>
+					<id>29</id>
+				</object>
+				<object>
+					<name>XFMR1</name>
+					<id>49</id>
+				</object>
+				<object>
+					<name>overhead_line2</name>
+					<id>22</id>
+				</object>
+				<object>
+					<name>overhead_line8</name>
+					<id>28</id>
+				</object>
+				<object>
+					<name>overhead_line7</name>
+					<id>27</id>
+				</object>
+				<object>
+					<name>overhead_line5</name>
+					<id>25</id>
+				</object>
+				<object>
+					<name>overhead_line10</name>
+					<id>30</id>
+				</object>
+				<object>
+					<name>switch1</name>
+					<id>48</id>
+				</object>
+				<object>
+					<name>overhead_line4</name>
+					<id>24</id>
+				</object>
+				<object>
+					<name>overhead_line11</name>
+					<id>31</id>
+				</object>
+				<object>
+					<name>overhead_line6</name>
+					<id>26</id>
+				</object>
+				<object>
+					<name>overhead_line3</name>
+					<id>23</id>
+				</object>
+				<object>
+					<name>overhead_line1</name>
+					<id>21</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>1</ordinal>
+				<object>
+					<name>Reg1</name>
+					<id>50</id>
+				</object>
+			</rank>
+			<rank>
+				<ordinal>0</ordinal>
+				<object>
+					<name>(recorder:53)</name>
+					<id>53</id>
+				</object>
+			</rank>
+		</pass>
+	</sync-order>
+	<powerflow>
+		<version.major>4</version.major>
+		<version.minor>0</version.minor>
+		<node_list>
+			<inherits_from>powerflow_object</inherits_from>
+			<node>
+				<id>32</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Node633</name>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+2368.62-2.59835d V</voltage_A>
+				<voltage_B>+2265.9-122.056d V</voltage_B>
+				<voltage_C>+2383.51+117.636d V</voltage_C>
+				<voltage_AB>+4002.94+26.9314d V</voltage_AB>
+				<voltage_BC>+4033.15-91.3785d V</voltage_BC>
+				<voltage_CA>+4120.33+147.416d V</voltage_CA>
+				<current_A>+0+0i A</current_A>
+				<current_B>+0+0i A</current_B>
+				<current_C>+0+0i A</current_C>
+				<power_A>+0+0i VA</power_A>
+				<power_B>+0+0i VA</power_B>
+				<power_C>+0+0i VA</power_C>
+				<shunt_A>+0+0i S</shunt_A>
+				<shunt_B>+0+0i S</shunt_B>
+				<shunt_C>+0+0i S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</node>
+			<node>
+				<id>33</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Node630</name>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+2479.2+0.000646969d V</voltage_A>
+				<voltage_B>+2301.06-120d V</voltage_B>
+				<voltage_C>+2511.61+120.001d V</voltage_C>
+				<voltage_AB>+4140.79+28.768d V</voltage_AB>
+				<voltage_BC>+4169.22-88.5526d V</voltage_BC>
+				<voltage_CA>+4322.2+149.786d V</voltage_CA>
+				<current_A>+0+0i A</current_A>
+				<current_B>+0+0i A</current_B>
+				<current_C>+0+0i A</current_C>
+				<power_A>+0+0i VA</power_A>
+				<power_B>+0+0i VA</power_B>
+				<power_C>+0+0i VA</power_C>
+				<shunt_A>+0+0i S</shunt_A>
+				<shunt_B>+0+0i S</shunt_B>
+				<shunt_C>+0+0i S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</node>
+			<node>
+				<id>34</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Node632</name>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+2376.17-2.53439d V</voltage_A>
+				<voltage_B>+2271.17-122d V</voltage_B>
+				<voltage_C>+2389.77+117.642d V</voltage_C>
+				<voltage_AB>+4014.17+26.9776d V</voltage_AB>
+				<voltage_BC>+4044.19-91.3431d V</voltage_BC>
+				<voltage_CA>+4131.1+147.46d V</voltage_CA>
+				<current_A>+0+0i A</current_A>
+				<current_B>+0+0i A</current_B>
+				<current_C>+0+0i A</current_C>
+				<power_A>+0+0i VA</power_A>
+				<power_B>+0+0i VA</power_B>
+				<power_C>+0+0i VA</power_C>
+				<shunt_A>+0+0i S</shunt_A>
+				<shunt_B>+0+0i S</shunt_B>
+				<shunt_C>+0+0i S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</node>
+			<node>
+				<id>35</id>
+				<rank>6</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Node650</name>
+				<bustype>SWING</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+2401.78+0d V</voltage_A>
+				<voltage_B>+2401.78-120d V</voltage_B>
+				<voltage_C>+2401.78+120d V</voltage_C>
+				<voltage_AB>+4160+30d V</voltage_AB>
+				<voltage_BC>+4160-90d V</voltage_BC>
+				<voltage_CA>+4160+150d V</voltage_CA>
+				<current_A>+0+0i A</current_A>
+				<current_B>+0+0i A</current_B>
+				<current_C>+0+0i A</current_C>
+				<power_A>+0+0i VA</power_A>
+				<power_B>+0+0i VA</power_B>
+				<power_C>+0+0i VA</power_C>
+				<shunt_A>+0+0i S</shunt_A>
+				<shunt_B>+0+0i S</shunt_B>
+				<shunt_C>+0+0i S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</node>
+			<node>
+				<id>36</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Node680</name>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+2299.22-5.46702d V</voltage_A>
+				<voltage_B>+2291.59-122.725d V</voltage_B>
+				<voltage_C>+2293.75+115.677d V</voltage_C>
+				<voltage_AB>+3919.7+25.846d V</voltage_AB>
+				<voltage_BC>+4002.6-93.5087d V</voltage_BC>
+				<voltage_CA>+4000.36+145.144d V</voltage_CA>
+				<current_A>+0+0i A</current_A>
+				<current_B>+0+0i A</current_B>
+				<current_C>+0+0i A</current_C>
+				<power_A>+0+0i VA</power_A>
+				<power_B>+0+0i VA</power_B>
+				<power_C>+0+0i VA</power_C>
+				<shunt_A>+0+0i S</shunt_A>
+				<shunt_B>+0+0i S</shunt_B>
+				<shunt_C>+0+0i S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</node>
+			<node>
+				<id>37</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Node684</name>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+2294.82-5.4863d V</voltage_A>
+				<voltage_B>+0+0d V</voltage_B>
+				<voltage_C>+2289.09+115.558d V</voltage_C>
+				<voltage_AB>+2294.82-5.4863d V</voltage_AB>
+				<voltage_BC>+2289.09-64.4416d V</voltage_BC>
+				<voltage_CA>+3990.51+145.077d V</voltage_CA>
+				<current_A>+0+0i A</current_A>
+				<current_B>+0+0i A</current_B>
+				<current_C>+0+0i A</current_C>
+				<power_A>+0+0i VA</power_A>
+				<power_B>+0+0i VA</power_B>
+				<power_C>+0+0i VA</power_C>
+				<shunt_A>+0+0i S</shunt_A>
+				<shunt_B>+0+0i S</shunt_B>
+				<shunt_C>+0+0i S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>ACN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</node>
+		</node_list>
+		<link_list>
+			<inherits_from>powerflow_object</inherits_from>
+		</link_list>
+		<capacitor_list>
+			<inherits_from>node</inherits_from>
+		</capacitor_list>
+		<fuse_list>
+			<inherits_from>link</inherits_from>
+		</fuse_list>
+		<meter_list>
+			<inherits_from>node</inherits_from>
+		</meter_list>
+		<line_list>
+			<inherits_from>link</inherits_from>
+		</line_list>
+		<line_spacing_list>
+			<line_spacing>
+				<id>5</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_spacing1</name>
+				<distance_AB>+2.5 ft</distance_AB>
+				<distance_BC>+7 ft</distance_BC>
+				<distance_AC>+4.5 ft</distance_AC>
+				<distance_AN>+4.272 ft</distance_AN>
+				<distance_BN>+5.65685 ft</distance_BN>
+				<distance_CN>+5 ft</distance_CN>
+				<distance_AE>+0 ft</distance_AE>
+				<distance_BE>+0 ft</distance_BE>
+				<distance_CE>+0 ft</distance_CE>
+				<distance_NE>+0 ft</distance_NE>
+			</line_spacing>
+			<line_spacing>
+				<id>6</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_spacing2</name>
+				<distance_AB>+4.5 ft</distance_AB>
+				<distance_BC>+7 ft</distance_BC>
+				<distance_AC>+2.5 ft</distance_AC>
+				<distance_AN>+4.272 ft</distance_AN>
+				<distance_BN>+5 ft</distance_BN>
+				<distance_CN>+5.65685 ft</distance_CN>
+				<distance_AE>+0 ft</distance_AE>
+				<distance_BE>+0 ft</distance_BE>
+				<distance_CE>+0 ft</distance_CE>
+				<distance_NE>+0 ft</distance_NE>
+			</line_spacing>
+			<line_spacing>
+				<id>7</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_spacing3</name>
+				<distance_AB>+0 ft</distance_AB>
+				<distance_BC>+7 ft</distance_BC>
+				<distance_AC>+0 ft</distance_AC>
+				<distance_AN>+0 ft</distance_AN>
+				<distance_BN>+5 ft</distance_BN>
+				<distance_CN>+5.65685 ft</distance_CN>
+				<distance_AE>+0 ft</distance_AE>
+				<distance_BE>+0 ft</distance_BE>
+				<distance_CE>+0 ft</distance_CE>
+				<distance_NE>+0 ft</distance_NE>
+			</line_spacing>
+			<line_spacing>
+				<id>8</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_spacing4</name>
+				<distance_AB>+0 ft</distance_AB>
+				<distance_BC>+0 ft</distance_BC>
+				<distance_AC>+7 ft</distance_AC>
+				<distance_AN>+5.65685 ft</distance_AN>
+				<distance_BN>+0 ft</distance_BN>
+				<distance_CN>+5 ft</distance_CN>
+				<distance_AE>+0 ft</distance_AE>
+				<distance_BE>+0 ft</distance_BE>
+				<distance_CE>+0 ft</distance_CE>
+				<distance_NE>+0 ft</distance_NE>
+			</line_spacing>
+			<line_spacing>
+				<id>9</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_spacing5</name>
+				<distance_AB>+0 ft</distance_AB>
+				<distance_BC>+0 ft</distance_BC>
+				<distance_AC>+0 ft</distance_AC>
+				<distance_AN>+0 ft</distance_AN>
+				<distance_BN>+0 ft</distance_BN>
+				<distance_CN>+5 ft</distance_CN>
+				<distance_AE>+0 ft</distance_AE>
+				<distance_BE>+0 ft</distance_BE>
+				<distance_CE>+0 ft</distance_CE>
+				<distance_NE>+0 ft</distance_NE>
+			</line_spacing>
+			<line_spacing>
+				<id>10</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_spacing6</name>
+				<distance_AB>+0.5 ft</distance_AB>
+				<distance_BC>+0.5 ft</distance_BC>
+				<distance_AC>+1 ft</distance_AC>
+				<distance_AN>+0 ft</distance_AN>
+				<distance_BN>+0 ft</distance_BN>
+				<distance_CN>+0 ft</distance_CN>
+				<distance_AE>+0 ft</distance_AE>
+				<distance_BE>+0 ft</distance_BE>
+				<distance_CE>+0 ft</distance_CE>
+				<distance_NE>+0 ft</distance_NE>
+			</line_spacing>
+			<line_spacing>
+				<id>11</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_spacing_7</name>
+				<distance_AB>+0 ft</distance_AB>
+				<distance_BC>+0 ft</distance_BC>
+				<distance_AC>+0 ft</distance_AC>
+				<distance_AN>+0.083333 ft</distance_AN>
+				<distance_BN>+0 ft</distance_BN>
+				<distance_CN>+0 ft</distance_CN>
+				<distance_AE>+0 ft</distance_AE>
+				<distance_BE>+0 ft</distance_BE>
+				<distance_CE>+0 ft</distance_CE>
+				<distance_NE>+0 ft</distance_NE>
+			</line_spacing>
+		</line_spacing_list>
+		<overhead_line_list>
+			<inherits_from>line</inherits_from>
+			<overhead_line>
+				<id>21</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>overhead_line1</name>
+				<configuration>line_configuration3</configuration>
+				<length>+500 ft</length>
+				<status>CLOSED</status>
+				<from>Node632</from>
+				<to>Load645</to>
+				<power_in>+386724+250365i VA</power_in>
+				<power_out>+383841+247834j VA</power_out>
+				<power_out_real>+383841 W</power_out_real>
+				<power_losses>+2882.83+2531.58i VA</power_losses>
+				<power_in_A>+0-0i VA</power_in_A>
+				<power_in_B>+310732+124851j VA</power_in_B>
+				<power_in_C>+75992.3+125515j VA</power_in_C>
+				<power_out_A>+0+0j VA</power_out_A>
+				<power_out_B>+308006+122509j VA</power_out_B>
+				<power_out_C>+75835.2+125325j VA</power_out_C>
+				<power_losses_A>+0-0i VA</power_losses_A>
+				<power_losses_B>+2725.66+2341.85j VA</power_losses_B>
+				<power_losses_C>+157.169+189.736j VA</power_losses_C>
+				<current_out_A>+0+0j A</current_out_A>
+				<current_out_B>-119.12-86.8968j A</current_out_B>
+				<current_out_C>+31.7739+52.5367j A</current_out_C>
+				<current_in_A>+0+0j A</current_in_A>
+				<current_in_B>-119.12-86.8968j A</current_in_B>
+				<current_in_C>+31.7739+52.5367j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CF|BF|AN</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>BCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</overhead_line>
+			<overhead_line>
+				<id>22</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>overhead_line2</name>
+				<configuration>line_configuration3</configuration>
+				<length>+300 ft</length>
+				<status>CLOSED</status>
+				<from>Load645</from>
+				<to>Load646</to>
+				<power_in>+213841+122834j VA</power_in>
+				<power_out>+213362+122451j VA</power_out>
+				<power_out_real>+213362 W</power_out_real>
+				<power_losses>+479.792+382.475j VA</power_losses>
+				<power_in_A>+0+0j VA</power_in_A>
+				<power_in_B>+138006-2491.29j VA</power_in_B>
+				<power_in_C>+75835.2+125325j VA</power_in_C>
+				<power_out_A>+0+0j VA</power_out_A>
+				<power_out_B>+137766-2681.48j VA</power_out_B>
+				<power_out_C>+75595.9+125133j VA</power_out_C>
+				<power_losses_A>+0+0j VA</power_losses_A>
+				<power_losses_B>+240.498+190.184j VA</power_losses_B>
+				<power_losses_C>+239.294+192.291j VA</power_losses_C>
+				<current_out_A>+0+0j A</current_out_A>
+				<current_out_B>-31.7739-52.5367j A</current_out_B>
+				<current_out_C>+31.7739+52.5367j A</current_out_C>
+				<current_in_A>+0+0j A</current_in_A>
+				<current_in_B>-31.7739-52.5367j A</current_in_B>
+				<current_in_C>+31.7739+52.5367j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CF|BF|AN</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>BCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</overhead_line>
+			<overhead_line>
+				<id>23</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>overhead_line3</name>
+				<configuration>line_configuration1</configuration>
+				<length>+2000 ft</length>
+				<status>CLOSED</status>
+				<from>Node630</from>
+				<to>Node632</to>
+				<power_in>+3.55843e+06+1.75871e+06j VA</power_in>
+				<power_out>+3.49428e+06+1.55223e+06i VA</power_out>
+				<power_out_real>+3.49428e+06 W</power_out_real>
+				<power_losses>+66611.9+206489j VA</power_losses>
+				<power_in_A>+1.26261e+06+694055j VA</power_in_A>
+				<power_in_B>+938646+406172j VA</power_in_B>
+				<power_in_C>+1.35717e+06+658488j VA</power_in_C>
+				<power_out_A>+1.23837e+06+611034i VA</power_out_A>
+				<power_out_B>+939877+368318j VA</power_out_B>
+				<power_out_C>+1.31603e+06+572873j VA</power_out_C>
+				<power_losses_A>+24236.5+83020.9j VA</power_losses_A>
+				<power_losses_B>+1231.01+37853.3j VA</power_losses_B>
+				<power_losses_C>+41144.4+85614.7j VA</power_losses_C>
+				<current_out_A>+509.284-279.945j A</current_out_A>
+				<current_out_B>-356.824-265.013j A</current_out_B>
+				<current_out_C>-43.1332+599.053j A</current_out_C>
+				<current_in_A>+509.284-279.945j A</current_in_A>
+				<current_in_B>-356.824-265.013j A</current_in_B>
+				<current_in_C>-43.1332+599.053j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CF|BF|AF</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</overhead_line>
+			<overhead_line>
+				<id>24</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>overhead_line4</name>
+				<configuration>line_configuration1</configuration>
+				<length>+500 ft</length>
+				<status>CLOSED</status>
+				<from>Node632</from>
+				<to>Load6321</to>
+				<power_in>+2.70066e+06+999804i VA</power_in>
+				<power_out>+2.6904e+06+967119i VA</power_out>
+				<power_out_real>+2.6904e+06 W</power_out_real>
+				<power_losses>+12935+32684.7i VA</power_losses>
+				<power_in_A>+1.07529e+06+495591i VA</power_in_A>
+				<power_in_B>+507213+149961j VA</power_in_B>
+				<power_in_C>+1.11816e+06+354251j VA</power_in_C>
+				<power_out_A>+1.07264e+06+478289i VA</power_out_A>
+				<power_out_B>+508553+148567j VA</power_out_B>
+				<power_out_C>+1.10921e+06+340263j VA</power_out_C>
+				<power_losses_A>+2647.99+17301.5i VA</power_losses_A>
+				<power_losses_B>+1339.81+1394.53j VA</power_losses_B>
+				<power_losses_C>+8947.23+13988.7j VA</power_losses_C>
+				<current_out_A>+442.867-228.374j A</current_out_A>
+				<current_out_B>-174.339-154.404j A</current_out_B>
+				<current_out_C>-85.7597+483.262j A</current_out_C>
+				<current_in_A>+442.867-228.374j A</current_in_A>
+				<current_in_B>-174.339-154.404j A</current_in_B>
+				<current_in_C>-85.7597+483.262j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CF|BR|AF</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</overhead_line>
+			<overhead_line>
+				<id>25</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>overhead_line5</name>
+				<configuration>line_configuration1</configuration>
+				<length>+1500 ft</length>
+				<status>CLOSED</status>
+				<from>Load6321</from>
+				<to>Load671</to>
+				<power_in>+2.55707e+06+889786i VA</power_in>
+				<power_out>+2.52892e+06+800279i VA</power_out>
+				<power_out_real>+2.52892e+06 W</power_out_real>
+				<power_losses>+37225.7+89506.8i VA</power_losses>
+				<power_in_A>+1.06131e+06+471623i VA</power_in_A>
+				<power_in_B>+464553+123234j VA</power_in_B>
+				<power_in_C>+1.03121e+06+294929j VA</power_in_C>
+				<power_out_A>+1.05234e+06+419612i VA</power_out_A>
+				<power_out_B>+469089+119720j VA</power_out_B>
+				<power_out_C>+1.00748e+06+260947j VA</power_out_C>
+				<power_losses_A>+8965.93+52010.4i VA</power_losses_A>
+				<power_losses_B>+4536.01+3513.66j VA</power_losses_B>
+				<power_losses_C>+23723.8+33982.7j VA</power_losses_C>
+				<current_out_A>+438.226-225.278j A</current_out_A>
+				<current_out_B>-154.613-143.967j A</current_out_B>
+				<current_out_C>-87.789+445.151j A</current_out_C>
+				<current_in_A>+438.226-225.278j A</current_in_A>
+				<current_in_B>-154.613-143.967j A</current_in_B>
+				<current_in_C>-87.789+445.151j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CF|BR|AF</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</overhead_line>
+			<overhead_line>
+				<id>26</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>overhead_line6</name>
+				<configuration>line_configuration1</configuration>
+				<length>+1000 ft</length>
+				<status>CLOSED</status>
+				<from>Load671</from>
+				<to>Node680</to>
+				<power_in>+5.95844e-09+1.46947e-08i VA</power_in>
+				<power_out>+5.95844e-09+1.46947e-08i VA</power_out>
+				<power_out_real>+5.95844e-09 W</power_out_real>
+				<power_losses>+1.24077e-24+2.48154e-24i VA</power_losses>
+				<power_in_A>+5.71988e-09+6.85565e-09i VA</power_in_A>
+				<power_in_B>-8.49453e-10+7.24316e-09j VA</power_in_B>
+				<power_in_C>+1.08802e-09+5.95872e-10j VA</power_in_C>
+				<power_out_A>+5.71988e-09+6.85565e-09i VA</power_out_A>
+				<power_out_B>-8.49453e-10+7.24316e-09j VA</power_out_B>
+				<power_out_C>+1.08802e-09+5.95872e-10j VA</power_out_C>
+				<power_losses_A>+8.27181e-25+1.65436e-24i VA</power_losses_A>
+				<power_losses_B>+4.1359e-25+8.27181e-25j VA</power_losses_B>
+				<power_losses_C>+0+0j VA</power_losses_C>
+				<current_out_A>+2.19235e-12-3.20518e-12j A</current_out_A>
+				<current_out_B>-2.45868e-12+2.02057e-12j A</current_out_B>
+				<current_out_C>+2.85956e-14+5.40062e-13j A</current_out_C>
+				<current_in_A>+2.19235e-12-3.20518e-12j A</current_in_A>
+				<current_in_B>-2.45868e-12+2.02057e-12j A</current_in_B>
+				<current_in_C>+2.85956e-14+5.40062e-13j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CN|BN|AN</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</overhead_line>
+			<overhead_line>
+				<id>27</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>overhead_line7</name>
+				<configuration>line_configuration4</configuration>
+				<length>+300 ft</length>
+				<status>CLOSED</status>
+				<from>Load671</from>
+				<to>Node684</to>
+				<power_in>+284816+51253.3i VA</power_in>
+				<power_out>+284221+50771.5i VA</power_out>
+				<power_out_real>+284221 W</power_out_real>
+				<power_losses>+594.443+481.883i VA</power_losses>
+				<power_in_A>+116718+78142.9i VA</power_in_A>
+				<power_in_B>-0+0j VA</power_in_B>
+				<power_in_C>+168097-26889.5j VA</power_in_C>
+				<power_out_A>+116521+77954.2i VA</power_out_A>
+				<power_out_B>+0+0j VA</power_out_B>
+				<power_out_C>+167700-27182.8j VA</power_out_C>
+				<power_losses_A>+197.016+188.654i VA</power_losses_A>
+				<power_losses_B>-0+0j VA</power_losses_B>
+				<power_losses_C>+397.427+293.229j VA</power_losses_C>
+				<current_out_A>+47.2953-38.6685j A</current_out_A>
+				<current_out_B>+0+0j A</current_out_B>
+				<current_out_C>-42.3198+60.9686j A</current_out_C>
+				<current_in_A>+47.2953-38.6685j A</current_in_A>
+				<current_in_B>+0+0j A</current_in_B>
+				<current_in_C>-42.3198+60.9686j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CF|BN|AF</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>ACN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</overhead_line>
+			<overhead_line>
+				<id>28</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>overhead_line8</name>
+				<configuration>line_configuration5</configuration>
+				<length>+300 ft</length>
+				<status>CLOSED</status>
+				<from>Node684</from>
+				<to>Load611</to>
+				<power_in>+167700-27182.8i VA</power_in>
+				<power_out>+167284-27604.3j VA</power_out>
+				<power_out_real>+167284 W</power_out_real>
+				<power_losses>+416.056+421.585i VA</power_losses>
+				<power_in_A>+0-0i VA</power_in_A>
+				<power_in_B>+0+0j VA</power_in_B>
+				<power_in_C>+167700-27182.8j VA</power_in_C>
+				<power_out_A>+0+0j VA</power_out_A>
+				<power_out_B>+0+0j VA</power_out_B>
+				<power_out_C>+167284-27604.3j VA</power_out_C>
+				<power_losses_A>+0-0i VA</power_losses_A>
+				<power_losses_B>+0+0j VA</power_losses_B>
+				<power_losses_C>+416.056+421.585j VA</power_losses_C>
+				<current_out_A>+0+0j A</current_out_A>
+				<current_out_B>+0+0j A</current_out_B>
+				<current_out_C>-42.3198+60.9686j A</current_out_C>
+				<current_in_A>+0+0j A</current_in_A>
+				<current_in_B>+0+0j A</current_in_B>
+				<current_in_C>-42.3198+60.9686j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CF|BN|AN</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>CN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</overhead_line>
+			<overhead_line>
+				<id>31</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>overhead_line11</name>
+				<configuration>line_configuration2</configuration>
+				<length>+500 ft</length>
+				<status>CLOSED</status>
+				<from>Node632</from>
+				<to>Node633</to>
+				<power_in>+406893+302057i VA</power_in>
+				<power_out>+406003+300914i VA</power_out>
+				<power_out_real>+406003 W</power_out_real>
+				<power_losses>+889.973+1142.39i VA</power_losses>
+				<power_in_A>+163082+115443i VA</power_in_A>
+				<power_in_B>+121933+93506.4j VA</power_in_B>
+				<power_in_C>+121878+93107.4j VA</power_in_C>
+				<power_out_A>+162692+114895i VA</power_out_A>
+				<power_out_B>+121743+93168.6j VA</power_out_B>
+				<power_out_C>+121568+92851.2j VA</power_out_C>
+				<power_losses_A>+389.848+548.374i VA</power_losses_A>
+				<power_losses_B>+189.976+337.834j VA</power_losses_B>
+				<power_losses_C>+310.149+256.185j VA</power_losses_C>
+				<current_out_A>+66.4169-51.571j A</current_out_A>
+				<current_out_B>-63.3648-23.7126j A</current_out_B>
+				<current_out_C>+10.8527+63.2547j A</current_out_C>
+				<current_in_A>+66.4169-51.571j A</current_in_A>
+				<current_in_B>-63.3648-23.7126j A</current_in_B>
+				<current_in_C>+10.8527+63.2547j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CF|BF|AF</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</overhead_line>
+		</overhead_line_list>
+		<underground_line_list>
+			<inherits_from>line</inherits_from>
+			<underground_line>
+				<id>29</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>overhead_line9</name>
+				<configuration>line_configuration7</configuration>
+				<length>+800 ft</length>
+				<status>CLOSED</status>
+				<from>Node684</from>
+				<to>Load652</to>
+				<power_in>+116521+77954.2i VA</power_in>
+				<power_out>+115882+77858.3i VA</power_out>
+				<power_out_real>+115882 W</power_out_real>
+				<power_losses>+639.148+95.918i VA</power_losses>
+				<power_in_A>+116521+77954.2i VA</power_in_A>
+				<power_in_B>+0+0j VA</power_in_B>
+				<power_in_C>+0+0j VA</power_in_C>
+				<power_out_A>+115882+77858.3i VA</power_out_A>
+				<power_out_B>+0+0j VA</power_out_B>
+				<power_out_C>+0+0j VA</power_out_C>
+				<power_losses_A>+639.148+95.918i VA</power_losses_A>
+				<power_losses_B>+0+0j VA</power_losses_B>
+				<power_losses_C>+0+0j VA</power_losses_C>
+				<current_out_A>+47.2953-38.6685j A</current_out_A>
+				<current_out_B>+0+0j A</current_out_B>
+				<current_out_C>+0+0j A</current_out_C>
+				<current_in_A>+47.2953-38.6685j A</current_in_A>
+				<current_in_B>+0+0j A</current_in_B>
+				<current_in_C>+0+0j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CN|BN|AF</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>AN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</underground_line>
+			<underground_line>
+				<id>30</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>overhead_line10</name>
+				<configuration>line_configuration6</configuration>
+				<length>+500 ft</length>
+				<status>CLOSED</status>
+				<from>Load692</from>
+				<to>Load675</to>
+				<power_in>+847250-80481.1i VA</power_in>
+				<power_out>+843000-83249.2i VA</power_out>
+				<power_out_real>+843000 W</power_out_real>
+				<power_losses>+4249.99+2768.13i VA</power_losses>
+				<power_in_A>+488377+11556.7i VA</power_in_A>
+				<power_in_B>+68234.9-122408j VA</power_in_B>
+				<power_in_C>+290638+30369.9j VA</power_in_C>
+				<power_out_A>+485000+9277.68i VA</power_out_A>
+				<power_out_B>+68000-122906j VA</power_out_B>
+				<power_out_C>+290000+30379.4j VA</power_out_C>
+				<power_losses_A>+3376.72+2278.97i VA</power_losses_A>
+				<power_losses_B>+234.92+498.675j VA</power_losses_B>
+				<power_losses_C>+638.35-9.52179j VA</power_losses_C>
+				<current_out_A>+210.965-25.2391j A</current_out_A>
+				<current_out_B>+28.8405-53.9271j A</current_out_B>
+				<current_out_C>-42.971+119.934j A</current_out_C>
+				<current_in_A>+210.965-25.2391j A</current_in_A>
+				<current_in_B>+28.8405-53.9271j A</current_in_B>
+				<current_in_C>-42.971+119.934j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CF|BR|AF</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>ABC</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</underground_line>
+		</underground_line_list>
+		<overhead_line_conductor_list>
+			<overhead_line_conductor>
+				<id>0</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>conductor1</name>
+				<geometric_mean_radius>+0.0313 ft</geometric_mean_radius>
+				<resistance>+0.1859 Ohm/mile</resistance>
+				<diameter>+0 in</diameter>
+				<rating.summer.continuous>+1000 A</rating.summer.continuous>
+				<rating.summer.emergency>+2000 A</rating.summer.emergency>
+				<rating.winter.continuous>+1000 A</rating.winter.continuous>
+				<rating.winter.emergency>+2000 A</rating.winter.emergency>
+			</overhead_line_conductor>
+			<overhead_line_conductor>
+				<id>1</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>conductor2</name>
+				<geometric_mean_radius>+0.00814 ft</geometric_mean_radius>
+				<resistance>+0.592 Ohm/mile</resistance>
+				<diameter>+0 in</diameter>
+				<rating.summer.continuous>+1000 A</rating.summer.continuous>
+				<rating.summer.emergency>+2000 A</rating.summer.emergency>
+				<rating.winter.continuous>+1000 A</rating.winter.continuous>
+				<rating.winter.emergency>+2000 A</rating.winter.emergency>
+			</overhead_line_conductor>
+			<overhead_line_conductor>
+				<id>2</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>conductor3</name>
+				<geometric_mean_radius>+0.00446 ft</geometric_mean_radius>
+				<resistance>+1.12 Ohm/mile</resistance>
+				<diameter>+0 in</diameter>
+				<rating.summer.continuous>+1000 A</rating.summer.continuous>
+				<rating.summer.emergency>+2000 A</rating.summer.emergency>
+				<rating.winter.continuous>+1000 A</rating.winter.continuous>
+				<rating.winter.emergency>+2000 A</rating.winter.emergency>
+			</overhead_line_conductor>
+		</overhead_line_conductor_list>
+		<underground_line_conductor_list>
+			<underground_line_conductor>
+				<id>3</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>conductor4</name>
+				<outer_diameter>+1.29 in</outer_diameter>
+				<conductor_gmr>+0.0171 ft</conductor_gmr>
+				<conductor_diameter>+0.567 in</conductor_diameter>
+				<conductor_resistance>+0.41 Ohm/mile</conductor_resistance>
+				<neutral_gmr>+0.00208 ft</neutral_gmr>
+				<neutral_diameter>+0.0640837 in</neutral_diameter>
+				<neutral_resistance>+14.872 Ohm/mile</neutral_resistance>
+				<neutral_strands>13</neutral_strands>
+				<shield_thickness>+0 in</shield_thickness>
+				<shield_diameter>+0 in</shield_diameter>
+				<insulation_relative_permitivitty>+1 unit</insulation_relative_permitivitty>
+				<shield_gmr>+0 ft</shield_gmr>
+				<shield_resistance>+0 Ohm/mile</shield_resistance>
+				<rating.summer.continuous>+1000 A</rating.summer.continuous>
+				<rating.summer.emergency>+2000 A</rating.summer.emergency>
+				<rating.winter.continuous>+1000 A</rating.winter.continuous>
+				<rating.winter.emergency>+2000 A</rating.winter.emergency>
+			</underground_line_conductor>
+			<underground_line_conductor>
+				<id>4</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>conductor5</name>
+				<outer_diameter>+1.06 in</outer_diameter>
+				<conductor_gmr>+0.0111 ft</conductor_gmr>
+				<conductor_diameter>+0.368 in</conductor_diameter>
+				<conductor_resistance>+0.97 Ohm/mile</conductor_resistance>
+				<neutral_gmr>+0.0111 ft</neutral_gmr>
+				<neutral_diameter>+0.0640837 in</neutral_diameter>
+				<neutral_resistance>+0.97 Ohm/mile</neutral_resistance>
+				<neutral_strands>6</neutral_strands>
+				<shield_thickness>+0 in</shield_thickness>
+				<shield_diameter>+0 in</shield_diameter>
+				<insulation_relative_permitivitty>+1 unit</insulation_relative_permitivitty>
+				<shield_gmr>+0 ft</shield_gmr>
+				<shield_resistance>+0 Ohm/mile</shield_resistance>
+				<rating.summer.continuous>+1000 A</rating.summer.continuous>
+				<rating.summer.emergency>+2000 A</rating.summer.emergency>
+				<rating.winter.continuous>+1000 A</rating.winter.continuous>
+				<rating.winter.emergency>+2000 A</rating.winter.emergency>
+			</underground_line_conductor>
+		</underground_line_conductor_list>
+		<line_configuration_list>
+			<line_configuration>
+				<id>12</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_configuration1</name>
+				<conductor_A>conductor1</conductor_A>
+				<conductor_B>conductor1</conductor_B>
+				<conductor_C>conductor1</conductor_C>
+				<conductor_N>conductor2</conductor_N>
+				<spacing>line_spacing1</spacing>
+				<z11>+0+0j Ohm/mile</z11>
+				<z12>+0+0j Ohm/mile</z12>
+				<z13>+0+0j Ohm/mile</z13>
+				<z21>+0+0j Ohm/mile</z21>
+				<z22>+0+0j Ohm/mile</z22>
+				<z23>+0+0j Ohm/mile</z23>
+				<z31>+0+0j Ohm/mile</z31>
+				<z32>+0+0j Ohm/mile</z32>
+				<z33>+0+0j Ohm/mile</z33>
+				<c11>+0 nF/mile</c11>
+				<c12>+0 nF/mile</c12>
+				<c13>+0 nF/mile</c13>
+				<c21>+0 nF/mile</c21>
+				<c22>+0 nF/mile</c22>
+				<c23>+0 nF/mile</c23>
+				<c31>+0 nF/mile</c31>
+				<c32>+0 nF/mile</c32>
+				<c33>+0 nF/mile</c33>
+				<rating.summer.continuous>+1000 A</rating.summer.continuous>
+				<rating.summer.emergency>+2000 A</rating.summer.emergency>
+				<rating.winter.continuous>+1000 A</rating.winter.continuous>
+				<rating.winter.emergency>+2000 A</rating.winter.emergency>
+			</line_configuration>
+			<line_configuration>
+				<id>13</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_configuration2</name>
+				<conductor_A>conductor2</conductor_A>
+				<conductor_B>conductor2</conductor_B>
+				<conductor_C>conductor2</conductor_C>
+				<conductor_N>conductor2</conductor_N>
+				<spacing>line_spacing2</spacing>
+				<z11>+0+0j Ohm/mile</z11>
+				<z12>+0+0j Ohm/mile</z12>
+				<z13>+0+0j Ohm/mile</z13>
+				<z21>+0+0j Ohm/mile</z21>
+				<z22>+0+0j Ohm/mile</z22>
+				<z23>+0+0j Ohm/mile</z23>
+				<z31>+0+0j Ohm/mile</z31>
+				<z32>+0+0j Ohm/mile</z32>
+				<z33>+0+0j Ohm/mile</z33>
+				<c11>+0 nF/mile</c11>
+				<c12>+0 nF/mile</c12>
+				<c13>+0 nF/mile</c13>
+				<c21>+0 nF/mile</c21>
+				<c22>+0 nF/mile</c22>
+				<c23>+0 nF/mile</c23>
+				<c31>+0 nF/mile</c31>
+				<c32>+0 nF/mile</c32>
+				<c33>+0 nF/mile</c33>
+				<rating.summer.continuous>+1000 A</rating.summer.continuous>
+				<rating.summer.emergency>+2000 A</rating.summer.emergency>
+				<rating.winter.continuous>+1000 A</rating.winter.continuous>
+				<rating.winter.emergency>+2000 A</rating.winter.emergency>
+			</line_configuration>
+			<line_configuration>
+				<id>14</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_configuration3</name>
+				<conductor_B>conductor3</conductor_B>
+				<conductor_C>conductor3</conductor_C>
+				<conductor_N>conductor3</conductor_N>
+				<spacing>line_spacing3</spacing>
+				<z11>+0+0j Ohm/mile</z11>
+				<z12>+0+0j Ohm/mile</z12>
+				<z13>+0+0j Ohm/mile</z13>
+				<z21>+0+0j Ohm/mile</z21>
+				<z22>+0+0j Ohm/mile</z22>
+				<z23>+0+0j Ohm/mile</z23>
+				<z31>+0+0j Ohm/mile</z31>
+				<z32>+0+0j Ohm/mile</z32>
+				<z33>+0+0j Ohm/mile</z33>
+				<c11>+0 nF/mile</c11>
+				<c12>+0 nF/mile</c12>
+				<c13>+0 nF/mile</c13>
+				<c21>+0 nF/mile</c21>
+				<c22>+0 nF/mile</c22>
+				<c23>+0 nF/mile</c23>
+				<c31>+0 nF/mile</c31>
+				<c32>+0 nF/mile</c32>
+				<c33>+0 nF/mile</c33>
+				<rating.summer.continuous>+1000 A</rating.summer.continuous>
+				<rating.summer.emergency>+2000 A</rating.summer.emergency>
+				<rating.winter.continuous>+1000 A</rating.winter.continuous>
+				<rating.winter.emergency>+2000 A</rating.winter.emergency>
+			</line_configuration>
+			<line_configuration>
+				<id>15</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_configuration4</name>
+				<conductor_A>conductor3</conductor_A>
+				<conductor_C>conductor3</conductor_C>
+				<conductor_N>conductor3</conductor_N>
+				<spacing>line_spacing4</spacing>
+				<z11>+0+0j Ohm/mile</z11>
+				<z12>+0+0j Ohm/mile</z12>
+				<z13>+0+0j Ohm/mile</z13>
+				<z21>+0+0j Ohm/mile</z21>
+				<z22>+0+0j Ohm/mile</z22>
+				<z23>+0+0j Ohm/mile</z23>
+				<z31>+0+0j Ohm/mile</z31>
+				<z32>+0+0j Ohm/mile</z32>
+				<z33>+0+0j Ohm/mile</z33>
+				<c11>+0 nF/mile</c11>
+				<c12>+0 nF/mile</c12>
+				<c13>+0 nF/mile</c13>
+				<c21>+0 nF/mile</c21>
+				<c22>+0 nF/mile</c22>
+				<c23>+0 nF/mile</c23>
+				<c31>+0 nF/mile</c31>
+				<c32>+0 nF/mile</c32>
+				<c33>+0 nF/mile</c33>
+				<rating.summer.continuous>+1000 A</rating.summer.continuous>
+				<rating.summer.emergency>+2000 A</rating.summer.emergency>
+				<rating.winter.continuous>+1000 A</rating.winter.continuous>
+				<rating.winter.emergency>+2000 A</rating.winter.emergency>
+			</line_configuration>
+			<line_configuration>
+				<id>16</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_configuration5</name>
+				<conductor_C>conductor3</conductor_C>
+				<conductor_N>conductor3</conductor_N>
+				<spacing>line_spacing5</spacing>
+				<z11>+0+0j Ohm/mile</z11>
+				<z12>+0+0j Ohm/mile</z12>
+				<z13>+0+0j Ohm/mile</z13>
+				<z21>+0+0j Ohm/mile</z21>
+				<z22>+0+0j Ohm/mile</z22>
+				<z23>+0+0j Ohm/mile</z23>
+				<z31>+0+0j Ohm/mile</z31>
+				<z32>+0+0j Ohm/mile</z32>
+				<z33>+0+0j Ohm/mile</z33>
+				<c11>+0 nF/mile</c11>
+				<c12>+0 nF/mile</c12>
+				<c13>+0 nF/mile</c13>
+				<c21>+0 nF/mile</c21>
+				<c22>+0 nF/mile</c22>
+				<c23>+0 nF/mile</c23>
+				<c31>+0 nF/mile</c31>
+				<c32>+0 nF/mile</c32>
+				<c33>+0 nF/mile</c33>
+				<rating.summer.continuous>+1000 A</rating.summer.continuous>
+				<rating.summer.emergency>+2000 A</rating.summer.emergency>
+				<rating.winter.continuous>+1000 A</rating.winter.continuous>
+				<rating.winter.emergency>+2000 A</rating.winter.emergency>
+			</line_configuration>
+			<line_configuration>
+				<id>17</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_configuration6</name>
+				<conductor_A>conductor4</conductor_A>
+				<conductor_B>conductor4</conductor_B>
+				<conductor_C>conductor4</conductor_C>
+				<spacing>line_spacing6</spacing>
+				<z11>+0+0j Ohm/mile</z11>
+				<z12>+0+0j Ohm/mile</z12>
+				<z13>+0+0j Ohm/mile</z13>
+				<z21>+0+0j Ohm/mile</z21>
+				<z22>+0+0j Ohm/mile</z22>
+				<z23>+0+0j Ohm/mile</z23>
+				<z31>+0+0j Ohm/mile</z31>
+				<z32>+0+0j Ohm/mile</z32>
+				<z33>+0+0j Ohm/mile</z33>
+				<c11>+0 nF/mile</c11>
+				<c12>+0 nF/mile</c12>
+				<c13>+0 nF/mile</c13>
+				<c21>+0 nF/mile</c21>
+				<c22>+0 nF/mile</c22>
+				<c23>+0 nF/mile</c23>
+				<c31>+0 nF/mile</c31>
+				<c32>+0 nF/mile</c32>
+				<c33>+0 nF/mile</c33>
+				<rating.summer.continuous>+1000 A</rating.summer.continuous>
+				<rating.summer.emergency>+2000 A</rating.summer.emergency>
+				<rating.winter.continuous>+1000 A</rating.winter.continuous>
+				<rating.winter.emergency>+2000 A</rating.winter.emergency>
+			</line_configuration>
+			<line_configuration>
+				<id>18</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>line_configuration7</name>
+				<conductor_A>conductor5</conductor_A>
+				<conductor_N>conductor5</conductor_N>
+				<spacing>line_spacing6</spacing>
+				<z11>+0+0j Ohm/mile</z11>
+				<z12>+0+0j Ohm/mile</z12>
+				<z13>+0+0j Ohm/mile</z13>
+				<z21>+0+0j Ohm/mile</z21>
+				<z22>+0+0j Ohm/mile</z22>
+				<z23>+0+0j Ohm/mile</z23>
+				<z31>+0+0j Ohm/mile</z31>
+				<z32>+0+0j Ohm/mile</z32>
+				<z33>+0+0j Ohm/mile</z33>
+				<c11>+0 nF/mile</c11>
+				<c12>+0 nF/mile</c12>
+				<c13>+0 nF/mile</c13>
+				<c21>+0 nF/mile</c21>
+				<c22>+0 nF/mile</c22>
+				<c23>+0 nF/mile</c23>
+				<c31>+0 nF/mile</c31>
+				<c32>+0 nF/mile</c32>
+				<c33>+0 nF/mile</c33>
+				<rating.summer.continuous>+1000 A</rating.summer.continuous>
+				<rating.summer.emergency>+2000 A</rating.summer.emergency>
+				<rating.winter.continuous>+1000 A</rating.winter.continuous>
+				<rating.winter.emergency>+2000 A</rating.winter.emergency>
+			</line_configuration>
+		</line_configuration_list>
+		<transformer_configuration_list>
+			<transformer_configuration>
+				<id>19</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>transformer_configuration1</name>
+				<connect_type>WYE_WYE</connect_type>
+				<install_type>PADMOUNT</install_type>
+				<coolant_type>UNKNOWN</coolant_type>
+				<cooling_type>UNKNOWN</cooling_type>
+				<primary_voltage>+4160 V</primary_voltage>
+				<secondary_voltage>+480 V</secondary_voltage>
+				<power_rating>+500 kVA</power_rating>
+				<powerA_rating>+166.667 kVA</powerA_rating>
+				<powerB_rating>+166.667 kVA</powerB_rating>
+				<powerC_rating>+166.667 kVA</powerC_rating>
+				<resistance>+0.011 pu*Ohm</resistance>
+				<reactance>+0.02 pu*Ohm</reactance>
+				<impedance>+0.011+0.02j pu*Ohm</impedance>
+				<resistance1>+0 pu*Ohm</resistance1>
+				<reactance1>+0 pu*Ohm</reactance1>
+				<impedance1>+0+0j pu*Ohm</impedance1>
+				<resistance2>+0 pu*Ohm</resistance2>
+				<reactance2>+0 pu*Ohm</reactance2>
+				<impedance2>+0+0j pu*Ohm</impedance2>
+				<shunt_resistance>+1e+09 pu*Ohm</shunt_resistance>
+				<shunt_reactance>+1e+09 pu*Ohm</shunt_reactance>
+				<shunt_impedance>+1e+09+1e+09j pu*Ohm</shunt_impedance>
+				<core_coil_weight>+0 lb</core_coil_weight>
+				<tank_fittings_weight>+0 lb</tank_fittings_weight>
+				<oil_volume>+0 gal</oil_volume>
+				<rated_winding_time_constant>+0 h</rated_winding_time_constant>
+				<rated_winding_hot_spot_rise>+0 degC</rated_winding_hot_spot_rise>
+				<rated_top_oil_rise>+0 degC</rated_top_oil_rise>
+				<no_load_loss>+0 pu</no_load_loss>
+				<full_load_loss>+0 pu</full_load_loss>
+				<reactance_resistance_ratio>+4.5</reactance_resistance_ratio>
+				<installed_insulation_life>+0 h</installed_insulation_life>
+				<magnetization_location>NONE</magnetization_location>
+				<inrush_saturation_enabled>FALSE</inrush_saturation_enabled>
+				<L_A>+0.2 pu</L_A>
+				<phi_K>+1.17 pu</phi_K>
+				<phi_M>+1 pu</phi_M>
+				<I_M>+0.01 pu</I_M>
+				<T_D>+0.5</T_D>
+			</transformer_configuration>
+		</transformer_configuration_list>
+		<transformer_list>
+			<inherits_from>link</inherits_from>
+			<transformer>
+				<id>49</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>XFMR1</name>
+				<configuration>transformer_configuration1</configuration>
+				<ambient_temperature>+0 degC</ambient_temperature>
+				<top_oil_hot_spot_temperature>+0 degC</top_oil_hot_spot_temperature>
+				<winding_hot_spot_temperature>+0 degC</winding_hot_spot_temperature>
+				<percent_loss_of_life>+0</percent_loss_of_life>
+				<aging_constant>+0</aging_constant>
+				<use_thermal_model>FALSE</use_thermal_model>
+				<transformer_replacement_count>+0</transformer_replacement_count>
+				<aging_granularity>+0 s</aging_granularity>
+				<phase_A_primary_flux_value>+0 Wb</phase_A_primary_flux_value>
+				<phase_B_primary_flux_value>+0 Wb</phase_B_primary_flux_value>
+				<phase_C_primary_flux_value>+0 Wb</phase_C_primary_flux_value>
+				<phase_A_secondary_flux_value>+0 Wb</phase_A_secondary_flux_value>
+				<phase_B_secondary_flux_value>+0 Wb</phase_B_secondary_flux_value>
+				<phase_C_secondary_flux_value>+0 Wb</phase_C_secondary_flux_value>
+				<status>CLOSED</status>
+				<from>Node633</from>
+				<to>Load634</to>
+				<power_in>+406003+300914i VA</power_in>
+				<power_out>+400000+290000j VA</power_out>
+				<power_out_real>+400000 W</power_out_real>
+				<power_losses>+6002.9+10914.4i VA</power_losses>
+				<power_in_A>+162692+114895i VA</power_in_A>
+				<power_in_B>+121743+93168.6j VA</power_in_B>
+				<power_in_C>+121568+92851.2j VA</power_in_C>
+				<power_out_A>+160000+110000j VA</power_out_A>
+				<power_out_B>+120000+90000j VA</power_out_B>
+				<power_out_C>+120000+90000j VA</power_out_C>
+				<power_losses_A>+2692.01+4894.56i VA</power_losses_A>
+				<power_losses_B>+1742.71+3168.57j VA</power_losses_B>
+				<power_losses_C>+1568.17+2851.23j VA</power_losses_C>
+				<current_out_A>+575.613-446.949j A</current_out_A>
+				<current_out_B>-549.161-205.509j A</current_out_B>
+				<current_out_C>+94.0563+548.207j A</current_out_C>
+				<current_in_A>+66.4169-51.571j A</current_in_A>
+				<current_in_B>-63.3648-23.7126j A</current_in_B>
+				<current_in_C>+10.8527+63.2547j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CF|BF|AF</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+500 A</continuous_rating>
+				<emergency_rating>+500 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</transformer>
+		</transformer_list>
+		<load_list>
+			<inherits_from>node</inherits_from>
+			<load>
+				<id>38</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Load634</name>
+				<load_class>U</load_class>
+				<constant_power_A>+160000+110000j VA</constant_power_A>
+				<constant_power_B>+120000+90000j VA</constant_power_B>
+				<constant_power_C>+120000+90000j VA</constant_power_C>
+				<constant_power_A_real>+160000 W</constant_power_A_real>
+				<constant_power_B_real>+120000 W</constant_power_B_real>
+				<constant_power_C_real>+120000 W</constant_power_C_real>
+				<constant_power_A_reac>+110000 VAr</constant_power_A_reac>
+				<constant_power_B_reac>+90000 VAr</constant_power_B_reac>
+				<constant_power_C_reac>+90000 VAr</constant_power_C_reac>
+				<constant_current_A>+0+0j A</constant_current_A>
+				<constant_current_B>+0+0j A</constant_current_B>
+				<constant_current_C>+0+0j A</constant_current_C>
+				<constant_current_A_real>+0 A</constant_current_A_real>
+				<constant_current_B_real>+0 A</constant_current_B_real>
+				<constant_current_C_real>+0 A</constant_current_C_real>
+				<constant_current_A_reac>+0 A</constant_current_A_reac>
+				<constant_current_B_reac>+0 A</constant_current_B_reac>
+				<constant_current_C_reac>+0 A</constant_current_C_reac>
+				<constant_impedance_A>+0+0j Ohm</constant_impedance_A>
+				<constant_impedance_B>+0+0j Ohm</constant_impedance_B>
+				<constant_impedance_C>+0+0j Ohm</constant_impedance_C>
+				<constant_impedance_A_real>+0 Ohm</constant_impedance_A_real>
+				<constant_impedance_B_real>+0 Ohm</constant_impedance_B_real>
+				<constant_impedance_C_real>+0 Ohm</constant_impedance_C_real>
+				<constant_impedance_A_reac>+0 Ohm</constant_impedance_A_reac>
+				<constant_impedance_B_reac>+0 Ohm</constant_impedance_B_reac>
+				<constant_impedance_C_reac>+0 Ohm</constant_impedance_C_reac>
+				<constant_power_AN>+0+0j VA</constant_power_AN>
+				<constant_power_BN>+0+0j VA</constant_power_BN>
+				<constant_power_CN>+0+0j VA</constant_power_CN>
+				<constant_power_AN_real>+0 W</constant_power_AN_real>
+				<constant_power_BN_real>+0 W</constant_power_BN_real>
+				<constant_power_CN_real>+0 W</constant_power_CN_real>
+				<constant_power_AN_reac>+0 VAr</constant_power_AN_reac>
+				<constant_power_BN_reac>+0 VAr</constant_power_BN_reac>
+				<constant_power_CN_reac>+0 VAr</constant_power_CN_reac>
+				<constant_current_AN>+0+0j A</constant_current_AN>
+				<constant_current_BN>+0+0j A</constant_current_BN>
+				<constant_current_CN>+0+0j A</constant_current_CN>
+				<constant_current_AN_real>+0 A</constant_current_AN_real>
+				<constant_current_BN_real>+0 A</constant_current_BN_real>
+				<constant_current_CN_real>+0 A</constant_current_CN_real>
+				<constant_current_AN_reac>+0 A</constant_current_AN_reac>
+				<constant_current_BN_reac>+0 A</constant_current_BN_reac>
+				<constant_current_CN_reac>+0 A</constant_current_CN_reac>
+				<constant_impedance_AN>+0+0j Ohm</constant_impedance_AN>
+				<constant_impedance_BN>+0+0j Ohm</constant_impedance_BN>
+				<constant_impedance_CN>+0+0j Ohm</constant_impedance_CN>
+				<constant_impedance_AN_real>+0 Ohm</constant_impedance_AN_real>
+				<constant_impedance_BN_real>+0 Ohm</constant_impedance_BN_real>
+				<constant_impedance_CN_real>+0 Ohm</constant_impedance_CN_real>
+				<constant_impedance_AN_reac>+0 Ohm</constant_impedance_AN_reac>
+				<constant_impedance_BN_reac>+0 Ohm</constant_impedance_BN_reac>
+				<constant_impedance_CN_reac>+0 Ohm</constant_impedance_CN_reac>
+				<constant_power_AB>+0+0j VA</constant_power_AB>
+				<constant_power_BC>+0+0j VA</constant_power_BC>
+				<constant_power_CA>+0+0j VA</constant_power_CA>
+				<constant_power_AB_real>+0 W</constant_power_AB_real>
+				<constant_power_BC_real>+0 W</constant_power_BC_real>
+				<constant_power_CA_real>+0 W</constant_power_CA_real>
+				<constant_power_AB_reac>+0 VAr</constant_power_AB_reac>
+				<constant_power_BC_reac>+0 VAr</constant_power_BC_reac>
+				<constant_power_CA_reac>+0 VAr</constant_power_CA_reac>
+				<constant_current_AB>+0+0j A</constant_current_AB>
+				<constant_current_BC>+0+0j A</constant_current_BC>
+				<constant_current_CA>+0+0j A</constant_current_CA>
+				<constant_current_AB_real>+0 A</constant_current_AB_real>
+				<constant_current_BC_real>+0 A</constant_current_BC_real>
+				<constant_current_CA_real>+0 A</constant_current_CA_real>
+				<constant_current_AB_reac>+0 A</constant_current_AB_reac>
+				<constant_current_BC_reac>+0 A</constant_current_BC_reac>
+				<constant_current_CA_reac>+0 A</constant_current_CA_reac>
+				<constant_impedance_AB>+0+0j Ohm</constant_impedance_AB>
+				<constant_impedance_BC>+0+0j Ohm</constant_impedance_BC>
+				<constant_impedance_CA>+0+0j Ohm</constant_impedance_CA>
+				<constant_impedance_AB_real>+0 Ohm</constant_impedance_AB_real>
+				<constant_impedance_BC_real>+0 Ohm</constant_impedance_BC_real>
+				<constant_impedance_CA_real>+0 Ohm</constant_impedance_CA_real>
+				<constant_impedance_AB_reac>+0 Ohm</constant_impedance_AB_reac>
+				<constant_impedance_BC_reac>+0 Ohm</constant_impedance_BC_reac>
+				<constant_impedance_CA_reac>+0 Ohm</constant_impedance_CA_reac>
+				<measured_voltage_A>+266.431-3.31991d</measured_voltage_A>
+				<measured_voltage_B>+255.818-122.613d</measured_voltage_B>
+				<measured_voltage_C>+269.679+117.134d</measured_voltage_C>
+				<measured_voltage_AB>+450.694+26.3517d</measured_voltage_AB>
+				<measured_voltage_BC>+455.723-91.8713d</measured_voltage_BC>
+				<measured_voltage_CA>+465.347+146.709d</measured_voltage_CA>
+				<phase_loss_protection>FALSE</phase_loss_protection>
+				<base_power_A>+0 VA</base_power_A>
+				<base_power_B>+0 VA</base_power_B>
+				<base_power_C>+0 VA</base_power_C>
+				<power_pf_A>+1 pu</power_pf_A>
+				<current_pf_A>+1 pu</current_pf_A>
+				<impedance_pf_A>+1 pu</impedance_pf_A>
+				<power_pf_B>+1 pu</power_pf_B>
+				<current_pf_B>+1 pu</current_pf_B>
+				<impedance_pf_B>+1 pu</impedance_pf_B>
+				<power_pf_C>+1 pu</power_pf_C>
+				<current_pf_C>+1 pu</current_pf_C>
+				<impedance_pf_C>+1 pu</impedance_pf_C>
+				<power_fraction_A>+0 pu</power_fraction_A>
+				<current_fraction_A>+0 pu</current_fraction_A>
+				<impedance_fraction_A>+0 pu</impedance_fraction_A>
+				<power_fraction_B>+0 pu</power_fraction_B>
+				<current_fraction_B>+0 pu</current_fraction_B>
+				<impedance_fraction_B>+0 pu</impedance_fraction_B>
+				<power_fraction_C>+0 pu</power_fraction_C>
+				<current_fraction_C>+0 pu</current_fraction_C>
+				<impedance_fraction_C>+0 pu</impedance_fraction_C>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00048 V</maximum_voltage_error>
+				<voltage_A>+266.431-3.31991d V</voltage_A>
+				<voltage_B>+255.818-122.613d V</voltage_B>
+				<voltage_C>+269.679+117.134d V</voltage_C>
+				<voltage_AB>+450.694+26.3517d V</voltage_AB>
+				<voltage_BC>+455.723-91.8713d V</voltage_BC>
+				<voltage_CA>+465.347+146.709d V</voltage_CA>
+				<current_A>+0+0j A</current_A>
+				<current_B>+0+0j A</current_B>
+				<current_C>+0+0j A</current_C>
+				<power_A>+160000+110000j VA</power_A>
+				<power_B>+120000+90000j VA</power_B>
+				<power_C>+120000+90000j VA</power_C>
+				<shunt_A>+0+0j S</shunt_A>
+				<shunt_B>+0+0j S</shunt_B>
+				<shunt_C>+0+0j S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>ABCN</phases>
+				<nominal_voltage>+480 V</nominal_voltage>
+			</load>
+			<load>
+				<id>39</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Load645</name>
+				<load_class>U</load_class>
+				<constant_power_A>+0+0j VA</constant_power_A>
+				<constant_power_B>+170000+125000j VA</constant_power_B>
+				<constant_power_C>+0+0j VA</constant_power_C>
+				<constant_power_A_real>+0 W</constant_power_A_real>
+				<constant_power_B_real>+170000 W</constant_power_B_real>
+				<constant_power_C_real>+0 W</constant_power_C_real>
+				<constant_power_A_reac>+0 VAr</constant_power_A_reac>
+				<constant_power_B_reac>+125000 VAr</constant_power_B_reac>
+				<constant_power_C_reac>+0 VAr</constant_power_C_reac>
+				<constant_current_A>+0+0j A</constant_current_A>
+				<constant_current_B>+0+0j A</constant_current_B>
+				<constant_current_C>+0+0j A</constant_current_C>
+				<constant_current_A_real>+0 A</constant_current_A_real>
+				<constant_current_B_real>+0 A</constant_current_B_real>
+				<constant_current_C_real>+0 A</constant_current_C_real>
+				<constant_current_A_reac>+0 A</constant_current_A_reac>
+				<constant_current_B_reac>+0 A</constant_current_B_reac>
+				<constant_current_C_reac>+0 A</constant_current_C_reac>
+				<constant_impedance_A>+0+0j Ohm</constant_impedance_A>
+				<constant_impedance_B>+0+0j Ohm</constant_impedance_B>
+				<constant_impedance_C>+0+0j Ohm</constant_impedance_C>
+				<constant_impedance_A_real>+0 Ohm</constant_impedance_A_real>
+				<constant_impedance_B_real>+0 Ohm</constant_impedance_B_real>
+				<constant_impedance_C_real>+0 Ohm</constant_impedance_C_real>
+				<constant_impedance_A_reac>+0 Ohm</constant_impedance_A_reac>
+				<constant_impedance_B_reac>+0 Ohm</constant_impedance_B_reac>
+				<constant_impedance_C_reac>+0 Ohm</constant_impedance_C_reac>
+				<constant_power_AN>+0+0j VA</constant_power_AN>
+				<constant_power_BN>+0+0j VA</constant_power_BN>
+				<constant_power_CN>+0+0j VA</constant_power_CN>
+				<constant_power_AN_real>+0 W</constant_power_AN_real>
+				<constant_power_BN_real>+0 W</constant_power_BN_real>
+				<constant_power_CN_real>+0 W</constant_power_CN_real>
+				<constant_power_AN_reac>+0 VAr</constant_power_AN_reac>
+				<constant_power_BN_reac>+0 VAr</constant_power_BN_reac>
+				<constant_power_CN_reac>+0 VAr</constant_power_CN_reac>
+				<constant_current_AN>+0+0j A</constant_current_AN>
+				<constant_current_BN>+0+0j A</constant_current_BN>
+				<constant_current_CN>+0+0j A</constant_current_CN>
+				<constant_current_AN_real>+0 A</constant_current_AN_real>
+				<constant_current_BN_real>+0 A</constant_current_BN_real>
+				<constant_current_CN_real>+0 A</constant_current_CN_real>
+				<constant_current_AN_reac>+0 A</constant_current_AN_reac>
+				<constant_current_BN_reac>+0 A</constant_current_BN_reac>
+				<constant_current_CN_reac>+0 A</constant_current_CN_reac>
+				<constant_impedance_AN>+0+0j Ohm</constant_impedance_AN>
+				<constant_impedance_BN>+0+0j Ohm</constant_impedance_BN>
+				<constant_impedance_CN>+0+0j Ohm</constant_impedance_CN>
+				<constant_impedance_AN_real>+0 Ohm</constant_impedance_AN_real>
+				<constant_impedance_BN_real>+0 Ohm</constant_impedance_BN_real>
+				<constant_impedance_CN_real>+0 Ohm</constant_impedance_CN_real>
+				<constant_impedance_AN_reac>+0 Ohm</constant_impedance_AN_reac>
+				<constant_impedance_BN_reac>+0 Ohm</constant_impedance_BN_reac>
+				<constant_impedance_CN_reac>+0 Ohm</constant_impedance_CN_reac>
+				<constant_power_AB>+0+0j VA</constant_power_AB>
+				<constant_power_BC>+0+0j VA</constant_power_BC>
+				<constant_power_CA>+0+0j VA</constant_power_CA>
+				<constant_power_AB_real>+0 W</constant_power_AB_real>
+				<constant_power_BC_real>+0 W</constant_power_BC_real>
+				<constant_power_CA_real>+0 W</constant_power_CA_real>
+				<constant_power_AB_reac>+0 VAr</constant_power_AB_reac>
+				<constant_power_BC_reac>+0 VAr</constant_power_BC_reac>
+				<constant_power_CA_reac>+0 VAr</constant_power_CA_reac>
+				<constant_current_AB>+0+0j A</constant_current_AB>
+				<constant_current_BC>+0+0j A</constant_current_BC>
+				<constant_current_CA>+0+0j A</constant_current_CA>
+				<constant_current_AB_real>+0 A</constant_current_AB_real>
+				<constant_current_BC_real>+0 A</constant_current_BC_real>
+				<constant_current_CA_real>+0 A</constant_current_CA_real>
+				<constant_current_AB_reac>+0 A</constant_current_AB_reac>
+				<constant_current_BC_reac>+0 A</constant_current_BC_reac>
+				<constant_current_CA_reac>+0 A</constant_current_CA_reac>
+				<constant_impedance_AB>+0+0j Ohm</constant_impedance_AB>
+				<constant_impedance_BC>+0+0j Ohm</constant_impedance_BC>
+				<constant_impedance_CA>+0+0j Ohm</constant_impedance_CA>
+				<constant_impedance_AB_real>+0 Ohm</constant_impedance_AB_real>
+				<constant_impedance_BC_real>+0 Ohm</constant_impedance_BC_real>
+				<constant_impedance_CA_real>+0 Ohm</constant_impedance_CA_real>
+				<constant_impedance_AB_reac>+0 Ohm</constant_impedance_AB_reac>
+				<constant_impedance_BC_reac>+0 Ohm</constant_impedance_BC_reac>
+				<constant_impedance_CA_reac>+0 Ohm</constant_impedance_CA_reac>
+				<measured_voltage_A>+0+0d</measured_voltage_A>
+				<measured_voltage_B>+2248.11-122.199d</measured_voltage_B>
+				<measured_voltage_C>+2385.8+117.656d</measured_voltage_C>
+				<measured_voltage_AB>+2248.11+57.8005d</measured_voltage_AB>
+				<measured_voltage_BC>+4016.59-91.2916d</measured_voltage_BC>
+				<measured_voltage_CA>+2385.8+117.656d</measured_voltage_CA>
+				<phase_loss_protection>FALSE</phase_loss_protection>
+				<base_power_A>+0 VA</base_power_A>
+				<base_power_B>+0 VA</base_power_B>
+				<base_power_C>+0 VA</base_power_C>
+				<power_pf_A>+1 pu</power_pf_A>
+				<current_pf_A>+1 pu</current_pf_A>
+				<impedance_pf_A>+1 pu</impedance_pf_A>
+				<power_pf_B>+1 pu</power_pf_B>
+				<current_pf_B>+1 pu</current_pf_B>
+				<impedance_pf_B>+1 pu</impedance_pf_B>
+				<power_pf_C>+1 pu</power_pf_C>
+				<current_pf_C>+1 pu</current_pf_C>
+				<impedance_pf_C>+1 pu</impedance_pf_C>
+				<power_fraction_A>+0 pu</power_fraction_A>
+				<current_fraction_A>+0 pu</current_fraction_A>
+				<impedance_fraction_A>+0 pu</impedance_fraction_A>
+				<power_fraction_B>+0 pu</power_fraction_B>
+				<current_fraction_B>+0 pu</current_fraction_B>
+				<impedance_fraction_B>+0 pu</impedance_fraction_B>
+				<power_fraction_C>+0 pu</power_fraction_C>
+				<current_fraction_C>+0 pu</current_fraction_C>
+				<impedance_fraction_C>+0 pu</impedance_fraction_C>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+0+0d V</voltage_A>
+				<voltage_B>+2248.11-122.199d V</voltage_B>
+				<voltage_C>+2385.8+117.656d V</voltage_C>
+				<voltage_AB>+2248.11+57.8005d V</voltage_AB>
+				<voltage_BC>+4016.59-91.2916d V</voltage_BC>
+				<voltage_CA>+2385.8+117.656d V</voltage_CA>
+				<current_A>+0+0j A</current_A>
+				<current_B>+0+0j A</current_B>
+				<current_C>+0+0j A</current_C>
+				<power_A>+0+0j VA</power_A>
+				<power_B>+170000+125000j VA</power_B>
+				<power_C>+0+0j VA</power_C>
+				<shunt_A>+0+0j S</shunt_A>
+				<shunt_B>+0+0j S</shunt_B>
+				<shunt_C>+0+0j S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>BCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</load>
+			<load>
+				<id>40</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Load646</name>
+				<load_class>U</load_class>
+				<constant_power_A>+0+0j VA</constant_power_A>
+				<constant_power_B>+0+0j VA</constant_power_B>
+				<constant_power_C>+0+0j VA</constant_power_C>
+				<constant_power_A_real>+0 W</constant_power_A_real>
+				<constant_power_B_real>+0 W</constant_power_B_real>
+				<constant_power_C_real>+0 W</constant_power_C_real>
+				<constant_power_A_reac>+0 VAr</constant_power_A_reac>
+				<constant_power_B_reac>+0 VAr</constant_power_B_reac>
+				<constant_power_C_reac>+0 VAr</constant_power_C_reac>
+				<constant_current_A>+0+0j A</constant_current_A>
+				<constant_current_B>+0+0j A</constant_current_B>
+				<constant_current_C>+0+0j A</constant_current_C>
+				<constant_current_A_real>+0 A</constant_current_A_real>
+				<constant_current_B_real>+0 A</constant_current_B_real>
+				<constant_current_C_real>+0 A</constant_current_C_real>
+				<constant_current_A_reac>+0 A</constant_current_A_reac>
+				<constant_current_B_reac>+0 A</constant_current_B_reac>
+				<constant_current_C_reac>+0 A</constant_current_C_reac>
+				<constant_impedance_A>+0+0j Ohm</constant_impedance_A>
+				<constant_impedance_B>+56.5993+32.4831j Ohm</constant_impedance_B>
+				<constant_impedance_C>+0+0j Ohm</constant_impedance_C>
+				<constant_impedance_A_real>+0 Ohm</constant_impedance_A_real>
+				<constant_impedance_B_real>+56.5993 Ohm</constant_impedance_B_real>
+				<constant_impedance_C_real>+0 Ohm</constant_impedance_C_real>
+				<constant_impedance_A_reac>+0 Ohm</constant_impedance_A_reac>
+				<constant_impedance_B_reac>+32.4831 Ohm</constant_impedance_B_reac>
+				<constant_impedance_C_reac>+0 Ohm</constant_impedance_C_reac>
+				<constant_power_AN>+0+0j VA</constant_power_AN>
+				<constant_power_BN>+0+0j VA</constant_power_BN>
+				<constant_power_CN>+0+0j VA</constant_power_CN>
+				<constant_power_AN_real>+0 W</constant_power_AN_real>
+				<constant_power_BN_real>+0 W</constant_power_BN_real>
+				<constant_power_CN_real>+0 W</constant_power_CN_real>
+				<constant_power_AN_reac>+0 VAr</constant_power_AN_reac>
+				<constant_power_BN_reac>+0 VAr</constant_power_BN_reac>
+				<constant_power_CN_reac>+0 VAr</constant_power_CN_reac>
+				<constant_current_AN>+0+0j A</constant_current_AN>
+				<constant_current_BN>+0+0j A</constant_current_BN>
+				<constant_current_CN>+0+0j A</constant_current_CN>
+				<constant_current_AN_real>+0 A</constant_current_AN_real>
+				<constant_current_BN_real>+0 A</constant_current_BN_real>
+				<constant_current_CN_real>+0 A</constant_current_CN_real>
+				<constant_current_AN_reac>+0 A</constant_current_AN_reac>
+				<constant_current_BN_reac>+0 A</constant_current_BN_reac>
+				<constant_current_CN_reac>+0 A</constant_current_CN_reac>
+				<constant_impedance_AN>+0+0j Ohm</constant_impedance_AN>
+				<constant_impedance_BN>+0+0j Ohm</constant_impedance_BN>
+				<constant_impedance_CN>+0+0j Ohm</constant_impedance_CN>
+				<constant_impedance_AN_real>+0 Ohm</constant_impedance_AN_real>
+				<constant_impedance_BN_real>+0 Ohm</constant_impedance_BN_real>
+				<constant_impedance_CN_real>+0 Ohm</constant_impedance_CN_real>
+				<constant_impedance_AN_reac>+0 Ohm</constant_impedance_AN_reac>
+				<constant_impedance_BN_reac>+0 Ohm</constant_impedance_BN_reac>
+				<constant_impedance_CN_reac>+0 Ohm</constant_impedance_CN_reac>
+				<constant_power_AB>+0+0j VA</constant_power_AB>
+				<constant_power_BC>+0+0j VA</constant_power_BC>
+				<constant_power_CA>+0+0j VA</constant_power_CA>
+				<constant_power_AB_real>+0 W</constant_power_AB_real>
+				<constant_power_BC_real>+0 W</constant_power_BC_real>
+				<constant_power_CA_real>+0 W</constant_power_CA_real>
+				<constant_power_AB_reac>+0 VAr</constant_power_AB_reac>
+				<constant_power_BC_reac>+0 VAr</constant_power_BC_reac>
+				<constant_power_CA_reac>+0 VAr</constant_power_CA_reac>
+				<constant_current_AB>+0+0j A</constant_current_AB>
+				<constant_current_BC>+0+0j A</constant_current_BC>
+				<constant_current_CA>+0+0j A</constant_current_CA>
+				<constant_current_AB_real>+0 A</constant_current_AB_real>
+				<constant_current_BC_real>+0 A</constant_current_BC_real>
+				<constant_current_CA_real>+0 A</constant_current_CA_real>
+				<constant_current_AB_reac>+0 A</constant_current_AB_reac>
+				<constant_current_BC_reac>+0 A</constant_current_BC_reac>
+				<constant_current_CA_reac>+0 A</constant_current_CA_reac>
+				<constant_impedance_AB>+0+0j Ohm</constant_impedance_AB>
+				<constant_impedance_BC>+0+0j Ohm</constant_impedance_BC>
+				<constant_impedance_CA>+0+0j Ohm</constant_impedance_CA>
+				<constant_impedance_AB_real>+0 Ohm</constant_impedance_AB_real>
+				<constant_impedance_BC_real>+0 Ohm</constant_impedance_BC_real>
+				<constant_impedance_CA_real>+0 Ohm</constant_impedance_CA_real>
+				<constant_impedance_AB_reac>+0 Ohm</constant_impedance_AB_reac>
+				<constant_impedance_BC_reac>+0 Ohm</constant_impedance_BC_reac>
+				<constant_impedance_CA_reac>+0 Ohm</constant_impedance_CA_reac>
+				<measured_voltage_A>+0+0d</measured_voltage_A>
+				<measured_voltage_B>+2244.25-122.28d</measured_voltage_B>
+				<measured_voltage_C>+2381.11+117.697d</measured_voltage_C>
+				<measured_voltage_AB>+2244.25+57.7197d</measured_voltage_AB>
+				<measured_voltage_BC>+4006.71-91.3132d</measured_voltage_BC>
+				<measured_voltage_CA>+2381.11+117.697d</measured_voltage_CA>
+				<phase_loss_protection>FALSE</phase_loss_protection>
+				<base_power_A>+0 VA</base_power_A>
+				<base_power_B>+0 VA</base_power_B>
+				<base_power_C>+0 VA</base_power_C>
+				<power_pf_A>+1 pu</power_pf_A>
+				<current_pf_A>+1 pu</current_pf_A>
+				<impedance_pf_A>+1 pu</impedance_pf_A>
+				<power_pf_B>+1 pu</power_pf_B>
+				<current_pf_B>+1 pu</current_pf_B>
+				<impedance_pf_B>+1 pu</impedance_pf_B>
+				<power_pf_C>+1 pu</power_pf_C>
+				<current_pf_C>+1 pu</current_pf_C>
+				<impedance_pf_C>+1 pu</impedance_pf_C>
+				<power_fraction_A>+0 pu</power_fraction_A>
+				<current_fraction_A>+0 pu</current_fraction_A>
+				<impedance_fraction_A>+0 pu</impedance_fraction_A>
+				<power_fraction_B>+0 pu</power_fraction_B>
+				<current_fraction_B>+0 pu</current_fraction_B>
+				<impedance_fraction_B>+0 pu</impedance_fraction_B>
+				<power_fraction_C>+0 pu</power_fraction_C>
+				<current_fraction_C>+0 pu</current_fraction_C>
+				<impedance_fraction_C>+0 pu</impedance_fraction_C>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+0+0d V</voltage_A>
+				<voltage_B>+2244.25-122.28d V</voltage_B>
+				<voltage_C>+2381.11+117.697d V</voltage_C>
+				<voltage_AB>+2244.25+57.7197d V</voltage_AB>
+				<voltage_BC>+4006.71-91.3132d V</voltage_BC>
+				<voltage_CA>+2381.11+117.697d V</voltage_CA>
+				<current_A>+0+0j A</current_A>
+				<current_B>+0+0j A</current_B>
+				<current_C>+0+0j A</current_C>
+				<power_A>+0+0j VA</power_A>
+				<power_B>+0+0j VA</power_B>
+				<power_C>+0+0j VA</power_C>
+				<shunt_A>+0+0j S</shunt_A>
+				<shunt_B>+0.0132905-0.00762759j S</shunt_B>
+				<shunt_C>+0+0j S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>BCD</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</load>
+			<load>
+				<id>41</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Load652</name>
+				<load_class>U</load_class>
+				<constant_power_A>+0+0j VA</constant_power_A>
+				<constant_power_B>+0+0j VA</constant_power_B>
+				<constant_power_C>+0+0j VA</constant_power_C>
+				<constant_power_A_real>+0 W</constant_power_A_real>
+				<constant_power_B_real>+0 W</constant_power_B_real>
+				<constant_power_C_real>+0 W</constant_power_C_real>
+				<constant_power_A_reac>+0 VAr</constant_power_A_reac>
+				<constant_power_B_reac>+0 VAr</constant_power_B_reac>
+				<constant_power_C_reac>+0 VAr</constant_power_C_reac>
+				<constant_current_A>+0+0j A</constant_current_A>
+				<constant_current_B>+0+0j A</constant_current_B>
+				<constant_current_C>+0+0j A</constant_current_C>
+				<constant_current_A_real>+0 A</constant_current_A_real>
+				<constant_current_B_real>+0 A</constant_current_B_real>
+				<constant_current_C_real>+0 A</constant_current_C_real>
+				<constant_current_A_reac>+0 A</constant_current_A_reac>
+				<constant_current_B_reac>+0 A</constant_current_B_reac>
+				<constant_current_C_reac>+0 A</constant_current_C_reac>
+				<constant_impedance_A>+31.0501+20.8618j Ohm</constant_impedance_A>
+				<constant_impedance_B>+0+0j Ohm</constant_impedance_B>
+				<constant_impedance_C>+0+0j Ohm</constant_impedance_C>
+				<constant_impedance_A_real>+31.0501 Ohm</constant_impedance_A_real>
+				<constant_impedance_B_real>+0 Ohm</constant_impedance_B_real>
+				<constant_impedance_C_real>+0 Ohm</constant_impedance_C_real>
+				<constant_impedance_A_reac>+20.8618 Ohm</constant_impedance_A_reac>
+				<constant_impedance_B_reac>+0 Ohm</constant_impedance_B_reac>
+				<constant_impedance_C_reac>+0 Ohm</constant_impedance_C_reac>
+				<constant_power_AN>+0+0j VA</constant_power_AN>
+				<constant_power_BN>+0+0j VA</constant_power_BN>
+				<constant_power_CN>+0+0j VA</constant_power_CN>
+				<constant_power_AN_real>+0 W</constant_power_AN_real>
+				<constant_power_BN_real>+0 W</constant_power_BN_real>
+				<constant_power_CN_real>+0 W</constant_power_CN_real>
+				<constant_power_AN_reac>+0 VAr</constant_power_AN_reac>
+				<constant_power_BN_reac>+0 VAr</constant_power_BN_reac>
+				<constant_power_CN_reac>+0 VAr</constant_power_CN_reac>
+				<constant_current_AN>+0+0j A</constant_current_AN>
+				<constant_current_BN>+0+0j A</constant_current_BN>
+				<constant_current_CN>+0+0j A</constant_current_CN>
+				<constant_current_AN_real>+0 A</constant_current_AN_real>
+				<constant_current_BN_real>+0 A</constant_current_BN_real>
+				<constant_current_CN_real>+0 A</constant_current_CN_real>
+				<constant_current_AN_reac>+0 A</constant_current_AN_reac>
+				<constant_current_BN_reac>+0 A</constant_current_BN_reac>
+				<constant_current_CN_reac>+0 A</constant_current_CN_reac>
+				<constant_impedance_AN>+0+0j Ohm</constant_impedance_AN>
+				<constant_impedance_BN>+0+0j Ohm</constant_impedance_BN>
+				<constant_impedance_CN>+0+0j Ohm</constant_impedance_CN>
+				<constant_impedance_AN_real>+0 Ohm</constant_impedance_AN_real>
+				<constant_impedance_BN_real>+0 Ohm</constant_impedance_BN_real>
+				<constant_impedance_CN_real>+0 Ohm</constant_impedance_CN_real>
+				<constant_impedance_AN_reac>+0 Ohm</constant_impedance_AN_reac>
+				<constant_impedance_BN_reac>+0 Ohm</constant_impedance_BN_reac>
+				<constant_impedance_CN_reac>+0 Ohm</constant_impedance_CN_reac>
+				<constant_power_AB>+0+0j VA</constant_power_AB>
+				<constant_power_BC>+0+0j VA</constant_power_BC>
+				<constant_power_CA>+0+0j VA</constant_power_CA>
+				<constant_power_AB_real>+0 W</constant_power_AB_real>
+				<constant_power_BC_real>+0 W</constant_power_BC_real>
+				<constant_power_CA_real>+0 W</constant_power_CA_real>
+				<constant_power_AB_reac>+0 VAr</constant_power_AB_reac>
+				<constant_power_BC_reac>+0 VAr</constant_power_BC_reac>
+				<constant_power_CA_reac>+0 VAr</constant_power_CA_reac>
+				<constant_current_AB>+0+0j A</constant_current_AB>
+				<constant_current_BC>+0+0j A</constant_current_BC>
+				<constant_current_CA>+0+0j A</constant_current_CA>
+				<constant_current_AB_real>+0 A</constant_current_AB_real>
+				<constant_current_BC_real>+0 A</constant_current_BC_real>
+				<constant_current_CA_real>+0 A</constant_current_CA_real>
+				<constant_current_AB_reac>+0 A</constant_current_AB_reac>
+				<constant_current_BC_reac>+0 A</constant_current_BC_reac>
+				<constant_current_CA_reac>+0 A</constant_current_CA_reac>
+				<constant_impedance_AB>+0+0j Ohm</constant_impedance_AB>
+				<constant_impedance_BC>+0+0j Ohm</constant_impedance_BC>
+				<constant_impedance_CA>+0+0j Ohm</constant_impedance_CA>
+				<constant_impedance_AB_real>+0 Ohm</constant_impedance_AB_real>
+				<constant_impedance_BC_real>+0 Ohm</constant_impedance_BC_real>
+				<constant_impedance_CA_real>+0 Ohm</constant_impedance_CA_real>
+				<constant_impedance_AB_reac>+0 Ohm</constant_impedance_AB_reac>
+				<constant_impedance_BC_reac>+0 Ohm</constant_impedance_BC_reac>
+				<constant_impedance_CA_reac>+0 Ohm</constant_impedance_CA_reac>
+				<measured_voltage_A>+2285.26-5.37316d</measured_voltage_A>
+				<measured_voltage_B>+0+0d</measured_voltage_B>
+				<measured_voltage_C>+0+0d</measured_voltage_C>
+				<measured_voltage_AB>+2285.26-5.37316d</measured_voltage_AB>
+				<measured_voltage_BC>+0+0d</measured_voltage_BC>
+				<measured_voltage_CA>+2285.26+174.627d</measured_voltage_CA>
+				<phase_loss_protection>FALSE</phase_loss_protection>
+				<base_power_A>+0 VA</base_power_A>
+				<base_power_B>+0 VA</base_power_B>
+				<base_power_C>+0 VA</base_power_C>
+				<power_pf_A>+1 pu</power_pf_A>
+				<current_pf_A>+1 pu</current_pf_A>
+				<impedance_pf_A>+1 pu</impedance_pf_A>
+				<power_pf_B>+1 pu</power_pf_B>
+				<current_pf_B>+1 pu</current_pf_B>
+				<impedance_pf_B>+1 pu</impedance_pf_B>
+				<power_pf_C>+1 pu</power_pf_C>
+				<current_pf_C>+1 pu</current_pf_C>
+				<impedance_pf_C>+1 pu</impedance_pf_C>
+				<power_fraction_A>+0 pu</power_fraction_A>
+				<current_fraction_A>+0 pu</current_fraction_A>
+				<impedance_fraction_A>+0 pu</impedance_fraction_A>
+				<power_fraction_B>+0 pu</power_fraction_B>
+				<current_fraction_B>+0 pu</current_fraction_B>
+				<impedance_fraction_B>+0 pu</impedance_fraction_B>
+				<power_fraction_C>+0 pu</power_fraction_C>
+				<current_fraction_C>+0 pu</current_fraction_C>
+				<impedance_fraction_C>+0 pu</impedance_fraction_C>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+2285.26-5.37316d V</voltage_A>
+				<voltage_B>+0+0d V</voltage_B>
+				<voltage_C>+0+0d V</voltage_C>
+				<voltage_AB>+2285.26-5.37316d V</voltage_AB>
+				<voltage_BC>+0+0d V</voltage_BC>
+				<voltage_CA>+2285.26+174.627d V</voltage_CA>
+				<current_A>+0+0j A</current_A>
+				<current_B>+0+0j A</current_B>
+				<current_C>+0+0j A</current_C>
+				<power_A>+0+0j VA</power_A>
+				<power_B>+0+0j VA</power_B>
+				<power_C>+0+0j VA</power_C>
+				<shunt_A>+0.0221894-0.0149085j S</shunt_A>
+				<shunt_B>+0+0j S</shunt_B>
+				<shunt_C>+0+0j S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>AN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</load>
+			<load>
+				<id>42</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Load671</name>
+				<load_class>U</load_class>
+				<constant_power_A>+385000+220000j VA</constant_power_A>
+				<constant_power_B>+385000+220000j VA</constant_power_B>
+				<constant_power_C>+385000+220000j VA</constant_power_C>
+				<constant_power_A_real>+385000 W</constant_power_A_real>
+				<constant_power_B_real>+385000 W</constant_power_B_real>
+				<constant_power_C_real>+385000 W</constant_power_C_real>
+				<constant_power_A_reac>+220000 VAr</constant_power_A_reac>
+				<constant_power_B_reac>+220000 VAr</constant_power_B_reac>
+				<constant_power_C_reac>+220000 VAr</constant_power_C_reac>
+				<constant_current_A>+0+0j A</constant_current_A>
+				<constant_current_B>+0+0j A</constant_current_B>
+				<constant_current_C>+0+0j A</constant_current_C>
+				<constant_current_A_real>+0 A</constant_current_A_real>
+				<constant_current_B_real>+0 A</constant_current_B_real>
+				<constant_current_C_real>+0 A</constant_current_C_real>
+				<constant_current_A_reac>+0 A</constant_current_A_reac>
+				<constant_current_B_reac>+0 A</constant_current_B_reac>
+				<constant_current_C_reac>+0 A</constant_current_C_reac>
+				<constant_impedance_A>+0+0j Ohm</constant_impedance_A>
+				<constant_impedance_B>+0+0j Ohm</constant_impedance_B>
+				<constant_impedance_C>+0+0j Ohm</constant_impedance_C>
+				<constant_impedance_A_real>+0 Ohm</constant_impedance_A_real>
+				<constant_impedance_B_real>+0 Ohm</constant_impedance_B_real>
+				<constant_impedance_C_real>+0 Ohm</constant_impedance_C_real>
+				<constant_impedance_A_reac>+0 Ohm</constant_impedance_A_reac>
+				<constant_impedance_B_reac>+0 Ohm</constant_impedance_B_reac>
+				<constant_impedance_C_reac>+0 Ohm</constant_impedance_C_reac>
+				<constant_power_AN>+0+0j VA</constant_power_AN>
+				<constant_power_BN>+0+0j VA</constant_power_BN>
+				<constant_power_CN>+0+0j VA</constant_power_CN>
+				<constant_power_AN_real>+0 W</constant_power_AN_real>
+				<constant_power_BN_real>+0 W</constant_power_BN_real>
+				<constant_power_CN_real>+0 W</constant_power_CN_real>
+				<constant_power_AN_reac>+0 VAr</constant_power_AN_reac>
+				<constant_power_BN_reac>+0 VAr</constant_power_BN_reac>
+				<constant_power_CN_reac>+0 VAr</constant_power_CN_reac>
+				<constant_current_AN>+0+0j A</constant_current_AN>
+				<constant_current_BN>+0+0j A</constant_current_BN>
+				<constant_current_CN>+0+0j A</constant_current_CN>
+				<constant_current_AN_real>+0 A</constant_current_AN_real>
+				<constant_current_BN_real>+0 A</constant_current_BN_real>
+				<constant_current_CN_real>+0 A</constant_current_CN_real>
+				<constant_current_AN_reac>+0 A</constant_current_AN_reac>
+				<constant_current_BN_reac>+0 A</constant_current_BN_reac>
+				<constant_current_CN_reac>+0 A</constant_current_CN_reac>
+				<constant_impedance_AN>+0+0j Ohm</constant_impedance_AN>
+				<constant_impedance_BN>+0+0j Ohm</constant_impedance_BN>
+				<constant_impedance_CN>+0+0j Ohm</constant_impedance_CN>
+				<constant_impedance_AN_real>+0 Ohm</constant_impedance_AN_real>
+				<constant_impedance_BN_real>+0 Ohm</constant_impedance_BN_real>
+				<constant_impedance_CN_real>+0 Ohm</constant_impedance_CN_real>
+				<constant_impedance_AN_reac>+0 Ohm</constant_impedance_AN_reac>
+				<constant_impedance_BN_reac>+0 Ohm</constant_impedance_BN_reac>
+				<constant_impedance_CN_reac>+0 Ohm</constant_impedance_CN_reac>
+				<constant_power_AB>+0+0j VA</constant_power_AB>
+				<constant_power_BC>+0+0j VA</constant_power_BC>
+				<constant_power_CA>+0+0j VA</constant_power_CA>
+				<constant_power_AB_real>+0 W</constant_power_AB_real>
+				<constant_power_BC_real>+0 W</constant_power_BC_real>
+				<constant_power_CA_real>+0 W</constant_power_CA_real>
+				<constant_power_AB_reac>+0 VAr</constant_power_AB_reac>
+				<constant_power_BC_reac>+0 VAr</constant_power_BC_reac>
+				<constant_power_CA_reac>+0 VAr</constant_power_CA_reac>
+				<constant_current_AB>+0+0j A</constant_current_AB>
+				<constant_current_BC>+0+0j A</constant_current_BC>
+				<constant_current_CA>+0+0j A</constant_current_CA>
+				<constant_current_AB_real>+0 A</constant_current_AB_real>
+				<constant_current_BC_real>+0 A</constant_current_BC_real>
+				<constant_current_CA_real>+0 A</constant_current_CA_real>
+				<constant_current_AB_reac>+0 A</constant_current_AB_reac>
+				<constant_current_BC_reac>+0 A</constant_current_BC_reac>
+				<constant_current_CA_reac>+0 A</constant_current_CA_reac>
+				<constant_impedance_AB>+0+0j Ohm</constant_impedance_AB>
+				<constant_impedance_BC>+0+0j Ohm</constant_impedance_BC>
+				<constant_impedance_CA>+0+0j Ohm</constant_impedance_CA>
+				<constant_impedance_AB_real>+0 Ohm</constant_impedance_AB_real>
+				<constant_impedance_BC_real>+0 Ohm</constant_impedance_BC_real>
+				<constant_impedance_CA_real>+0 Ohm</constant_impedance_CA_real>
+				<constant_impedance_AB_reac>+0 Ohm</constant_impedance_AB_reac>
+				<constant_impedance_BC_reac>+0 Ohm</constant_impedance_BC_reac>
+				<constant_impedance_CA_reac>+0 Ohm</constant_impedance_CA_reac>
+				<measured_voltage_A>+2299.22-5.46702d</measured_voltage_A>
+				<measured_voltage_B>+2291.59-122.725d</measured_voltage_B>
+				<measured_voltage_C>+2293.75+115.677d</measured_voltage_C>
+				<measured_voltage_AB>+3919.7+25.846d</measured_voltage_AB>
+				<measured_voltage_BC>+4002.6-93.5087d</measured_voltage_BC>
+				<measured_voltage_CA>+4000.36+145.144d</measured_voltage_CA>
+				<phase_loss_protection>FALSE</phase_loss_protection>
+				<base_power_A>+0 VA</base_power_A>
+				<base_power_B>+0 VA</base_power_B>
+				<base_power_C>+0 VA</base_power_C>
+				<power_pf_A>+1 pu</power_pf_A>
+				<current_pf_A>+1 pu</current_pf_A>
+				<impedance_pf_A>+1 pu</impedance_pf_A>
+				<power_pf_B>+1 pu</power_pf_B>
+				<current_pf_B>+1 pu</current_pf_B>
+				<impedance_pf_B>+1 pu</impedance_pf_B>
+				<power_pf_C>+1 pu</power_pf_C>
+				<current_pf_C>+1 pu</current_pf_C>
+				<impedance_pf_C>+1 pu</impedance_pf_C>
+				<power_fraction_A>+0 pu</power_fraction_A>
+				<current_fraction_A>+0 pu</current_fraction_A>
+				<impedance_fraction_A>+0 pu</impedance_fraction_A>
+				<power_fraction_B>+0 pu</power_fraction_B>
+				<current_fraction_B>+0 pu</current_fraction_B>
+				<impedance_fraction_B>+0 pu</impedance_fraction_B>
+				<power_fraction_C>+0 pu</power_fraction_C>
+				<current_fraction_C>+0 pu</current_fraction_C>
+				<impedance_fraction_C>+0 pu</impedance_fraction_C>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+2299.22-5.46702d V</voltage_A>
+				<voltage_B>+2291.59-122.725d V</voltage_B>
+				<voltage_C>+2293.75+115.677d V</voltage_C>
+				<voltage_AB>+3919.7+25.846d V</voltage_AB>
+				<voltage_BC>+4002.6-93.5087d V</voltage_BC>
+				<voltage_CA>+4000.36+145.144d V</voltage_CA>
+				<current_A>+0+0j A</current_A>
+				<current_B>+0+0j A</current_B>
+				<current_C>+0+0j A</current_C>
+				<power_A>+385000+220000j VA</power_A>
+				<power_B>+385000+220000j VA</power_B>
+				<power_C>+385000+220000j VA</power_C>
+				<shunt_A>+0+0j S</shunt_A>
+				<shunt_B>+0+0j S</shunt_B>
+				<shunt_C>+0+0j S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>ABCD</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</load>
+			<load>
+				<id>43</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Load675</name>
+				<load_class>U</load_class>
+				<constant_power_A>+485000+190000j VA</constant_power_A>
+				<constant_power_B>+68000+60000j VA</constant_power_B>
+				<constant_power_C>+290000+212000j VA</constant_power_C>
+				<constant_power_A_real>+485000 W</constant_power_A_real>
+				<constant_power_B_real>+68000 W</constant_power_B_real>
+				<constant_power_C_real>+290000 W</constant_power_C_real>
+				<constant_power_A_reac>+190000 VAr</constant_power_A_reac>
+				<constant_power_B_reac>+60000 VAr</constant_power_B_reac>
+				<constant_power_C_reac>+212000 VAr</constant_power_C_reac>
+				<constant_current_A>+0+0j A</constant_current_A>
+				<constant_current_B>+0+0j A</constant_current_B>
+				<constant_current_C>+0+0j A</constant_current_C>
+				<constant_current_A_real>+0 A</constant_current_A_real>
+				<constant_current_B_real>+0 A</constant_current_B_real>
+				<constant_current_C_real>+0 A</constant_current_C_real>
+				<constant_current_A_reac>+0 A</constant_current_A_reac>
+				<constant_current_B_reac>+0 A</constant_current_B_reac>
+				<constant_current_C_reac>+0 A</constant_current_C_reac>
+				<constant_impedance_A>+0-28.8427j Ohm</constant_impedance_A>
+				<constant_impedance_B>+0-28.8427j Ohm</constant_impedance_B>
+				<constant_impedance_C>+0-28.8427j Ohm</constant_impedance_C>
+				<constant_impedance_A_real>+0 Ohm</constant_impedance_A_real>
+				<constant_impedance_B_real>+0 Ohm</constant_impedance_B_real>
+				<constant_impedance_C_real>+0 Ohm</constant_impedance_C_real>
+				<constant_impedance_A_reac>-28.8427 Ohm</constant_impedance_A_reac>
+				<constant_impedance_B_reac>-28.8427 Ohm</constant_impedance_B_reac>
+				<constant_impedance_C_reac>-28.8427 Ohm</constant_impedance_C_reac>
+				<constant_power_AN>+0+0j VA</constant_power_AN>
+				<constant_power_BN>+0+0j VA</constant_power_BN>
+				<constant_power_CN>+0+0j VA</constant_power_CN>
+				<constant_power_AN_real>+0 W</constant_power_AN_real>
+				<constant_power_BN_real>+0 W</constant_power_BN_real>
+				<constant_power_CN_real>+0 W</constant_power_CN_real>
+				<constant_power_AN_reac>+0 VAr</constant_power_AN_reac>
+				<constant_power_BN_reac>+0 VAr</constant_power_BN_reac>
+				<constant_power_CN_reac>+0 VAr</constant_power_CN_reac>
+				<constant_current_AN>+0+0j A</constant_current_AN>
+				<constant_current_BN>+0+0j A</constant_current_BN>
+				<constant_current_CN>+0+0j A</constant_current_CN>
+				<constant_current_AN_real>+0 A</constant_current_AN_real>
+				<constant_current_BN_real>+0 A</constant_current_BN_real>
+				<constant_current_CN_real>+0 A</constant_current_CN_real>
+				<constant_current_AN_reac>+0 A</constant_current_AN_reac>
+				<constant_current_BN_reac>+0 A</constant_current_BN_reac>
+				<constant_current_CN_reac>+0 A</constant_current_CN_reac>
+				<constant_impedance_AN>+0+0j Ohm</constant_impedance_AN>
+				<constant_impedance_BN>+0+0j Ohm</constant_impedance_BN>
+				<constant_impedance_CN>+0+0j Ohm</constant_impedance_CN>
+				<constant_impedance_AN_real>+0 Ohm</constant_impedance_AN_real>
+				<constant_impedance_BN_real>+0 Ohm</constant_impedance_BN_real>
+				<constant_impedance_CN_real>+0 Ohm</constant_impedance_CN_real>
+				<constant_impedance_AN_reac>+0 Ohm</constant_impedance_AN_reac>
+				<constant_impedance_BN_reac>+0 Ohm</constant_impedance_BN_reac>
+				<constant_impedance_CN_reac>+0 Ohm</constant_impedance_CN_reac>
+				<constant_power_AB>+0+0j VA</constant_power_AB>
+				<constant_power_BC>+0+0j VA</constant_power_BC>
+				<constant_power_CA>+0+0j VA</constant_power_CA>
+				<constant_power_AB_real>+0 W</constant_power_AB_real>
+				<constant_power_BC_real>+0 W</constant_power_BC_real>
+				<constant_power_CA_real>+0 W</constant_power_CA_real>
+				<constant_power_AB_reac>+0 VAr</constant_power_AB_reac>
+				<constant_power_BC_reac>+0 VAr</constant_power_BC_reac>
+				<constant_power_CA_reac>+0 VAr</constant_power_CA_reac>
+				<constant_current_AB>+0+0j A</constant_current_AB>
+				<constant_current_BC>+0+0j A</constant_current_BC>
+				<constant_current_CA>+0+0j A</constant_current_CA>
+				<constant_current_AB_real>+0 A</constant_current_AB_real>
+				<constant_current_BC_real>+0 A</constant_current_BC_real>
+				<constant_current_CA_real>+0 A</constant_current_CA_real>
+				<constant_current_AB_reac>+0 A</constant_current_AB_reac>
+				<constant_current_BC_reac>+0 A</constant_current_BC_reac>
+				<constant_current_CA_reac>+0 A</constant_current_CA_reac>
+				<constant_impedance_AB>+0+0j Ohm</constant_impedance_AB>
+				<constant_impedance_BC>+0+0j Ohm</constant_impedance_BC>
+				<constant_impedance_CA>+0+0j Ohm</constant_impedance_CA>
+				<constant_impedance_AB_real>+0 Ohm</constant_impedance_AB_real>
+				<constant_impedance_BC_real>+0 Ohm</constant_impedance_BC_real>
+				<constant_impedance_CA_real>+0 Ohm</constant_impedance_CA_real>
+				<constant_impedance_AB_reac>+0 Ohm</constant_impedance_AB_reac>
+				<constant_impedance_BC_reac>+0 Ohm</constant_impedance_BC_reac>
+				<constant_impedance_CA_reac>+0 Ohm</constant_impedance_CA_reac>
+				<measured_voltage_A>+2283.09-5.72633d</measured_voltage_A>
+				<measured_voltage_B>+2296.85-122.908d</measured_voltage_B>
+				<measured_voltage_C>+2288.76+115.692d</measured_voltage_C>
+				<measured_voltage_AB>+3908.83+25.7881d</measured_voltage_AB>
+				<measured_voltage_BC>+3998.97-93.6643d</measured_voltage_BC>
+				<measured_voltage_CA>+3987.34+144.943d</measured_voltage_CA>
+				<phase_loss_protection>FALSE</phase_loss_protection>
+				<base_power_A>+0 VA</base_power_A>
+				<base_power_B>+0 VA</base_power_B>
+				<base_power_C>+0 VA</base_power_C>
+				<power_pf_A>+1 pu</power_pf_A>
+				<current_pf_A>+1 pu</current_pf_A>
+				<impedance_pf_A>+1 pu</impedance_pf_A>
+				<power_pf_B>+1 pu</power_pf_B>
+				<current_pf_B>+1 pu</current_pf_B>
+				<impedance_pf_B>+1 pu</impedance_pf_B>
+				<power_pf_C>+1 pu</power_pf_C>
+				<current_pf_C>+1 pu</current_pf_C>
+				<impedance_pf_C>+1 pu</impedance_pf_C>
+				<power_fraction_A>+0 pu</power_fraction_A>
+				<current_fraction_A>+0 pu</current_fraction_A>
+				<impedance_fraction_A>+0 pu</impedance_fraction_A>
+				<power_fraction_B>+0 pu</power_fraction_B>
+				<current_fraction_B>+0 pu</current_fraction_B>
+				<impedance_fraction_B>+0 pu</impedance_fraction_B>
+				<power_fraction_C>+0 pu</power_fraction_C>
+				<current_fraction_C>+0 pu</current_fraction_C>
+				<impedance_fraction_C>+0 pu</impedance_fraction_C>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+2283.09-5.72633d V</voltage_A>
+				<voltage_B>+2296.85-122.908d V</voltage_B>
+				<voltage_C>+2288.76+115.692d V</voltage_C>
+				<voltage_AB>+3908.83+25.7881d V</voltage_AB>
+				<voltage_BC>+3998.97-93.6643d V</voltage_BC>
+				<voltage_CA>+3987.34+144.943d V</voltage_CA>
+				<current_A>+0+0j A</current_A>
+				<current_B>+0+0j A</current_B>
+				<current_C>+0+0j A</current_C>
+				<power_A>+485000+190000j VA</power_A>
+				<power_B>+68000+60000j VA</power_B>
+				<power_C>+290000+212000j VA</power_C>
+				<shunt_A>+0+0.0346708j S</shunt_A>
+				<shunt_B>+0+0.0346708j S</shunt_B>
+				<shunt_C>+0+0.0346708j S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>ABC</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</load>
+			<load>
+				<id>44</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Load692</name>
+				<load_class>U</load_class>
+				<constant_power_A>+0+0j VA</constant_power_A>
+				<constant_power_B>+0+0j VA</constant_power_B>
+				<constant_power_C>+0+0j VA</constant_power_C>
+				<constant_power_A_real>+0 W</constant_power_A_real>
+				<constant_power_B_real>+0 W</constant_power_B_real>
+				<constant_power_C_real>+0 W</constant_power_C_real>
+				<constant_power_A_reac>+0 VAr</constant_power_A_reac>
+				<constant_power_B_reac>+0 VAr</constant_power_B_reac>
+				<constant_power_C_reac>+0 VAr</constant_power_C_reac>
+				<constant_current_A>+0+0j A</constant_current_A>
+				<constant_current_B>+0+0j A</constant_current_B>
+				<constant_current_C>-17.2414+51.8677j A</constant_current_C>
+				<constant_current_A_real>+0 A</constant_current_A_real>
+				<constant_current_B_real>+0 A</constant_current_B_real>
+				<constant_current_C_real>-17.2414 A</constant_current_C_real>
+				<constant_current_A_reac>+0 A</constant_current_A_reac>
+				<constant_current_B_reac>+0 A</constant_current_B_reac>
+				<constant_current_C_reac>+51.8677 A</constant_current_C_reac>
+				<constant_impedance_A>+0+0j Ohm</constant_impedance_A>
+				<constant_impedance_B>+0+0j Ohm</constant_impedance_B>
+				<constant_impedance_C>+0+0j Ohm</constant_impedance_C>
+				<constant_impedance_A_real>+0 Ohm</constant_impedance_A_real>
+				<constant_impedance_B_real>+0 Ohm</constant_impedance_B_real>
+				<constant_impedance_C_real>+0 Ohm</constant_impedance_C_real>
+				<constant_impedance_A_reac>+0 Ohm</constant_impedance_A_reac>
+				<constant_impedance_B_reac>+0 Ohm</constant_impedance_B_reac>
+				<constant_impedance_C_reac>+0 Ohm</constant_impedance_C_reac>
+				<constant_power_AN>+0+0j VA</constant_power_AN>
+				<constant_power_BN>+0+0j VA</constant_power_BN>
+				<constant_power_CN>+0+0j VA</constant_power_CN>
+				<constant_power_AN_real>+0 W</constant_power_AN_real>
+				<constant_power_BN_real>+0 W</constant_power_BN_real>
+				<constant_power_CN_real>+0 W</constant_power_CN_real>
+				<constant_power_AN_reac>+0 VAr</constant_power_AN_reac>
+				<constant_power_BN_reac>+0 VAr</constant_power_BN_reac>
+				<constant_power_CN_reac>+0 VAr</constant_power_CN_reac>
+				<constant_current_AN>+0+0j A</constant_current_AN>
+				<constant_current_BN>+0+0j A</constant_current_BN>
+				<constant_current_CN>+0+0j A</constant_current_CN>
+				<constant_current_AN_real>+0 A</constant_current_AN_real>
+				<constant_current_BN_real>+0 A</constant_current_BN_real>
+				<constant_current_CN_real>+0 A</constant_current_CN_real>
+				<constant_current_AN_reac>+0 A</constant_current_AN_reac>
+				<constant_current_BN_reac>+0 A</constant_current_BN_reac>
+				<constant_current_CN_reac>+0 A</constant_current_CN_reac>
+				<constant_impedance_AN>+0+0j Ohm</constant_impedance_AN>
+				<constant_impedance_BN>+0+0j Ohm</constant_impedance_BN>
+				<constant_impedance_CN>+0+0j Ohm</constant_impedance_CN>
+				<constant_impedance_AN_real>+0 Ohm</constant_impedance_AN_real>
+				<constant_impedance_BN_real>+0 Ohm</constant_impedance_BN_real>
+				<constant_impedance_CN_real>+0 Ohm</constant_impedance_CN_real>
+				<constant_impedance_AN_reac>+0 Ohm</constant_impedance_AN_reac>
+				<constant_impedance_BN_reac>+0 Ohm</constant_impedance_BN_reac>
+				<constant_impedance_CN_reac>+0 Ohm</constant_impedance_CN_reac>
+				<constant_power_AB>+0+0j VA</constant_power_AB>
+				<constant_power_BC>+0+0j VA</constant_power_BC>
+				<constant_power_CA>+0+0j VA</constant_power_CA>
+				<constant_power_AB_real>+0 W</constant_power_AB_real>
+				<constant_power_BC_real>+0 W</constant_power_BC_real>
+				<constant_power_CA_real>+0 W</constant_power_CA_real>
+				<constant_power_AB_reac>+0 VAr</constant_power_AB_reac>
+				<constant_power_BC_reac>+0 VAr</constant_power_BC_reac>
+				<constant_power_CA_reac>+0 VAr</constant_power_CA_reac>
+				<constant_current_AB>+0+0j A</constant_current_AB>
+				<constant_current_BC>+0+0j A</constant_current_BC>
+				<constant_current_CA>+0+0j A</constant_current_CA>
+				<constant_current_AB_real>+0 A</constant_current_AB_real>
+				<constant_current_BC_real>+0 A</constant_current_BC_real>
+				<constant_current_CA_real>+0 A</constant_current_CA_real>
+				<constant_current_AB_reac>+0 A</constant_current_AB_reac>
+				<constant_current_BC_reac>+0 A</constant_current_BC_reac>
+				<constant_current_CA_reac>+0 A</constant_current_CA_reac>
+				<constant_impedance_AB>+0+0j Ohm</constant_impedance_AB>
+				<constant_impedance_BC>+0+0j Ohm</constant_impedance_BC>
+				<constant_impedance_CA>+0+0j Ohm</constant_impedance_CA>
+				<constant_impedance_AB_real>+0 Ohm</constant_impedance_AB_real>
+				<constant_impedance_BC_real>+0 Ohm</constant_impedance_BC_real>
+				<constant_impedance_CA_real>+0 Ohm</constant_impedance_CA_real>
+				<constant_impedance_AB_reac>+0 Ohm</constant_impedance_AB_reac>
+				<constant_impedance_BC_reac>+0 Ohm</constant_impedance_BC_reac>
+				<constant_impedance_CA_reac>+0 Ohm</constant_impedance_CA_reac>
+				<measured_voltage_A>+2299.21-5.46666d</measured_voltage_A>
+				<measured_voltage_B>+2291.58-122.725d</measured_voltage_B>
+				<measured_voltage_C>+2293.74+115.677d</measured_voltage_C>
+				<measured_voltage_AB>+3919.69+25.8462d</measured_voltage_AB>
+				<measured_voltage_BC>+4002.58-93.5087d</measured_voltage_BC>
+				<measured_voltage_CA>+4000.34+145.144d</measured_voltage_CA>
+				<phase_loss_protection>FALSE</phase_loss_protection>
+				<base_power_A>+0 VA</base_power_A>
+				<base_power_B>+0 VA</base_power_B>
+				<base_power_C>+0 VA</base_power_C>
+				<power_pf_A>+1 pu</power_pf_A>
+				<current_pf_A>+1 pu</current_pf_A>
+				<impedance_pf_A>+1 pu</impedance_pf_A>
+				<power_pf_B>+1 pu</power_pf_B>
+				<current_pf_B>+1 pu</current_pf_B>
+				<impedance_pf_B>+1 pu</impedance_pf_B>
+				<power_pf_C>+1 pu</power_pf_C>
+				<current_pf_C>+1 pu</current_pf_C>
+				<impedance_pf_C>+1 pu</impedance_pf_C>
+				<power_fraction_A>+0 pu</power_fraction_A>
+				<current_fraction_A>+0 pu</current_fraction_A>
+				<impedance_fraction_A>+0 pu</impedance_fraction_A>
+				<power_fraction_B>+0 pu</power_fraction_B>
+				<current_fraction_B>+0 pu</current_fraction_B>
+				<impedance_fraction_B>+0 pu</impedance_fraction_B>
+				<power_fraction_C>+0 pu</power_fraction_C>
+				<current_fraction_C>+0 pu</current_fraction_C>
+				<impedance_fraction_C>+0 pu</impedance_fraction_C>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+2299.21-5.46666d V</voltage_A>
+				<voltage_B>+2291.58-122.725d V</voltage_B>
+				<voltage_C>+2293.74+115.677d V</voltage_C>
+				<voltage_AB>+3919.69+25.8462d V</voltage_AB>
+				<voltage_BC>+4002.58-93.5087d V</voltage_BC>
+				<voltage_CA>+4000.34+145.144d V</voltage_CA>
+				<current_A>+0+0j A</current_A>
+				<current_B>+0+0j A</current_B>
+				<current_C>-17.2414+51.8677j A</current_C>
+				<power_A>+0+0j VA</power_A>
+				<power_B>+0+0j VA</power_B>
+				<power_C>+0+0j VA</power_C>
+				<shunt_A>+0+0j S</shunt_A>
+				<shunt_B>+0+0j S</shunt_B>
+				<shunt_C>+0+0j S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>ABCD</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</load>
+			<load>
+				<id>45</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Load611</name>
+				<load_class>U</load_class>
+				<constant_power_A>+0+0j VA</constant_power_A>
+				<constant_power_B>+0+0j VA</constant_power_B>
+				<constant_power_C>+0+0j VA</constant_power_C>
+				<constant_power_A_real>+0 W</constant_power_A_real>
+				<constant_power_B_real>+0 W</constant_power_B_real>
+				<constant_power_C_real>+0 W</constant_power_C_real>
+				<constant_power_A_reac>+0 VAr</constant_power_A_reac>
+				<constant_power_B_reac>+0 VAr</constant_power_B_reac>
+				<constant_power_C_reac>+0 VAr</constant_power_C_reac>
+				<constant_current_A>+0+0j A</constant_current_A>
+				<constant_current_B>+0+0j A</constant_current_B>
+				<constant_current_C>-6.5443+77.9524j A</constant_current_C>
+				<constant_current_A_real>+0 A</constant_current_A_real>
+				<constant_current_B_real>+0 A</constant_current_B_real>
+				<constant_current_C_real>-6.5443 A</constant_current_C_real>
+				<constant_current_A_reac>+0 A</constant_current_A_reac>
+				<constant_current_B_reac>+0 A</constant_current_B_reac>
+				<constant_current_C_reac>+77.9524 A</constant_current_C_reac>
+				<constant_impedance_A>+0+0j Ohm</constant_impedance_A>
+				<constant_impedance_B>+0+0j Ohm</constant_impedance_B>
+				<constant_impedance_C>+0-57.6854j Ohm</constant_impedance_C>
+				<constant_impedance_A_real>+0 Ohm</constant_impedance_A_real>
+				<constant_impedance_B_real>+0 Ohm</constant_impedance_B_real>
+				<constant_impedance_C_real>+0 Ohm</constant_impedance_C_real>
+				<constant_impedance_A_reac>+0 Ohm</constant_impedance_A_reac>
+				<constant_impedance_B_reac>+0 Ohm</constant_impedance_B_reac>
+				<constant_impedance_C_reac>-57.6854 Ohm</constant_impedance_C_reac>
+				<constant_power_AN>+0+0j VA</constant_power_AN>
+				<constant_power_BN>+0+0j VA</constant_power_BN>
+				<constant_power_CN>+0+0j VA</constant_power_CN>
+				<constant_power_AN_real>+0 W</constant_power_AN_real>
+				<constant_power_BN_real>+0 W</constant_power_BN_real>
+				<constant_power_CN_real>+0 W</constant_power_CN_real>
+				<constant_power_AN_reac>+0 VAr</constant_power_AN_reac>
+				<constant_power_BN_reac>+0 VAr</constant_power_BN_reac>
+				<constant_power_CN_reac>+0 VAr</constant_power_CN_reac>
+				<constant_current_AN>+0+0j A</constant_current_AN>
+				<constant_current_BN>+0+0j A</constant_current_BN>
+				<constant_current_CN>+0+0j A</constant_current_CN>
+				<constant_current_AN_real>+0 A</constant_current_AN_real>
+				<constant_current_BN_real>+0 A</constant_current_BN_real>
+				<constant_current_CN_real>+0 A</constant_current_CN_real>
+				<constant_current_AN_reac>+0 A</constant_current_AN_reac>
+				<constant_current_BN_reac>+0 A</constant_current_BN_reac>
+				<constant_current_CN_reac>+0 A</constant_current_CN_reac>
+				<constant_impedance_AN>+0+0j Ohm</constant_impedance_AN>
+				<constant_impedance_BN>+0+0j Ohm</constant_impedance_BN>
+				<constant_impedance_CN>+0+0j Ohm</constant_impedance_CN>
+				<constant_impedance_AN_real>+0 Ohm</constant_impedance_AN_real>
+				<constant_impedance_BN_real>+0 Ohm</constant_impedance_BN_real>
+				<constant_impedance_CN_real>+0 Ohm</constant_impedance_CN_real>
+				<constant_impedance_AN_reac>+0 Ohm</constant_impedance_AN_reac>
+				<constant_impedance_BN_reac>+0 Ohm</constant_impedance_BN_reac>
+				<constant_impedance_CN_reac>+0 Ohm</constant_impedance_CN_reac>
+				<constant_power_AB>+0+0j VA</constant_power_AB>
+				<constant_power_BC>+0+0j VA</constant_power_BC>
+				<constant_power_CA>+0+0j VA</constant_power_CA>
+				<constant_power_AB_real>+0 W</constant_power_AB_real>
+				<constant_power_BC_real>+0 W</constant_power_BC_real>
+				<constant_power_CA_real>+0 W</constant_power_CA_real>
+				<constant_power_AB_reac>+0 VAr</constant_power_AB_reac>
+				<constant_power_BC_reac>+0 VAr</constant_power_BC_reac>
+				<constant_power_CA_reac>+0 VAr</constant_power_CA_reac>
+				<constant_current_AB>+0+0j A</constant_current_AB>
+				<constant_current_BC>+0+0j A</constant_current_BC>
+				<constant_current_CA>+0+0j A</constant_current_CA>
+				<constant_current_AB_real>+0 A</constant_current_AB_real>
+				<constant_current_BC_real>+0 A</constant_current_BC_real>
+				<constant_current_CA_real>+0 A</constant_current_CA_real>
+				<constant_current_AB_reac>+0 A</constant_current_AB_reac>
+				<constant_current_BC_reac>+0 A</constant_current_BC_reac>
+				<constant_current_CA_reac>+0 A</constant_current_CA_reac>
+				<constant_impedance_AB>+0+0j Ohm</constant_impedance_AB>
+				<constant_impedance_BC>+0+0j Ohm</constant_impedance_BC>
+				<constant_impedance_CA>+0+0j Ohm</constant_impedance_CA>
+				<constant_impedance_AB_real>+0 Ohm</constant_impedance_AB_real>
+				<constant_impedance_BC_real>+0 Ohm</constant_impedance_BC_real>
+				<constant_impedance_CA_real>+0 Ohm</constant_impedance_CA_real>
+				<constant_impedance_AB_reac>+0 Ohm</constant_impedance_AB_reac>
+				<constant_impedance_BC_reac>+0 Ohm</constant_impedance_BC_reac>
+				<constant_impedance_CA_reac>+0 Ohm</constant_impedance_CA_reac>
+				<measured_voltage_A>+0+0d</measured_voltage_A>
+				<measured_voltage_B>+0+0d</measured_voltage_B>
+				<measured_voltage_C>+2284.47+115.395d</measured_voltage_C>
+				<measured_voltage_AB>+0+0d</measured_voltage_AB>
+				<measured_voltage_BC>+2284.47-64.6047d</measured_voltage_BC>
+				<measured_voltage_CA>+2284.47+115.395d</measured_voltage_CA>
+				<phase_loss_protection>FALSE</phase_loss_protection>
+				<base_power_A>+0 VA</base_power_A>
+				<base_power_B>+0 VA</base_power_B>
+				<base_power_C>+0 VA</base_power_C>
+				<power_pf_A>+1 pu</power_pf_A>
+				<current_pf_A>+1 pu</current_pf_A>
+				<impedance_pf_A>+1 pu</impedance_pf_A>
+				<power_pf_B>+1 pu</power_pf_B>
+				<current_pf_B>+1 pu</current_pf_B>
+				<impedance_pf_B>+1 pu</impedance_pf_B>
+				<power_pf_C>+1 pu</power_pf_C>
+				<current_pf_C>+1 pu</current_pf_C>
+				<impedance_pf_C>+1 pu</impedance_pf_C>
+				<power_fraction_A>+0 pu</power_fraction_A>
+				<current_fraction_A>+0 pu</current_fraction_A>
+				<impedance_fraction_A>+0 pu</impedance_fraction_A>
+				<power_fraction_B>+0 pu</power_fraction_B>
+				<current_fraction_B>+0 pu</current_fraction_B>
+				<impedance_fraction_B>+0 pu</impedance_fraction_B>
+				<power_fraction_C>+0 pu</power_fraction_C>
+				<current_fraction_C>+0 pu</current_fraction_C>
+				<impedance_fraction_C>+0 pu</impedance_fraction_C>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+0+0d V</voltage_A>
+				<voltage_B>+0+0d V</voltage_B>
+				<voltage_C>+2284.47+115.395d V</voltage_C>
+				<voltage_AB>+0+0d V</voltage_AB>
+				<voltage_BC>+2284.47-64.6047d V</voltage_BC>
+				<voltage_CA>+2284.47+115.395d V</voltage_CA>
+				<current_A>+0+0j A</current_A>
+				<current_B>+0+0j A</current_B>
+				<current_C>-6.5443+77.9524j A</current_C>
+				<power_A>+0+0j VA</power_A>
+				<power_B>+0+0j VA</power_B>
+				<power_C>+0+0j VA</power_C>
+				<shunt_A>+0+0j S</shunt_A>
+				<shunt_B>+0+0j S</shunt_B>
+				<shunt_C>+0+0.0173354j S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>CN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</load>
+			<load>
+				<id>46</id>
+				<rank>4</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Load671</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Load6711</name>
+				<load_class>U</load_class>
+				<constant_power_A>+5666.67+3333.33j VA</constant_power_A>
+				<constant_power_B>+22000+12666.7j VA</constant_power_B>
+				<constant_power_C>+39000+22666.7j VA</constant_power_C>
+				<constant_power_A_real>+5666.67 W</constant_power_A_real>
+				<constant_power_B_real>+22000 W</constant_power_B_real>
+				<constant_power_C_real>+39000 W</constant_power_C_real>
+				<constant_power_A_reac>+3333.33 VAr</constant_power_A_reac>
+				<constant_power_B_reac>+12666.7 VAr</constant_power_B_reac>
+				<constant_power_C_reac>+22666.7 VAr</constant_power_C_reac>
+				<constant_current_A>+0+0j A</constant_current_A>
+				<constant_current_B>+0+0j A</constant_current_B>
+				<constant_current_C>+0+0j A</constant_current_C>
+				<constant_current_A_real>+0 A</constant_current_A_real>
+				<constant_current_B_real>+0 A</constant_current_B_real>
+				<constant_current_C_real>+0 A</constant_current_C_real>
+				<constant_current_A_reac>+0 A</constant_current_A_reac>
+				<constant_current_B_reac>+0 A</constant_current_B_reac>
+				<constant_current_C_reac>+0 A</constant_current_C_reac>
+				<constant_impedance_A>+0+0j Ohm</constant_impedance_A>
+				<constant_impedance_B>+0+0j Ohm</constant_impedance_B>
+				<constant_impedance_C>+0+0j Ohm</constant_impedance_C>
+				<constant_impedance_A_real>+0 Ohm</constant_impedance_A_real>
+				<constant_impedance_B_real>+0 Ohm</constant_impedance_B_real>
+				<constant_impedance_C_real>+0 Ohm</constant_impedance_C_real>
+				<constant_impedance_A_reac>+0 Ohm</constant_impedance_A_reac>
+				<constant_impedance_B_reac>+0 Ohm</constant_impedance_B_reac>
+				<constant_impedance_C_reac>+0 Ohm</constant_impedance_C_reac>
+				<constant_power_AN>+0+0j VA</constant_power_AN>
+				<constant_power_BN>+0+0j VA</constant_power_BN>
+				<constant_power_CN>+0+0j VA</constant_power_CN>
+				<constant_power_AN_real>+0 W</constant_power_AN_real>
+				<constant_power_BN_real>+0 W</constant_power_BN_real>
+				<constant_power_CN_real>+0 W</constant_power_CN_real>
+				<constant_power_AN_reac>+0 VAr</constant_power_AN_reac>
+				<constant_power_BN_reac>+0 VAr</constant_power_BN_reac>
+				<constant_power_CN_reac>+0 VAr</constant_power_CN_reac>
+				<constant_current_AN>+0+0j A</constant_current_AN>
+				<constant_current_BN>+0+0j A</constant_current_BN>
+				<constant_current_CN>+0+0j A</constant_current_CN>
+				<constant_current_AN_real>+0 A</constant_current_AN_real>
+				<constant_current_BN_real>+0 A</constant_current_BN_real>
+				<constant_current_CN_real>+0 A</constant_current_CN_real>
+				<constant_current_AN_reac>+0 A</constant_current_AN_reac>
+				<constant_current_BN_reac>+0 A</constant_current_BN_reac>
+				<constant_current_CN_reac>+0 A</constant_current_CN_reac>
+				<constant_impedance_AN>+0+0j Ohm</constant_impedance_AN>
+				<constant_impedance_BN>+0+0j Ohm</constant_impedance_BN>
+				<constant_impedance_CN>+0+0j Ohm</constant_impedance_CN>
+				<constant_impedance_AN_real>+0 Ohm</constant_impedance_AN_real>
+				<constant_impedance_BN_real>+0 Ohm</constant_impedance_BN_real>
+				<constant_impedance_CN_real>+0 Ohm</constant_impedance_CN_real>
+				<constant_impedance_AN_reac>+0 Ohm</constant_impedance_AN_reac>
+				<constant_impedance_BN_reac>+0 Ohm</constant_impedance_BN_reac>
+				<constant_impedance_CN_reac>+0 Ohm</constant_impedance_CN_reac>
+				<constant_power_AB>+0+0j VA</constant_power_AB>
+				<constant_power_BC>+0+0j VA</constant_power_BC>
+				<constant_power_CA>+0+0j VA</constant_power_CA>
+				<constant_power_AB_real>+0 W</constant_power_AB_real>
+				<constant_power_BC_real>+0 W</constant_power_BC_real>
+				<constant_power_CA_real>+0 W</constant_power_CA_real>
+				<constant_power_AB_reac>+0 VAr</constant_power_AB_reac>
+				<constant_power_BC_reac>+0 VAr</constant_power_BC_reac>
+				<constant_power_CA_reac>+0 VAr</constant_power_CA_reac>
+				<constant_current_AB>+0+0j A</constant_current_AB>
+				<constant_current_BC>+0+0j A</constant_current_BC>
+				<constant_current_CA>+0+0j A</constant_current_CA>
+				<constant_current_AB_real>+0 A</constant_current_AB_real>
+				<constant_current_BC_real>+0 A</constant_current_BC_real>
+				<constant_current_CA_real>+0 A</constant_current_CA_real>
+				<constant_current_AB_reac>+0 A</constant_current_AB_reac>
+				<constant_current_BC_reac>+0 A</constant_current_BC_reac>
+				<constant_current_CA_reac>+0 A</constant_current_CA_reac>
+				<constant_impedance_AB>+0+0j Ohm</constant_impedance_AB>
+				<constant_impedance_BC>+0+0j Ohm</constant_impedance_BC>
+				<constant_impedance_CA>+0+0j Ohm</constant_impedance_CA>
+				<constant_impedance_AB_real>+0 Ohm</constant_impedance_AB_real>
+				<constant_impedance_BC_real>+0 Ohm</constant_impedance_BC_real>
+				<constant_impedance_CA_real>+0 Ohm</constant_impedance_CA_real>
+				<constant_impedance_AB_reac>+0 Ohm</constant_impedance_AB_reac>
+				<constant_impedance_BC_reac>+0 Ohm</constant_impedance_BC_reac>
+				<constant_impedance_CA_reac>+0 Ohm</constant_impedance_CA_reac>
+				<measured_voltage_A>+2299.22-5.46702d</measured_voltage_A>
+				<measured_voltage_B>+2291.59-122.725d</measured_voltage_B>
+				<measured_voltage_C>+2293.75+115.677d</measured_voltage_C>
+				<measured_voltage_AB>+3919.7+25.846d</measured_voltage_AB>
+				<measured_voltage_BC>+4002.6-93.5087d</measured_voltage_BC>
+				<measured_voltage_CA>+4000.36+145.144d</measured_voltage_CA>
+				<phase_loss_protection>FALSE</phase_loss_protection>
+				<base_power_A>+0 VA</base_power_A>
+				<base_power_B>+0 VA</base_power_B>
+				<base_power_C>+0 VA</base_power_C>
+				<power_pf_A>+1 pu</power_pf_A>
+				<current_pf_A>+1 pu</current_pf_A>
+				<impedance_pf_A>+1 pu</impedance_pf_A>
+				<power_pf_B>+1 pu</power_pf_B>
+				<current_pf_B>+1 pu</current_pf_B>
+				<impedance_pf_B>+1 pu</impedance_pf_B>
+				<power_pf_C>+1 pu</power_pf_C>
+				<current_pf_C>+1 pu</current_pf_C>
+				<impedance_pf_C>+1 pu</impedance_pf_C>
+				<power_fraction_A>+0 pu</power_fraction_A>
+				<current_fraction_A>+0 pu</current_fraction_A>
+				<impedance_fraction_A>+0 pu</impedance_fraction_A>
+				<power_fraction_B>+0 pu</power_fraction_B>
+				<current_fraction_B>+0 pu</current_fraction_B>
+				<impedance_fraction_B>+0 pu</impedance_fraction_B>
+				<power_fraction_C>+0 pu</power_fraction_C>
+				<current_fraction_C>+0 pu</current_fraction_C>
+				<impedance_fraction_C>+0 pu</impedance_fraction_C>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+2299.22-5.46702d V</voltage_A>
+				<voltage_B>+2291.59-122.725d V</voltage_B>
+				<voltage_C>+2293.75+115.677d V</voltage_C>
+				<voltage_AB>+3919.7+25.846d V</voltage_AB>
+				<voltage_BC>+4002.6-93.5087d V</voltage_BC>
+				<voltage_CA>+4000.36+145.144d V</voltage_CA>
+				<current_A>+0+0j A</current_A>
+				<current_B>+0+0j A</current_B>
+				<current_C>+0+0j A</current_C>
+				<power_A>+5666.67+3333.33j VA</power_A>
+				<power_B>+22000+12666.7j VA</power_B>
+				<power_C>+39000+22666.7j VA</power_C>
+				<shunt_A>+0+0j S</shunt_A>
+				<shunt_B>+0+0j S</shunt_B>
+				<shunt_C>+0+0j S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<topological_parent>Load671</topological_parent>
+				<phases>ABC</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</load>
+			<load>
+				<id>47</id>
+				<rank>5</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Node650</parent>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Load6321</name>
+				<load_class>U</load_class>
+				<constant_power_A>+11333.3+6666.67j VA</constant_power_A>
+				<constant_power_B>+44000+25333.3j VA</constant_power_B>
+				<constant_power_C>+78000+45333.3j VA</constant_power_C>
+				<constant_power_A_real>+11333.3 W</constant_power_A_real>
+				<constant_power_B_real>+44000 W</constant_power_B_real>
+				<constant_power_C_real>+78000 W</constant_power_C_real>
+				<constant_power_A_reac>+6666.67 VAr</constant_power_A_reac>
+				<constant_power_B_reac>+25333.3 VAr</constant_power_B_reac>
+				<constant_power_C_reac>+45333.3 VAr</constant_power_C_reac>
+				<constant_current_A>+0+0j A</constant_current_A>
+				<constant_current_B>+0+0j A</constant_current_B>
+				<constant_current_C>+0+0j A</constant_current_C>
+				<constant_current_A_real>+0 A</constant_current_A_real>
+				<constant_current_B_real>+0 A</constant_current_B_real>
+				<constant_current_C_real>+0 A</constant_current_C_real>
+				<constant_current_A_reac>+0 A</constant_current_A_reac>
+				<constant_current_B_reac>+0 A</constant_current_B_reac>
+				<constant_current_C_reac>+0 A</constant_current_C_reac>
+				<constant_impedance_A>+0+0j Ohm</constant_impedance_A>
+				<constant_impedance_B>+0+0j Ohm</constant_impedance_B>
+				<constant_impedance_C>+0+0j Ohm</constant_impedance_C>
+				<constant_impedance_A_real>+0 Ohm</constant_impedance_A_real>
+				<constant_impedance_B_real>+0 Ohm</constant_impedance_B_real>
+				<constant_impedance_C_real>+0 Ohm</constant_impedance_C_real>
+				<constant_impedance_A_reac>+0 Ohm</constant_impedance_A_reac>
+				<constant_impedance_B_reac>+0 Ohm</constant_impedance_B_reac>
+				<constant_impedance_C_reac>+0 Ohm</constant_impedance_C_reac>
+				<constant_power_AN>+0+0j VA</constant_power_AN>
+				<constant_power_BN>+0+0j VA</constant_power_BN>
+				<constant_power_CN>+0+0j VA</constant_power_CN>
+				<constant_power_AN_real>+0 W</constant_power_AN_real>
+				<constant_power_BN_real>+0 W</constant_power_BN_real>
+				<constant_power_CN_real>+0 W</constant_power_CN_real>
+				<constant_power_AN_reac>+0 VAr</constant_power_AN_reac>
+				<constant_power_BN_reac>+0 VAr</constant_power_BN_reac>
+				<constant_power_CN_reac>+0 VAr</constant_power_CN_reac>
+				<constant_current_AN>+0+0j A</constant_current_AN>
+				<constant_current_BN>+0+0j A</constant_current_BN>
+				<constant_current_CN>+0+0j A</constant_current_CN>
+				<constant_current_AN_real>+0 A</constant_current_AN_real>
+				<constant_current_BN_real>+0 A</constant_current_BN_real>
+				<constant_current_CN_real>+0 A</constant_current_CN_real>
+				<constant_current_AN_reac>+0 A</constant_current_AN_reac>
+				<constant_current_BN_reac>+0 A</constant_current_BN_reac>
+				<constant_current_CN_reac>+0 A</constant_current_CN_reac>
+				<constant_impedance_AN>+0+0j Ohm</constant_impedance_AN>
+				<constant_impedance_BN>+0+0j Ohm</constant_impedance_BN>
+				<constant_impedance_CN>+0+0j Ohm</constant_impedance_CN>
+				<constant_impedance_AN_real>+0 Ohm</constant_impedance_AN_real>
+				<constant_impedance_BN_real>+0 Ohm</constant_impedance_BN_real>
+				<constant_impedance_CN_real>+0 Ohm</constant_impedance_CN_real>
+				<constant_impedance_AN_reac>+0 Ohm</constant_impedance_AN_reac>
+				<constant_impedance_BN_reac>+0 Ohm</constant_impedance_BN_reac>
+				<constant_impedance_CN_reac>+0 Ohm</constant_impedance_CN_reac>
+				<constant_power_AB>+0+0j VA</constant_power_AB>
+				<constant_power_BC>+0+0j VA</constant_power_BC>
+				<constant_power_CA>+0+0j VA</constant_power_CA>
+				<constant_power_AB_real>+0 W</constant_power_AB_real>
+				<constant_power_BC_real>+0 W</constant_power_BC_real>
+				<constant_power_CA_real>+0 W</constant_power_CA_real>
+				<constant_power_AB_reac>+0 VAr</constant_power_AB_reac>
+				<constant_power_BC_reac>+0 VAr</constant_power_BC_reac>
+				<constant_power_CA_reac>+0 VAr</constant_power_CA_reac>
+				<constant_current_AB>+0+0j A</constant_current_AB>
+				<constant_current_BC>+0+0j A</constant_current_BC>
+				<constant_current_CA>+0+0j A</constant_current_CA>
+				<constant_current_AB_real>+0 A</constant_current_AB_real>
+				<constant_current_BC_real>+0 A</constant_current_BC_real>
+				<constant_current_CA_real>+0 A</constant_current_CA_real>
+				<constant_current_AB_reac>+0 A</constant_current_AB_reac>
+				<constant_current_BC_reac>+0 A</constant_current_BC_reac>
+				<constant_current_CA_reac>+0 A</constant_current_CA_reac>
+				<constant_impedance_AB>+0+0j Ohm</constant_impedance_AB>
+				<constant_impedance_BC>+0+0j Ohm</constant_impedance_BC>
+				<constant_impedance_CA>+0+0j Ohm</constant_impedance_CA>
+				<constant_impedance_AB_real>+0 Ohm</constant_impedance_AB_real>
+				<constant_impedance_BC_real>+0 Ohm</constant_impedance_BC_real>
+				<constant_impedance_CA_real>+0 Ohm</constant_impedance_CA_real>
+				<constant_impedance_AB_reac>+0 Ohm</constant_impedance_AB_reac>
+				<constant_impedance_BC_reac>+0 Ohm</constant_impedance_BC_reac>
+				<constant_impedance_CA_reac>+0 Ohm</constant_impedance_CA_reac>
+				<measured_voltage_A>+2356.99-3.2469d</measured_voltage_A>
+				<measured_voltage_B>+2275-122.185d</measured_voltage_B>
+				<measured_voltage_C>+2363.89+117.117d</measured_voltage_C>
+				<measured_voltage_AB>+3990.01+26.6858d</measured_voltage_AB>
+				<measured_voltage_BC>+4031.68-91.9092d</measured_voltage_BC>
+				<measured_voltage_CA>+4095.87+146.887d</measured_voltage_CA>
+				<phase_loss_protection>FALSE</phase_loss_protection>
+				<base_power_A>+0 VA</base_power_A>
+				<base_power_B>+0 VA</base_power_B>
+				<base_power_C>+0 VA</base_power_C>
+				<power_pf_A>+1 pu</power_pf_A>
+				<current_pf_A>+1 pu</current_pf_A>
+				<impedance_pf_A>+1 pu</impedance_pf_A>
+				<power_pf_B>+1 pu</power_pf_B>
+				<current_pf_B>+1 pu</current_pf_B>
+				<impedance_pf_B>+1 pu</impedance_pf_B>
+				<power_pf_C>+1 pu</power_pf_C>
+				<current_pf_C>+1 pu</current_pf_C>
+				<impedance_pf_C>+1 pu</impedance_pf_C>
+				<power_fraction_A>+0 pu</power_fraction_A>
+				<current_fraction_A>+0 pu</current_fraction_A>
+				<impedance_fraction_A>+0 pu</impedance_fraction_A>
+				<power_fraction_B>+0 pu</power_fraction_B>
+				<current_fraction_B>+0 pu</current_fraction_B>
+				<impedance_fraction_B>+0 pu</impedance_fraction_B>
+				<power_fraction_C>+0 pu</power_fraction_C>
+				<current_fraction_C>+0 pu</current_fraction_C>
+				<impedance_fraction_C>+0 pu</impedance_fraction_C>
+				<bustype>PQ</bustype>
+				<busflags>HASSOURCE</busflags>
+				<maximum_voltage_error>+0.00240178 V</maximum_voltage_error>
+				<voltage_A>+2356.99-3.2469d V</voltage_A>
+				<voltage_B>+2275-122.185d V</voltage_B>
+				<voltage_C>+2363.89+117.117d V</voltage_C>
+				<voltage_AB>+3990.01+26.6858d V</voltage_AB>
+				<voltage_BC>+4031.68-91.9092d V</voltage_BC>
+				<voltage_CA>+4095.87+146.887d V</voltage_CA>
+				<current_A>+0+0j A</current_A>
+				<current_B>+0+0j A</current_B>
+				<current_C>+0+0j A</current_C>
+				<power_A>+11333.3+6666.67j VA</power_A>
+				<power_B>+44000+25333.3j VA</power_B>
+				<power_C>+78000+45333.3j VA</power_C>
+				<shunt_A>+0+0j S</shunt_A>
+				<shunt_B>+0+0j S</shunt_B>
+				<shunt_C>+0+0j S</shunt_C>
+				<prerotated_current_A>+0+0i A</prerotated_current_A>
+				<prerotated_current_B>+0+0i A</prerotated_current_B>
+				<prerotated_current_C>+0+0i A</prerotated_current_C>
+				<current_AB>+0+0j A</current_AB>
+				<current_BC>+0+0j A</current_BC>
+				<current_CA>+0+0j A</current_CA>
+				<current_AN>+0+0j A</current_AN>
+				<current_BN>+0+0j A</current_BN>
+				<current_CN>+0+0j A</current_CN>
+				<power_AB>+0+0j VA</power_AB>
+				<power_BC>+0+0j VA</power_BC>
+				<power_CA>+0+0j VA</power_CA>
+				<power_AN>+0+0j VA</power_AN>
+				<power_BN>+0+0j VA</power_BN>
+				<power_CN>+0+0j VA</power_CN>
+				<shunt_AB>+0+0j S</shunt_AB>
+				<shunt_BC>+0+0j S</shunt_BC>
+				<shunt_CA>+0+0j S</shunt_CA>
+				<shunt_AN>+0+0j S</shunt_AN>
+				<shunt_BN>+0+0j S</shunt_BN>
+				<shunt_CN>+0+0j S</shunt_CN>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<frequency_measure_type>NONE</frequency_measure_type>
+				<sfm_T>+0.01 s</sfm_T>
+				<pll_Kp>+10 pu</pll_Kp>
+				<pll_Ki>+100 pu</pll_Ki>
+				<measured_angle_A>+0 rad</measured_angle_A>
+				<measured_frequency_A>+60 Hz</measured_frequency_A>
+				<measured_angle_B>+0 rad</measured_angle_B>
+				<measured_frequency_B>+60 Hz</measured_frequency_B>
+				<measured_angle_C>+0 rad</measured_angle_C>
+				<measured_frequency_C>+60 Hz</measured_frequency_C>
+				<measured_frequency>+60 Hz</measured_frequency>
+				<service_status>IN_SERVICE</service_status>
+				<service_status_double>-1</service_status_double>
+				<previous_uptime>-1 min</previous_uptime>
+				<current_uptime>+2 min</current_uptime>
+				<Norton_dynamic>FALSE</Norton_dynamic>
+				<GFA_enable>FALSE</GFA_enable>
+				<GFA_freq_low_trip>+59.5 Hz</GFA_freq_low_trip>
+				<GFA_freq_high_trip>+60.5 Hz</GFA_freq_high_trip>
+				<GFA_volt_low_trip>+0.8 pu</GFA_volt_low_trip>
+				<GFA_volt_high_trip>+1.2 pu</GFA_volt_high_trip>
+				<GFA_reconnect_time>+300 s</GFA_reconnect_time>
+				<GFA_freq_disconnect_time>+0.2 s</GFA_freq_disconnect_time>
+				<GFA_volt_disconnect_time>+0.2 s</GFA_volt_disconnect_time>
+				<GFA_status>TRUE</GFA_status>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</load>
+		</load_list>
+		<regulator_configuration_list>
+			<regulator_configuration>
+				<id>20</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:00:00 EST</clock>
+				<name>regulator_configuration1</name>
+				<connect_type>WYE_WYE</connect_type>
+				<band_center>+2300 V</band_center>
+				<band_width>+20 V</band_width>
+				<time_delay>+30 s</time_delay>
+				<dwell_time>+0 s</dwell_time>
+				<raise_taps>16</raise_taps>
+				<lower_taps>16</lower_taps>
+				<current_transducer_ratio>+0 pu</current_transducer_ratio>
+				<power_transducer_ratio>+0 pu</power_transducer_ratio>
+				<compensator_r_setting_A>+0 V</compensator_r_setting_A>
+				<compensator_r_setting_B>+0 V</compensator_r_setting_B>
+				<compensator_r_setting_C>+0 V</compensator_r_setting_C>
+				<compensator_x_setting_A>+0 V</compensator_x_setting_A>
+				<compensator_x_setting_B>+0 V</compensator_x_setting_B>
+				<compensator_x_setting_C>+0 V</compensator_x_setting_C>
+				<CT_phase>CBA</CT_phase>
+				<PT_phase>CBA</PT_phase>
+				<regulation>+0.1</regulation>
+				<control_level>INDIVIDUAL</control_level>
+				<Control>REMOTE_NODE</Control>
+				<reverse_flow_control>LOCK_NONE</reverse_flow_control>
+				<Type>B</Type>
+				<tap_pos_A>0</tap_pos_A>
+				<tap_pos_B>0</tap_pos_B>
+				<tap_pos_C>0</tap_pos_C>
+			</regulator_configuration>
+		</regulator_configuration_list>
+		<regulator_list>
+			<inherits_from>link</inherits_from>
+			<regulator>
+				<id>50</id>
+				<rank>1</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>Reg1</name>
+				<configuration>regulator_configuration1</configuration>
+				<tap_A>5</tap_A>
+				<tap_B>-7</tap_B>
+				<tap_C>7</tap_C>
+				<tap_A_change_count>+1</tap_A_change_count>
+				<tap_B_change_count>+1</tap_B_change_count>
+				<tap_C_change_count>+3</tap_C_change_count>
+				<sense_node>Load671</sense_node>
+				<regulator_resistance>+0.0001 Ohm</regulator_resistance>
+				<status>CLOSED</status>
+				<from>Node650</from>
+				<to>Node630</to>
+				<power_in>+3.55852e+06+1.75871e+06i VA</power_in>
+				<power_out>+3.55843e+06+1.75871e+06j VA</power_out>
+				<power_out_real>+3.55843e+06 W</power_out_real>
+				<power_losses>+89.6019+1.16415e-10i VA</power_losses>
+				<power_in_A>+1.26264e+06+694055i VA</power_in_A>
+				<power_in_B>+938666+406172j VA</power_in_B>
+				<power_in_C>+1.35721e+06+658488j VA</power_in_C>
+				<power_out_A>+1.26261e+06+694055j VA</power_out_A>
+				<power_out_B>+938646+406172j VA</power_out_B>
+				<power_out_C>+1.35717e+06+658488j VA</power_out_C>
+				<power_losses_A>+33.7739+1.16415e-10i VA</power_losses_A>
+				<power_losses_B>+19.7555+0j VA</power_losses_B>
+				<power_losses_C>+36.0725+0j VA</power_losses_C>
+				<current_out_A>+509.284-279.945j A</current_out_A>
+				<current_out_B>-356.824-265.013i A</current_out_B>
+				<current_out_C>-43.1332+599.053i A</current_out_C>
+				<current_in_A>+525.712-288.975j A</current_in_A>
+				<current_in_B>-341.867-253.905j A</current_in_B>
+				<current_in_C>-45.1066+626.461j A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CF|BF|AF</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>ABC</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</regulator>
+		</regulator_list>
+		<triplex_node_list>
+			<inherits_from>powerflow_object</inherits_from>
+		</triplex_node_list>
+		<triplex_meter_list>
+			<inherits_from>triplex_node</inherits_from>
+		</triplex_meter_list>
+		<triplex_line_list>
+			<inherits_from>line</inherits_from>
+		</triplex_line_list>
+		<triplex_line_configuration_list>
+		</triplex_line_configuration_list>
+		<triplex_line_conductor_list>
+		</triplex_line_conductor_list>
+		<switch_list>
+			<inherits_from>link</inherits_from>
+			<switch>
+				<id>48</id>
+				<rank>2</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>switch1</name>
+				<phase_A_state>CLOSED</phase_A_state>
+				<phase_B_state>CLOSED</phase_B_state>
+				<phase_C_state>CLOSED</phase_C_state>
+				<operating_mode>BANKED</operating_mode>
+				<switch_resistance>+0.0001 Ohm</switch_resistance>
+				<status>CLOSED</status>
+				<from>Load671</from>
+				<to>Load692</to>
+				<power_in>+1.02244e+06+50358.9i VA</power_in>
+				<power_out>+1.02243e+06+50363.7i VA</power_out>
+				<power_out_real>+1.02243e+06 W</power_out_real>
+				<power_losses>+4.74525-4.74525i VA</power_losses>
+				<power_in_A>+539202+126490i VA</power_in_A>
+				<power_in_B>+68235.1-122408j VA</power_in_B>
+				<power_in_C>+414998+46277j VA</power_in_C>
+				<power_out_A>+539199+126493i VA</power_out_A>
+				<power_out_B>+68234.9-122408j VA</power_out_B>
+				<power_out_C>+414997+46278.6j VA</power_out_C>
+				<power_losses_A>+2.90119-2.90119i VA</power_losses_A>
+				<power_losses_B>+0.186996-0.186996j VA</power_losses_B>
+				<power_losses_C>+1.65706-1.65706j VA</power_losses_C>
+				<current_out_A>+228.207-77.1068j A</current_out_A>
+				<current_out_B>+28.8405-53.9271j A</current_out_B>
+				<current_out_C>-60.2124+171.801j A</current_out_C>
+				<current_in_A>+228.207-77.1068i A</current_in_A>
+				<current_in_B>+28.8405-53.9271i A</current_in_B>
+				<current_in_C>-60.2124+171.801i A</current_in_C>
+				<fault_current_in_A>+0+0j A</fault_current_in_A>
+				<fault_current_in_B>+0+0j A</fault_current_in_B>
+				<fault_current_in_C>+0+0j A</fault_current_in_C>
+				<fault_current_out_A>+0+0j A</fault_current_out_A>
+				<fault_current_out_B>+0+0j A</fault_current_out_B>
+				<fault_current_out_C>+0+0j A</fault_current_out_C>
+				<flow_direction>CF|BF|AF</flow_direction>
+				<mean_repair_time>+0 s</mean_repair_time>
+				<continuous_rating>+1000 A</continuous_rating>
+				<emergency_rating>+2000 A</emergency_rating>
+				<inrush_convergence_value>+0.0001 V</inrush_convergence_value>
+				<phases>ABCN</phases>
+				<nominal_voltage>+2401.78 V</nominal_voltage>
+			</switch>
+		</switch_list>
+		<substation_list>
+			<inherits_from>node</inherits_from>
+		</substation_list>
+		<pqload_list>
+			<inherits_from>load</inherits_from>
+		</pqload_list>
+		<voltdump_list>
+			<voltdump>
+				<id>51</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>voltdump:51</name>
+				<group>""</group>
+				<runtime>NEVER</runtime>
+				<filename>Volt_Dump_NR_o.csv</filename>
+				<file>Volt_Dump_NR_o.csv</file>
+				<runcount>1</runcount>
+				<mode>rect</mode>
+			</voltdump>
+		</voltdump_list>
+		<series_reactor_list>
+			<inherits_from>link</inherits_from>
+		</series_reactor_list>
+		<restoration_list>
+		</restoration_list>
+		<frequency_gen_list>
+		</frequency_gen_list>
+		<volt_var_control_list>
+		</volt_var_control_list>
+		<fault_check_list>
+		</fault_check_list>
+		<motor_list>
+			<inherits_from>node</inherits_from>
+		</motor_list>
+		<billdump_list>
+		</billdump_list>
+		<power_metrics_list>
+		</power_metrics_list>
+		<currdump_list>
+			<currdump>
+				<id>52</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<clock>2013-12-31 19:02:00 EST</clock>
+				<name>currdump:52</name>
+				<group>""</group>
+				<runtime>NEVER</runtime>
+				<filename>Current_Dump_NR_o.csv</filename>
+				<runcount>1</runcount>
+				<mode>rect</mode>
+			</currdump>
+		</currdump_list>
+		<recloser_list>
+			<inherits_from>switch</inherits_from>
+		</recloser_list>
+		<sectionalizer_list>
+			<inherits_from>switch</inherits_from>
+		</sectionalizer_list>
+		<emissions_list>
+		</emissions_list>
+		<load_tracker_list>
+		</load_tracker_list>
+		<triplex_load_list>
+			<inherits_from>triplex_node</inherits_from>
+		</triplex_load_list>
+		<impedance_dump_list>
+		</impedance_dump_list>
+	</powerflow>
+	<tape>
+		<version.major>4</version.major>
+		<version.minor>0</version.minor>
+		<player_list>
+		</player_list>
+		<shaper_list>
+		</shaper_list>
+		<recorder_list>
+			<recorder>
+				<id>53</id>
+				<rank>0</rank>
+				<out_svc>NEVER</out_svc>
+				<parent>Reg1</parent>
+				<clock>2013-12-31 19:00:03 EST</clock>
+				<name>recorder:53</name>
+				<property>tap_A,tap_B,tap_C,power_in_A.real,power_in_A.imag,power_in_B.real,power_in_B.imag,power_in_C.real,power_in_C.imag,power_in.real,power_in.imag</property>
+				<trigger>""</trigger>
+				<file>reg1_output_o.csv</file>
+				<filetype>txt</filetype>
+				<mode>file</mode>
+				<multifile>""</multifile>
+				<limit>1</limit>
+				<plotcommands>""</plotcommands>
+				<xdata>""</xdata>
+				<columns>""</columns>
+				<flush>4294967295</flush>
+				<format>FALSE</format>
+				<interval>+1 s</interval>
+				<output>SCREEN</output>
+				<header_units>DEFAULT</header_units>
+				<line_units>DEFAULT</line_units>
+			</recorder>
+		</recorder_list>
+		<multi_recorder_list>
+		</multi_recorder_list>
+		<collector_list>
+		</collector_list>
+		<histogram_list>
+		</histogram_list>
+		<group_recorder_list>
+		</group_recorder_list>
+		<violation_recorder_list>
+		</violation_recorder_list>
+		<metrics_collector_list>
+		</metrics_collector_list>
+		<metrics_collector_writer_list>
+		</metrics_collector_writer_list>
+	</tape>
+</gridlabd>
