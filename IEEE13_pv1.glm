@@ -6,8 +6,8 @@
 clock {
 	timezone US/HI/Honolulu;
 	starttime '2000-08-02 0:00:00';
-	//stoptime '2000-08-03 0:00:00';
-	stoptime '2000-08-02 12:00:00';
+	stoptime '2000-08-03 0:00:00';
+	//stoptime '2000-08-02 13:00:00';
 }
 
 module powerflow {
@@ -651,6 +651,22 @@ object group_recorder {
 }
 
 object group_recorder {
+		group class=meter;
+		property measured_current_A;
+		file "time_results/measured_current_A_pv.csv";
+}
+object group_recorder {
+		group class=meter;
+		property measured_current_B;
+		file "time_results/measured_current_B_pv.csv";
+}
+object group_recorder {
+		group class=meter;
+		property measured_current_C;
+		file "time_results/measured_current_C_pv.csv";
+}
+
+object group_recorder {
 		group class=inverter;
 		property generator_status;
 		file "time_results/inverter_pv.csv";
@@ -721,3 +737,199 @@ object group_recorder {
 		property power_C;
 		file "time_results/inverter_power_C_pv.csv";
 }
+
+
+
+
+
+
+
+
+
+object group_recorder {
+	group class=overhead_line;
+	property current_in_A;
+	file "time_results/line_in_A_pv/overhead_line_losses.csv";
+}
+
+object group_recorder {
+	group class=underground_line;
+	property current_in_A;
+	file "time_results/line_in_A_pv/underground_line_losses.csv";
+}
+
+object group_recorder {
+		group class=regulator;
+		property current_in_A;
+		file "time_results/line_in_A_pv/regulator_power_loss.csv";
+}
+
+object group_recorder {
+		group class=transformer;
+		property current_in_A;
+		file "time_results/line_in_A_pv/transformer_power_loss.csv";
+}
+
+object group_recorder {
+		group class=switch;
+		property current_in_A;
+		file "time_results/line_in_A_pv/switch_power_loss.csv";
+}
+
+
+object group_recorder {
+	group class=overhead_line;
+	property current_in_B;
+	file "time_results/line_in_B_pv/overhead_line_losses.csv";
+}
+
+object group_recorder {
+	group class=underground_line;
+	property current_in_B;
+	file "time_results/line_in_B_pv/underground_line_losses.csv";
+}
+
+object group_recorder {
+		group class=regulator;
+		property current_in_B;
+		file "time_results/line_in_B_pv/regulator_power_loss.csv";
+}
+
+object group_recorder {
+		group class=transformer;
+		property current_in_B;
+		file "time_results/line_in_B_pv/transformer_power_loss.csv";
+}
+
+object group_recorder {
+		group class=switch;
+		property current_in_B;
+		file "time_results/line_in_B_pv/switch_power_loss.csv";
+}
+
+
+object group_recorder {
+	group class=overhead_line;
+	property current_in_C;
+	file "time_results/line_in_C_pv/overhead_line_losses.csv";
+}
+
+object group_recorder {
+	group class=underground_line;
+	property current_in_C;
+	file "time_results/line_in_C_pv/underground_line_losses.csv";
+}
+
+object group_recorder {
+		group class=regulator;
+		property current_in_C;
+		file "time_results/line_in_C_pv/regulator_power_loss.csv";
+}
+
+object group_recorder {
+		group class=transformer;
+		property current_in_C;
+		file "time_results/line_in_C_pv/transformer_power_loss.csv";
+}
+
+object group_recorder {
+		group class=switch;
+		property current_in_C;
+		file "time_results/line_in_C_pv/switch_power_loss.csv";
+}
+
+
+
+
+object group_recorder {
+	group class=overhead_line;
+	property current_out_A;
+	file "time_results/line_out_A_pv/overhead_line_losses.csv";
+}
+
+object group_recorder {
+	group class=underground_line;
+	property current_out_A;
+	file "time_results/line_out_A_pv/underground_line_losses.csv";
+}
+
+object group_recorder {
+		group class=regulator;
+		property current_out_A;
+		file "time_results/line_out_A_pv/regulator_power_loss.csv";
+}
+
+object group_recorder {
+		group class=transformer;
+		property current_out_A;
+		file "time_results/line_out_A_pv/transformer_power_loss.csv";
+}
+
+object group_recorder {
+		group class=switch;
+		property current_out_A;
+		file "time_results/line_out_A_pv/switch_power_loss.csv";
+}
+
+
+object group_recorder {
+	group class=overhead_line;
+	property current_out_B;
+	file "time_results/line_out_B_pv/overhead_line_losses.csv";
+}
+
+object group_recorder {
+	group class=underground_line;
+	property current_out_B;
+	file "time_results/line_out_B_pv/underground_line_losses.csv";
+}
+
+object group_recorder {
+		group class=regulator;
+		property current_out_B;
+		file "time_results/line_out_B_pv/regulator_power_loss.csv";
+}
+
+object group_recorder {
+		group class=transformer;
+		property current_out_B;
+		file "time_results/line_out_B_pv/transformer_power_loss.csv";
+}
+
+object group_recorder {
+		group class=switch;
+		property current_out_B;
+		file "time_results/line_out_B_pv/switch_power_loss.csv";
+}
+
+
+object group_recorder {
+	group class=overhead_line;
+	property current_out_C;
+	file "time_results/line_out_C_pv/overhead_line_losses.csv";
+}
+
+object group_recorder {
+	group class=underground_line;
+	property current_out_C;
+	file "time_results/line_out_C_pv/underground_line_losses.csv";
+}
+
+object group_recorder {
+		group class=regulator;
+		property current_out_C;
+		file "time_results/line_out_C_pv/regulator_power_loss.csv";
+}
+
+object group_recorder {
+		group class=transformer;
+		property current_out_C;
+		file "time_results/line_out_C_pv/transformer_power_loss.csv";
+}
+
+object group_recorder {
+		group class=switch;
+		property current_out_C;      
+		file "time_results/line_out_C_pv/switch_power_loss.csv";
+}
+
