@@ -2116,51 +2116,43 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 
 						// ERIC'S CODE
 						// handle overvoltage
-						double overvoltage_3phase = 2407.11 * 1.1;
-						power_A = power_B = power_C = complex(VA_Out.Mag()*fabs(power_factor),power_factor/fabs(power_factor)*VA_Out.Mag()*sin(acos(power_factor)))/3;
-						if (phaseA_V_Out.Mag() != 0.0 && phaseA_V_Out.Mag() < overvoltage_3phase)
-							phaseA_I_Out = ~(power_A / phaseA_V_Out); // /sqrt(2.0);
-						else
-							phaseA_I_Out = complex(0.1,0.0);
-							power_A = complex(0.0,0.0);
-							pCircuit_V[0]=complex(0.0,0.0);
-							printf("voltage A is over: %d\n", phaseA_V_Out.Mag());
-							printf("overvoltage %d\n", overvoltage_3phase);
-							printf("current is %d + %dd\n", phaseA_I_Out.Mag(), phaseA_I_Out.Arg());
-						if (phaseB_V_Out.Mag() != 0.0 && phaseB_V_Out.Mag() < overvoltage_3phase)
-							phaseB_I_Out = ~(power_B / phaseB_V_Out); // /sqrt(2.0);
-						else
-							phaseB_I_Out = complex(0.1,0.0);
-							power_B = complex(0.0,0.0);
-							pCircuit_V[1]=complex(0.0,0.0);
-							printf("voltage B is over: %d\n", phaseB_V_Out.Mag());
-							printf("overvoltage %d\n", overvoltage_3phase);
-							printf("current is %d + %dd\n", phaseB_I_Out.Mag(), phaseB_I_Out.Arg());
-						if (phaseC_V_Out.Mag() != 0.0 && phaseC_V_Out.Mag() < overvoltage_3phase)
-							phaseC_I_Out = ~(power_C / phaseC_V_Out); // /sqrt(2.0);
-						else
-							phaseC_I_Out = complex(0.1,0.0);
-							power_C = complex(0.0,0.0);
-							pCircuit_V[2]=complex(0.0,0.0);
-							printf("voltage C is over: %d\n", phaseC_V_Out.Mag());
-							printf("overvoltage %d\n", overvoltage_3phase);
-							printf("current is %d + %dd\n", phaseC_I_Out.Mag(), phaseC_I_Out.Arg());
+						// double overvoltage_3phase = 2407.11 * 1.1;
+						// power_A = power_B = power_C = complex(VA_Out.Mag()*fabs(power_factor),power_factor/fabs(power_factor)*VA_Out.Mag()*sin(acos(power_factor)))/3;
+						// if (phaseA_V_Out.Mag() != 0.0 && phaseA_V_Out.Mag() < overvoltage_3phase)
+						// 	phaseA_I_Out = ~(power_A / phaseA_V_Out); // /sqrt(2.0);
+						// else
+						// 	phaseA_I_Out = complex(0.1,0.0);
+						// 	power_A = complex(0.0,0.0);
+						// 	pCircuit_V[0]=complex(0.0,0.0);
+						// if (phaseB_V_Out.Mag() != 0.0 && phaseB_V_Out.Mag() < overvoltage_3phase)
+						// 	phaseB_I_Out = ~(power_B / phaseB_V_Out); // /sqrt(2.0);
+						// else
+						// 	phaseB_I_Out = complex(0.1,0.0);
+						// 	power_B = complex(0.0,0.0);
+						// 	pCircuit_V[1]=complex(0.0,0.0);
+						// if (phaseC_V_Out.Mag() != 0.0 && phaseC_V_Out.Mag() < overvoltage_3phase)
+						// 	phaseC_I_Out = ~(power_C / phaseC_V_Out); // /sqrt(2.0);
+						// else
+						// 	phaseC_I_Out = complex(0.1,0.0);
+						// 	power_C = complex(0.0,0.0);
+						// 	pCircuit_V[2]=complex(0.0,0.0);
+
 						//END OF ERIC'S CODE
 
 						// ORIGINAL CODE
-						// power_A = power_B = power_C = complex(VA_Out.Mag()*fabs(power_factor),power_factor/fabs(power_factor)*VA_Out.Mag()*sin(acos(power_factor)))/3;
-						// if (phaseA_V_Out.Mag() != 0.0)
-						// 	phaseA_I_Out = ~(power_A / phaseA_V_Out); // /sqrt(2.0);
-						// else
-						// 	phaseA_I_Out = complex(0.0,0.0);
-						// if (phaseB_V_Out.Mag() != 0.0)
-						// 	phaseB_I_Out = ~(power_B / phaseB_V_Out); // /sqrt(2.0);
-						// else
-						// 	phaseB_I_Out = complex(0.0,0.0);
-						// if (phaseC_V_Out.Mag() != 0.0)
-						// 	phaseC_I_Out = ~(power_C / phaseC_V_Out); // /sqrt(2.0);
-						// else
-						// 	phaseC_I_Out = complex(0.0,0.0);
+						power_A = power_B = power_C = complex(VA_Out.Mag()*fabs(power_factor),power_factor/fabs(power_factor)*VA_Out.Mag()*sin(acos(power_factor)))/3;
+						if (phaseA_V_Out.Mag() != 0.0)
+							phaseA_I_Out = ~(power_A / phaseA_V_Out); // /sqrt(2.0);
+						else
+							phaseA_I_Out = complex(0.0,0.0);
+						if (phaseB_V_Out.Mag() != 0.0)
+							phaseB_I_Out = ~(power_B / phaseB_V_Out); // /sqrt(2.0);
+						else
+							phaseB_I_Out = complex(0.0,0.0);
+						if (phaseC_V_Out.Mag() != 0.0)
+							phaseC_I_Out = ~(power_C / phaseC_V_Out); // /sqrt(2.0);
+						else
+							phaseC_I_Out = complex(0.0,0.0);
 						// ORIGINAL CODE
 
 						// does not seem to make a difference if I change pCircuit_V

@@ -4,7 +4,7 @@
 	<version.major>4</version.major>
 	<version.minor>0</version.minor>
 	<version.patch>0</version.patch>
-	<version.build>17469</version.build>
+	<version.build>17513</version.build>
 	<version.branch>Keeler</version.branch>
 	<command_line>"/usr/local/bin/gridlabd.bin -o IEEE13_pv_control.xml -v IEEE13_pv_control.glm"</command_line>
 	<environment>batch</environment>
@@ -40,7 +40,7 @@
 	<strictnames>TRUE</strictnames>
 	<website>http://www.gridlabd.org/</website>
 	<urlbase>http://www.gridlabd.org/</urlbase>
-	<randomseed>3512338632</randomseed>
+	<randomseed>3430826720</randomseed>
 	<include>""</include>
 	<trace>""</trace>
 	<gdb_window>FALSE</gdb_window>
