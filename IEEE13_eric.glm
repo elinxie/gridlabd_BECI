@@ -6,8 +6,8 @@
 clock {
 	timezone US/HI/Honolulu;
 	starttime '2000-08-02 0:00:00';
-	//stoptime '2000-08-03 0:00:00';
-	stoptime '2000-08-02 13:00:00';
+	stoptime '2000-08-03 0:00:00';
+	//stoptime '2000-08-02 13:00:00';
 }
 
 module powerflow {

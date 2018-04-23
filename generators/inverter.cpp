@@ -2011,7 +2011,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 		}
 	}//End first delta timestep
 	//default else - either not deltamode, or not the first timestep
-
+	
 	//Perform 1547 checks, if appropriate
 	if (enable_1547_compliance == true)
 	{
@@ -2058,7 +2058,6 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 		//Default else -- same timestep, so don't care
 	}
 	//Default else - 1547 checks are not enabled
-	
 	if ((*pMeterStatus==1) && (inverter_1547_status == true))	//Make sure the meter is in service
 	{
 		phaseA_V_Out = pCircuit_V[0];	//Syncs the meter parent to the generator.
@@ -4208,6 +4207,7 @@ SIMULATIONMODE inverter::inter_deltaupdate(unsigned int64 delta_time, unsigned l
 		//Update tracking variable
 		prev_time_dbl = (double)gl_globalclock + deltatimedbl;
 	}
+	
 	
 	//Perform the 1547 update, if enabled
 	if ((enable_1547_compliance == true) && (iteration_count_val == 0))	//Always just do on the first pass
