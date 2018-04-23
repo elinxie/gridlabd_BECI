@@ -1574,6 +1574,7 @@ TIMESTAMP inverter::presync(TIMESTAMP t0, TIMESTAMP t1)
 {
 	TIMESTAMP t2 = TS_NEVER;
 	OBJECT *obj = OBJECTHDR(this);
+	gl_verbose("in presync %d", t1);
 	if(inverter_type_v != FOUR_QUADRANT){
 		phaseA_I_Out = phaseB_I_Out = phaseC_I_Out = 0.0;
 	} else {
@@ -1887,6 +1888,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 
 	//Assume always want TS_NEVER
 	tret_value = TS_NEVER;
+	gl_verbose("in sync %d", t1);
 
 	if(gen_status_v == OFFLINE){
 		power_A = complex(0);
@@ -1918,6 +1920,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 
 	if (first_sync_delta_enabled == true)	//Deltamode first pass
 	{
+		gl_verbose("in first pass %d", t1);
 		//TODO: LOCKING!
 		if ((deltamode_inclusive == true) && (enable_subsecond_models == true))	//We want deltamode - see if it's populated yet
 		{
@@ -2015,6 +2018,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 	//Perform 1547 checks, if appropriate
 	if (enable_1547_compliance == true)
 	{
+		gl_verbose("check 1547 %d", t1);
 		//Extract the current timestamp, as a double
 		curr_ts_dbl = (double)gl_globalclock;
 
@@ -2029,6 +2033,8 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 
 			//Do the checks
 			ieee_1547_return_value = perform_1547_checks(diff_dbl);
+			gl_verbose("1547 value %d", ieee_1547_return_value);
+			gl_verbose("voltage value %f", pCircuit_V[0]);
 
 			//Check it
 			if (ieee_1547_return_value > 0.0)
@@ -2036,6 +2042,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 				//See which mode we're in
 				if (deltamode_inclusive == true)
 				{
+					gl_verbose("let's turn on delta?");
 					new_ret_value = t1 + (TIMESTAMP)(floor(ieee_1547_return_value));
 
 					//Regardless of the return, schedule us for a delta transition - if it clears by then, we should
@@ -2044,6 +2051,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 				}
 				else	//Steady state
 				{
+					gl_verbose("don't do delta");
 					new_ret_value = t1 + (TIMESTAMP)(ceil(ieee_1547_return_value));
 				}
 
@@ -2060,6 +2068,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 	//Default else - 1547 checks are not enabled
 	if ((*pMeterStatus==1) && (inverter_1547_status == true))	//Make sure the meter is in service
 	{
+		gl_verbose("check voltage and modify current %f", pCircuit_V[0]);
 		phaseA_V_Out = pCircuit_V[0];	//Syncs the meter parent to the generator.
 		phaseB_V_Out = pCircuit_V[1];
 		phaseC_V_Out = pCircuit_V[2];
@@ -3151,11 +3160,13 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 	}
 	else
 	{
+
 		//Check to see if we're accumulating or out of service
 		if (*pMeterStatus==1)
 		{
 			if (inverter_type_v != FOUR_QUADRANT)
 			{
+				gl_verbose("what are we doing not updating current%d", t1);
 				//Will only get here on true NR_cycle, if meter is in service
 				if ((phases & 0x10) == 0x10)
 				{
@@ -3185,6 +3196,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 		}
 		else
 		{
+			gl_verbose("doing nothing %d", t1);
 			//No contributions, but zero the last_current, just to be safe
 			last_current[0] = 0.0;
 			last_current[1] = 0.0;
@@ -3220,7 +3232,7 @@ TIMESTAMP inverter::postsync(TIMESTAMP t0, TIMESTAMP t1)
 	double new_lf_dispatch_power, curr_power_val, diff_power_val;				
 	double new_pf_reg_distpatch_VAR, curr_real_power_val, curr_reactive_power_val, curr_pf, available_VA, new_Q_out, Q_out, Q_required, Q_available, Q_load;
 	double scaling_factor, Q_target;
-
+	gl_verbose("in postsync %d", t1);
 	//Check and see if we need to redispatch
 	if ((inverter_type_v == FOUR_QUADRANT) && (four_quadrant_control_mode == FQM_LOAD_FOLLOWING) && (lf_dispatch_change_allowed==true))
 	{
@@ -4147,7 +4159,7 @@ TIMESTAMP inverter::postsync(TIMESTAMP t0, TIMESTAMP t1)
 STATUS inverter::pre_deltaupdate(TIMESTAMP t0, unsigned int64 delta_time)
 {
 	STATUS stat_val;
-
+	gl_verbose("preupdate");
 	//See which method we are
 	if (inverter_dyn_mode == PI_CONTROLLER)
 	{
@@ -4214,6 +4226,8 @@ SIMULATIONMODE inverter::inter_deltaupdate(unsigned int64 delta_time, unsigned l
 	{
 		//Do the checks
 		ieee_1547_double = perform_1547_checks(deltat);
+		gl_verbose("my other ieee 1547 check %d", ieee_1547_double);
+		gl_verbose("update");
 	}
 
 	//See if we are actually enabled
@@ -4622,6 +4636,7 @@ SIMULATIONMODE inverter::inter_deltaupdate(unsigned int64 delta_time, unsigned l
 
 STATUS inverter::post_deltaupdate(complex *useful_value, unsigned int mode_pass)
 {
+	gl_verbose("postsync");
 	if (inverter_dyn_mode == PI_CONTROLLER)
 	{
 		if((phases & 0x10) == 0x10){
@@ -5016,6 +5031,9 @@ double inverter::perform_1547_checks(double timestepvalue)
 	return_time_freq = -1.0;
 	return_time_volt = -1.0;
 	return_value = -1.0;
+	gl_verbose("doing 1547 at %d", timestepvalue);
+	gl_verbose("voltage %f", pCircuit_V[0].Mag()/node_nominal_voltage);
+
 
 	//Perform frequency check - overlapping bands set so we don't care about size anyore
 	if ((*freq_pointer > over_freq_low_band_setpoint) || (*freq_pointer < under_freq_high_band_setpoint))
@@ -5294,6 +5312,7 @@ double inverter::perform_1547_checks(double timestepvalue)
 	//See if anything was hit - if so, reconcile it
 	if (voltage_violation == true)
 	{
+		gl_verbose("we violated %f", pCircuit_V[0].Mag()/node_nominal_voltage);
 		//Reconcile the violation times and see how we need to break
 		if (uv_low_hit == true)
 		{
@@ -5444,6 +5463,7 @@ double inverter::perform_1547_checks(double timestepvalue)
 		{
 			//Set us back into service
 			inverter_1547_status = true;
+			gl_verbose("we are back on %f", pCircuit_V[0].Mag()/node_nominal_voltage);
 
 			//Implies no violations, so force return a -1.0
 			return -1.0;
@@ -5451,6 +5471,7 @@ double inverter::perform_1547_checks(double timestepvalue)
 		else	//Still delayed, just reaffirm our status
 		{
 			inverter_1547_status = false;
+			gl_verbose("we are still off %f", pCircuit_V[0].Mag()/node_nominal_voltage);
 
 			//calculate the new update time
 			return_value = reconnect_time - out_of_violation_time_total;
@@ -5464,12 +5485,14 @@ double inverter::perform_1547_checks(double timestepvalue)
 		if (trigger_disconnect == true)
 		{
 			inverter_1547_status = false;	//Trigger
+			gl_verbose("we are now off %f", pCircuit_V[0].Mag()/node_nominal_voltage);
 
 			//Return our expected next status interval
 			return return_value;
 		}
 		else
 		{
+			gl_verbose("still on %f", pCircuit_V[0].Mag()/node_nominal_voltage);
 			//All is well, indicate as much
 			return return_value;
 		}
