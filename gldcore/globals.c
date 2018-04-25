@@ -224,6 +224,8 @@ static struct s_varmap {
 	{"delta_current_clock", PT_double, &global_delta_curr_clock, PA_PUBLIC, "Absolute delta time (global clock offset)"},
 	{"deltamode_updateorder", PT_char1024, &global_deltamode_updateorder, PA_REFERENCE, "order in which modules are update in deltamode"},
 	{"deltamode_iteration_limit", PT_int32, &global_deltamode_iteration_limit, PA_PUBLIC, "iteration limit for each delta timestep (object and interupdate)"},
+	{"deltamode_forced_extra_timesteps",PT_int32, &global_deltamode_forced_extra_timesteps, PA_PUBLIC, "forced extra deltamode timesteps before returning to event-driven mode"},
+	{"deltamode_forced_always",PT_bool, &global_deltamode_forced_always, PA_PUBLIC, "forced deltamode for debugging -- prevents event-driven mode"},
 	{"run_powerworld", PT_bool, &global_run_powerworld, PA_PUBLIC, "boolean that that says your system is set up correctly to run with PowerWorld"},
 	{"bigranks", PT_bool, &global_bigranks, PA_PUBLIC, "enable fast/blind set_rank operations"},
 	{"exename", PT_char1024, &global_execname, PA_REFERENCE, "argv[0] value"},
@@ -713,12 +715,12 @@ int global_isdefined(char *name)
 
 int parameter_expansion(char *buffer, int size, char *spec)
 {
-	char name[64], value[64], pattern[64], op[64], string[64]="", yes[1024]="1", no[1024]="0";
+	char name[64], value[1023], pattern[64], op[64], string[64]="", yes[1024]="1", no[1024]="0";
 	int offset, length;
 	int32 number;
 
 	/* ${name:-value} */
-	if ( sscanf(spec,"%63[^:]:-%63s",name,value)==2 )
+	if ( sscanf(spec,"%63[^:]:-%1023[^}]",name,value)==2 )
 	{	
 		if ( global_getvar(name,buffer,size)==NULL )
 			strncpy(buffer,value,size);
@@ -726,7 +728,7 @@ int parameter_expansion(char *buffer, int size, char *spec)
 	}
 
 	/* ${name:=value} */
-	if ( sscanf(spec,"%63[^:]:=%63s",name,value)==2 )
+	if ( sscanf(spec,"%63[^:]:=%1023[^}]",name,value)==2 )
 	{
 		if ( !global_isdefined(name) )
 			global_setvar(name,value);
@@ -735,7 +737,7 @@ int parameter_expansion(char *buffer, int size, char *spec)
 	}
 
 	/* ${name:+value} */
-	if ( sscanf(spec,"%63[^:]:+%63s",name,value)==2 )
+	if ( sscanf(spec,"%63[^:]:+%1023[^}]",name,value)==2 )
 	{
 		if ( !global_isdefined(name) )
 			strcpy(buffer,"");
@@ -772,7 +774,7 @@ int parameter_expansion(char *buffer, int size, char *spec)
 	}
 
 	/* ${name/offset/length} */
-	if ( sscanf(spec,"%63[^/]/%63[^/]/%63s",name,pattern,string)>=2 )
+	if ( sscanf(spec,"%63[^/]/%63[^/]/%63[^}]",name,pattern,string)>=2 )
 	{
 		char temp[1024], *ptr;
 		size_t start;
@@ -791,7 +793,7 @@ int parameter_expansion(char *buffer, int size, char *spec)
 	}
 
 	/* ${name//offset/length} */
-	if ( sscanf(spec,"%63[^/]//%63[^/]/%63s",name,pattern,string)==2 )
+	if ( sscanf(spec,"%63[^/]//%63[^/]/%63[^}]",name,pattern,string)==2 )
 	{
 		char temp[1024], *ptr=NULL;
 		size_t start;

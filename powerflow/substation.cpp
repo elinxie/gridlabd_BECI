@@ -81,11 +81,15 @@ substation::substation(MODULE *mod) : node(mod)
 			NULL)<1) GL_THROW("unable to publish properties in %s",__FILE__);
 		//Publish deltamode functions
 		if (gl_publish_function(oclass,	"delta_linkage_node", (FUNCTIONADDR)delta_linkage)==NULL)
-			GL_THROW("Unable to publish meter delta_linkage function");
+			GL_THROW("Unable to publish substation delta_linkage function");
 		if (gl_publish_function(oclass,	"interupdate_pwr_object", (FUNCTIONADDR)interupdate_substation)==NULL)
-			GL_THROW("Unable to publish meter deltamode function");
+			GL_THROW("Unable to publish substation deltamode function");
 		if (gl_publish_function(oclass,	"delta_freq_pwr_object", (FUNCTIONADDR)delta_frequency_node)==NULL)
-			GL_THROW("Unable to publish meter deltamode function");
+			GL_THROW("Unable to publish substation deltamode function");
+		if (gl_publish_function(oclass,	"pwr_object_swing_swapper", (FUNCTIONADDR)swap_node_swing_status)==NULL)
+			GL_THROW("Unable to publish substation swing-swapping function");
+		if (gl_publish_function(oclass,	"pwr_current_injection_update_map", (FUNCTIONADDR)node_map_current_update_function)==NULL)
+			GL_THROW("Unable to publish substation current injection update mapping function");
 	}
 }
 
@@ -389,7 +393,7 @@ SIMULATIONMODE substation::inter_deltaupdate_substation(unsigned int64 delta_tim
 		//calculate the energy used
 		if(iteration_count_val == 0){
 			total_load = last_power_A.Re() + last_power_B.Re() + last_power_C.Re();
-			distribution_real_energy += total_load*dt/(3600*DT_SECOND);
+			distribution_real_energy += total_load*((double)dt/(3600.0*DT_SECOND));
 		}
 		NR_node_presync_fxn(0);
 

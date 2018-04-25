@@ -20,7 +20,8 @@ typedef enum {
 		SPLITPHASE=3,		///< defines the link is a split-phase transformer
 		SWITCH=4,			///< defines the link is a switch
 		DELTADELTA=5,		///< defines the link is a delta-delta transformer - for power operations
-		WYEWYE=6			///< defines the link is a Wye-wye transformer, mainly to allow triggering for unity turns ratios
+		WYEWYE=6,			///< defines the link is a Wye-wye transformer, mainly to allow triggering for unity turns ratios
+		VFD=7				///< defines the link is a VFD device (basically skip admittance)
 } SPECIAL_LINK;
 
 // flow directions (see link_object::flow_direction)
@@ -79,6 +80,7 @@ public:
 	complex read_I_out[3];  ///< published current flow out of link (w.r.t to node)
 	complex If_in[3];		///< fault current flowing in 
 	complex If_out[3];		///< fault current flowing out
+	complex Vf_out[3];
 	complex power_in;		///< power flow in (w.r.t from node)
 	complex power_out;		///< power flow out (w.r.t to node)
 	complex power_loss;		///< power losses 
@@ -130,6 +132,8 @@ public:
 	void BOTH_link_postsync_fxn(void);
 	void perform_limit_checks(double *over_limit_value, bool *over_limits);
 	double inrush_tol_value;	///< Tolerance value (of vdiff on the line ends) before "inrush convergence" is accepted
+	INRUSHINTMETHOD inrush_int_method_inductance;	//Individual mode selection
+	INRUSHINTMETHOD inrush_int_method_capacitance;
 
 	//New matrix functions associated with transformer inrush (bigger)
 	void lmatrix_add(complex *matrix_in_A, complex *matrix_in_B, complex *matrix_out, int matsize);
@@ -188,3 +192,4 @@ void forward_sub(complex *l, complex *b, complex *z, int size_val); //backwards 
 void back_sub(complex *u, complex *z, complex *x, int size_val); // forwards substitution algorithm for a generic square system
 void lu_matrix_inverse(complex *input_mat, complex *output_mat, int size_val);	//matrix inversion calculated by LU decomp method
 #endif // _LINK_H
+

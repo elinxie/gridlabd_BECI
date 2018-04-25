@@ -93,10 +93,13 @@
 #include <math.h>
 #include "link.h"
 #include "node.h"
+
+//More stuff to try and separate when time permits
 #include "meter.h"
 #include "regulator.h"
 #include "triplex_meter.h"
 #include "switch_object.h"
+
 
 CLASS* link_object::oclass = NULL;
 CLASS* link_object::pclass = NULL;
@@ -149,6 +152,11 @@ link_object::link_object(MODULE *mod) : powerflow_object(mod)
 			PT_complex, "fault_current_out_A[A]", PADDR(If_out[0]),PT_DESCRIPTION,"fault current flowing out, phase A",
 			PT_complex, "fault_current_out_B[A]", PADDR(If_out[1]),PT_DESCRIPTION,"fault current flowing out, phase B",
 			PT_complex, "fault_current_out_C[A]", PADDR(If_out[2]),PT_DESCRIPTION,"fault current flowing out, phase C",
+
+			PT_complex, "fault_voltage_A[A]", PADDR(Vf_out[0]),PT_DESCRIPTION,"fault voltage, phase A",
+			PT_complex, "fault_voltage_B[A]", PADDR(Vf_out[1]),PT_DESCRIPTION,"fault voltage, phase B",
+			PT_complex, "fault_voltage_C[A]", PADDR(Vf_out[2]),PT_DESCRIPTION,"fault voltage, phase C",
+				
 			PT_set, "flow_direction", PADDR(flow_direction),PT_DESCRIPTION,"flag used for describing direction of the flow of power",
 				PT_KEYWORD, "UNKNOWN", (set)FD_UNKNOWN,
 				PT_KEYWORD, "AF", (set)FD_A_NORMAL,
@@ -164,6 +172,19 @@ link_object::link_object(MODULE *mod) : powerflow_object(mod)
 			PT_double, "continuous_rating[A]", PADDR(link_rating[0]), PT_DESCRIPTION, "Continuous rating for this link object (set individual line segments",
 			PT_double, "emergency_rating[A]", PADDR(link_rating[1]), PT_DESCRIPTION, "Emergency rating for this link object (set individual line segments",
 			PT_double, "inrush_convergence_value[V]", PADDR(inrush_tol_value), PT_DESCRIPTION, "Tolerance, as change in line voltage drop between iterations, for deltamode in-rush completion",
+
+			PT_enumeration, "inrush_integration_method_capacitance",PADDR(inrush_int_method_capacitance),PT_DESCRIPTION,"Selected integration method to use for capacitive elements of the link",
+				PT_KEYWORD,"NONE",(enumeration)IRM_NONE,
+				PT_KEYWORD,"UNDEFINED",(enumeration)IRM_UNDEFINED,
+				PT_KEYWORD,"TRAPEZOIDAL",(enumeration)IRM_TRAPEZOIDAL,
+				PT_KEYWORD,"BACKWARD_EULER",(enumeration)IRM_BACKEULER,
+
+			PT_enumeration, "inrush_integration_method_inductance",PADDR(inrush_int_method_inductance),PT_DESCRIPTION,"Selected integration method to use for inductive elements of the link",
+				PT_KEYWORD,"NONE",(enumeration)IRM_NONE,
+				PT_KEYWORD,"UNDEFINED",(enumeration)IRM_UNDEFINED,
+				PT_KEYWORD,"TRAPEZOIDAL",(enumeration)IRM_TRAPEZOIDAL,
+				PT_KEYWORD,"BACKWARD_EULER",(enumeration)IRM_BACKEULER,
+
 			NULL) < 1 && errno) GL_THROW("unable to publish link properties in %s",__FILE__);
 
 			//Publish deltamode functions
@@ -213,7 +234,7 @@ int link_object::create(void)
 
 	current_in[0] = current_in[1] = current_in[2] = complex(0,0);
 
-	link_limits[0][0] = link_limits[0][1] = link_limits[0][2] = link_limits[1][0] = link_limits[1][2] = link_limits[1][3] = NULL;
+	link_limits[0][0] = link_limits[0][1] = link_limits[0][2] = link_limits[1][0] = link_limits[1][1] = link_limits[1][2] = NULL;
 	
 	link_rating[0][0] = link_rating[0][1] = link_rating[0][2] = 1000;	//Replicates current defaults of line objects
 	link_rating[1][0] = link_rating[1][1] = link_rating[1][2] = 2000;
@@ -245,13 +266,16 @@ int link_object::create(void)
 	deltamode_prev_time = -1.0; 
 	inrush_tol_value = 0.0001;	//0.1 mV - arbitrary
 
-	//****************** DEBUG
 	//Saturation-based items -- probably need to be moved, but putting here since me=lazy
 	D_sat = 0.0;
 	A_phi = complex(0.0,0.0);
 	B_phi = complex(0.0,0.0);
 	hphi = NULL;
 	saturation_calculated_vals = NULL;
+
+	//Set defaults to see if anyone changes the integration methods
+	inrush_int_method_inductance = IRM_UNDEFINED;
+	inrush_int_method_capacitance = IRM_UNDEFINED;
 
 	return result;
 }
@@ -561,6 +585,20 @@ int link_object::init(OBJECT *parent)
 			//See if we're a normal line
 			if (SpecialLnk == NORMAL)
 			{
+				//Figure out if we need our integration method updated - inductance
+				if (inrush_int_method_inductance == IRM_UNDEFINED)
+				{
+					//Pull the main object-level one
+					inrush_int_method_inductance = inrush_integration_method;
+				}
+
+				//Figure out if we need our integration method updated - capacitance
+				if (inrush_int_method_capacitance == IRM_UNDEFINED)
+				{
+					//Pull the main object-level one
+					inrush_int_method_capacitance = inrush_integration_method;
+				}
+
 				//Allocate the terms -- Inductance -- fully allocate, to stay consistent
 				LinkHistTermL = (complex *)gl_malloc(6*sizeof(complex));
 
@@ -999,6 +1037,7 @@ void link_object::NR_link_presync_fxn(void)
 
 					if (use_line_cap == true)	//Only enable if capacitance is on
 					{
+						// Both do this, but backward-Euler probably doesn't need this
 						LinkHistTermCf[3] = LinkHistTermCf[0];	//"from" capacitance
 						LinkHistTermCf[4] = LinkHistTermCf[1];
 						LinkHistTermCf[5] = LinkHistTermCf[2];
@@ -1036,37 +1075,70 @@ void link_object::NR_link_presync_fxn(void)
 
 						if (use_line_cap == true)	//Only do if capacitance is enabled
 						{
-							//Calculate the updated history terms - hrcf = chrc*vfromprev - hrcfprev
-							LinkHistTermCf[0] = NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[0] +
-												NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[1] +
-												NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[2] -
-												LinkHistTermCf[3];
+							//See which method we're using
+							if (inrush_int_method_capacitance == IRM_TRAPEZOIDAL)
+							{
+								//Calculate the updated history terms - hrcf = chrc*vfromprev - hrcfprev
+								LinkHistTermCf[0] = NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[0] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[1] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[2] -
+													LinkHistTermCf[3];
 
-							LinkHistTermCf[1] = NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[3] +
-												NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[4] +
-												NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[5] -
-												LinkHistTermCf[4];
+								LinkHistTermCf[1] = NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[3] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[4] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[5] -
+													LinkHistTermCf[4];
 
-							LinkHistTermCf[2] = NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[6] +
-												NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[7] +
-												NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[8] -
-												LinkHistTermCf[5];
+								LinkHistTermCf[2] = NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[6] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[7] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[8] -
+													LinkHistTermCf[5];
 
-							//Calculate the updated history terms - hrcf = chrc*vfromprev - hrcfprev
-							LinkHistTermCt[0] = NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[0] +
-												NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[1] +
-												NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[2] -
-												LinkHistTermCt[3];
+								//Calculate the updated history terms - hrcf = chrc*vfromprev - hrcfprev
+								LinkHistTermCt[0] = NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[0] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[1] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[2] -
+													LinkHistTermCt[3];
 
-							LinkHistTermCt[1] = NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[3] +
-												NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[4] +
-												NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[5] -
-												LinkHistTermCt[4];
+								LinkHistTermCt[1] = NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[3] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[4] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[5] -
+													LinkHistTermCt[4];
 
-							LinkHistTermCt[2] = NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[6] +
-												NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[7] +
-												NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[8] -
-												LinkHistTermCt[5];
+								LinkHistTermCt[2] = NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[6] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[7] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[8] -
+													LinkHistTermCt[5];
+							}//End trapezoial method
+							else if (inrush_int_method_capacitance == IRM_BACKEULER)
+							{
+								//Calculate the updated history terms - hrcf = chrc*vfromprev
+								LinkHistTermCf[0] = NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[0] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[1] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[2];
+
+								LinkHistTermCf[1] = NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[3] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[4] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[5];
+
+								LinkHistTermCf[2] = NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[6] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[7] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[8];
+
+								//Calculate the updated history terms - hrcf = chrc*vfromprev
+								LinkHistTermCt[0] = NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[0] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[1] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[2];
+
+								LinkHistTermCt[1] = NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[3] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[4] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[5];
+
+								LinkHistTermCt[2] = NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[6] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[7] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[8];
+							}
+							//Default else - not any of these
 						}//End capacitance update
 					}//End "normal" run
 					else	//First run from steady state
@@ -1106,31 +1178,64 @@ void link_object::NR_link_presync_fxn(void)
 						//Update capacitance terms
 						if (use_line_cap == true)	//Only do if capacitance is enabled
 						{
-							//Calculate the updated history terms - hrcf = chrc*vfromprev/2.0
-							LinkHistTermCf[0] = (NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[0] +
-												NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[1] +
-												NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[2]) / complex(2.0,0.0);
+							//See which method we are
+							if (inrush_int_method_capacitance == IRM_TRAPEZOIDAL)
+							{
+								//Calculate the updated history terms - hrcf = chrc*vfromprev/2.0
+								LinkHistTermCf[0] = (NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[0] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[1] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[2]) / complex(2.0,0.0);
 
-							LinkHistTermCf[1] = (NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[3] +
-												NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[4] +
-												NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[5]) / complex(2.0,0.0);
+								LinkHistTermCf[1] = (NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[3] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[4] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[5]) / complex(2.0,0.0);
 
-							LinkHistTermCf[2] = (NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[6] +
-												NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[7] +
-												NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[8]) / complex(2.0,0.0);
+								LinkHistTermCf[2] = (NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[6] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[7] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[8]) / complex(2.0,0.0);
 
-							//Calculate the updated history terms - hrcf = chrc*vfromprev - hrcfprev
-							LinkHistTermCt[0] = (NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[0] +
-												NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[1] +
-												NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[2]) / complex(2.0,0.0);
+								//Calculate the updated history terms - hrcf = chrc*vfromprev - hrcfprev
+								LinkHistTermCt[0] = (NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[0] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[1] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[2]) / complex(2.0,0.0);
 
-							LinkHistTermCt[1] = (NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[3] +
-												NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[4] +
-												NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[5]) / complex(2.0,0.0);
+								LinkHistTermCt[1] = (NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[3] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[4] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[5]) / complex(2.0,0.0);
 
-							LinkHistTermCt[2] = (NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[6] +
-												NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[7] +
-												NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[8]) / complex(2.0,0.0);
+								LinkHistTermCt[2] = (NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[6] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[7] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[8]) / complex(2.0,0.0);
+							}
+							else if (inrush_int_method_capacitance == IRM_BACKEULER)
+							{
+								//Calculate the updated history terms - hrcf = chrc*vfromprev
+								LinkHistTermCf[0] = NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[0] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[1] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[2];
+
+								LinkHistTermCf[1] = NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[3] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[4] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[5];
+
+								LinkHistTermCf[2] = NR_busdata[NR_branchdata[NR_branch_reference].from].V[0] * chrcstore[6] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[1] * chrcstore[7] +
+													NR_busdata[NR_branchdata[NR_branch_reference].from].V[2] * chrcstore[8];
+
+								//Calculate the updated history terms - hrcf = chrc*vfromprev
+								LinkHistTermCt[0] = NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[0] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[1] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[2];
+
+								LinkHistTermCt[1] = NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[3] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[4] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[5];
+
+								LinkHistTermCt[2] = NR_busdata[NR_branchdata[NR_branch_reference].to].V[0] * chrcstore[6] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[1] * chrcstore[7] +
+													NR_busdata[NR_branchdata[NR_branch_reference].to].V[2] * chrcstore[8];
+							}
+							//else - not sure?
 						}//End capacitance update
 					}//End first run of in-rush from steady-state
 
@@ -1235,7 +1340,6 @@ void link_object::NR_link_presync_fxn(void)
 						//Set the transformer flag for "normal"
 						transf_from_stdy_state = false;
 					}
-					/**************************************************************/
 
 					//Update the tracker
 					deltamode_prev_time = curr_delta_time;
@@ -1618,7 +1722,7 @@ void link_object::NR_link_presync_fxn(void)
 				Y[jindex][kindex] = 0.0;
 
 		// compute admittance - invert b matrix - special circumstances given different methods
-		if ((SpecialLnk!=NORMAL) && (SpecialLnk!=SPLITPHASE))
+		if ((SpecialLnk!=NORMAL) && (SpecialLnk!=SPLITPHASE) && (SpecialLnk!=VFD))
 		{
 			;	//Just skip over all of this nonsense
 		}
@@ -1788,7 +1892,7 @@ void link_object::NR_link_presync_fxn(void)
 					*/
 								
 			}
-			else if ((SpecialLnk==SWITCH) || (SpecialLnk==REGULATOR))
+			else if ((SpecialLnk==SWITCH) || (SpecialLnk==REGULATOR) || (SpecialLnk==VFD))
 			{
 				;	//More nothingness (all handled inside switch/regulator itself)
 			}
@@ -1885,11 +1989,23 @@ void link_object::NR_link_presync_fxn(void)
 				{
 					for (kindex=0; kindex<3; kindex++)
 					{
-						//Extract the imaginary part (should be only part) and de-phasor it - Yshunt/(2*pi*f)*2/dt
-						workingvalue = b_mat[jindex][kindex].Im() / (PI * current_frequency * deltatimestep_running);
+						if (inrush_int_method_inductance == IRM_TRAPEZOIDAL)
+						{
+							//Extract the imaginary part (should be only part) and de-phasor it - Yshunt/(2*pi*f)*2/dt
+							workingvalue = b_mat[jindex][kindex].Im() / (PI * current_frequency * deltatimestep_running);
 
-						//Put into the other working matrix (zh)
-						Ylefttemp[jindex][kindex] = b_mat[jindex][kindex] - complex(workingvalue,0.0);
+							//Put into the other working matrix (zh)
+							Ylefttemp[jindex][kindex] = b_mat[jindex][kindex] - complex(workingvalue,0.0);
+						}
+						else if (inrush_int_method_inductance == IRM_BACKEULER)
+						{
+							//Extract the imaginary part (should be only part) and de-phasor it - Yshunt/(2*pi*f)/dt
+							workingvalue = b_mat[jindex][kindex].Im() / (2.0 * PI * current_frequency * deltatimestep_running);
+
+							//Put into the other working matrix (zh)
+							Ylefttemp[jindex][kindex] = complex(-1.0 * workingvalue,0.0);
+						}
+						//Default else -- better not get here
 
 						//Put back into the impedance matrix
 						b_mat[jindex][kindex] += complex(workingvalue,0.0);
@@ -1936,12 +2052,21 @@ void link_object::NR_link_presync_fxn(void)
 				//Form the bhrl term - Y*Zh = bhrl
 				multiply(Y,Ylefttemp,Yfrom);
 
-				//Compute the ahrl term - Y(Zh*Y - I)
-				multiply(Ylefttemp,Y,Yto);	//Zh*Y
-				Yto[0][0]-=1.0;	// -I
-				Yto[1][1]-=1.0;
-				Yto[2][2]-=1.0;
-				multiply(Y,Yto,Ylefttemp);	//Y(Zh*Y-I)
+				if (inrush_int_method_inductance == IRM_TRAPEZOIDAL)
+				{
+					//Compute the ahrl term - Y(Zh*Y - I)
+					multiply(Ylefttemp,Y,Yto);	//Zh*Y
+					Yto[0][0]-=1.0;	// -I
+					Yto[1][1]-=1.0;
+					Yto[2][2]-=1.0;
+					multiply(Y,Yto,Ylefttemp);	//Y(Zh*Y-I)
+				}
+				else if (inrush_int_method_inductance == IRM_BACKEULER)
+				{
+					//Compute the ahrl term - Y*Zh*Y
+					multiply(Ylefttemp,Y,Yto);	//Zh*Y
+					multiply(Y,Yto,Ylefttemp);	//Y(Zh*Y))
+				}
 
 				//Loop and store them - translate due to mallocing to be safe
 				for (jindex=0; jindex<3; jindex++)
@@ -2051,17 +2176,29 @@ void link_object::NR_link_presync_fxn(void)
 						{
 							for (kindex=0; kindex<3; kindex++)
 							{
-								//Extract the imaginary part (should be only part) and de-phasor it - Yshunt/(2*pi*f)*2/dt
-								workingvalue = Ylefttemp[jindex][kindex].Im() / (PI * current_frequency * deltatimestep_running);
+								if (inrush_int_method_capacitance == IRM_TRAPEZOIDAL)
+								{
+									//Extract the imaginary part (should be only part) and de-phasor it - Yshunt/(2*pi*f)*2/dt
+									workingvalue = Ylefttemp[jindex][kindex].Im() / (PI * current_frequency * deltatimestep_running);
+
+									//Create chrcstore while we're in here
+									chrcstore[jindex*3+kindex] = 2.0 * workingvalue;
+								}
+								else if (inrush_int_method_capacitance == IRM_BACKEULER)
+								{
+									//Extract the imaginary part (should be only part) and de-phasor it - Yshunt/(2*pi*f)/dt
+									workingvalue = Ylefttemp[jindex][kindex].Im() / (2.0 * PI * current_frequency * deltatimestep_running);
+
+									//Create chrcstore while we're in here
+									chrcstore[jindex*3+kindex] = workingvalue;
+								}
+								//Default else
 
 								//Put into the "shunt" matrix
 								Ylefttemp[jindex][kindex] += complex(workingvalue,0.0);
 
 								//Copy this value into the final storage matrix too
 								LinkCapShuntTerm[jindex*3+kindex] = Ylefttemp[jindex][kindex];
-
-								//Create chrcstore while we're in here
-								chrcstore[jindex*3+kindex] = 2.0 * workingvalue;
 							}
 						}
 					}
@@ -2178,6 +2315,8 @@ TIMESTAMP link_object::presync(TIMESTAMP t0)
 					*/
 				}
 
+				//For all initial implementations, we're all part of the same big/happy island - island #0!
+				NR_branchdata[NR_branch_reference].island_number = 0;
 
 				//Start with admittance matrix
 				if (SpecialLnk!=NORMAL)	//Transformer, send more - may not need all 4, but put them there anyways
@@ -2554,8 +2693,10 @@ TIMESTAMP link_object::presync(TIMESTAMP t0)
 					*/
 				}
 
-				//Null out the frequency function - links don't do anything with it anyways
-				delta_freq_functions[temp_pwr_object_current] = NULL;
+				//Attempt to map up post-delta
+				post_delta_functions[temp_pwr_object_current] = (FUNCTIONADDR)(gl_get_function(obj,"postupdate_pwr_object"));
+
+				//No null check, since this one just may not work (post update may not exist)
 
 				//See if we're an appropriate transformer and in-rush enabled
 				if ((enable_inrush_calculations == true) && (gl_object_isa(obj,"transformer","powerflow")))
@@ -3456,6 +3597,13 @@ EXPORT int calculate_overlimit_link(OBJECT *obj, double *overload_value, bool *o
 */
 int link_object::CurrentCalculation(int nodecall)
 {
+	//If we're FBS, just get out - assume success - mainly from API-directed-type calls
+	if (solver_method == SM_FBS)
+	{
+		return 1;
+	}
+	//Default else -- NR, which is mostly how this gets called
+
 	if (current_accumulated==false)	//Only update if we haven't done so yet
 	{
 		//Reset the deltamode-oriented flag, just because - will stay by exception
@@ -3519,7 +3667,11 @@ int link_object::CurrentCalculation(int nodecall)
 			else
 				ofnode = NULL;	//Ensure it's blanked
 
-			if ((SpecialLnk == DELTADELTA) || (SpecialLnk == WYEWYE))
+			if (SpecialLnk == VFD)
+			{
+				;	//Do nothing for now - handled elsewhere
+			}
+			else if ((SpecialLnk == DELTADELTA) || (SpecialLnk == WYEWYE))
 			{
 				//See if we're in deltamode and in-rush enabled
 				if ((deltatimestep_running > 0) && (enable_inrush_calculations == true) && (SpecialLnk == WYEWYE))
@@ -4512,6 +4664,15 @@ int link_object::CurrentCalculation(int nodecall)
 		current_accumulated = true;
 	}//End current not accumulated yet
 
+	//Copy in the values to the published values - otherwise, API-type calls may miss them
+	read_I_in[0] = current_in[0];
+	read_I_in[1] = current_in[1];
+	read_I_in[2] = current_in[2];
+
+	read_I_out[0] = current_out[0];
+	read_I_out[1] = current_out[1];
+	read_I_out[2] = current_out[2];
+
 	return 1;	//Assume it's always successful now
 }
 
@@ -4711,6 +4872,10 @@ void link_object::calculate_power()
 				indiv_power_out[0] = (a_mat[0][0].Re() == 0.0) ? 0.0 : t->voltage[0]*~current_out[0];
 				indiv_power_out[1] = (a_mat[1][1].Re() == 0.0) ? 0.0 : t->voltage[1]*~current_out[1];
 				indiv_power_out[2] = (a_mat[2][2].Re() == 0.0) ? 0.0 : t->voltage[2]*~current_out[2];
+			}
+			else if (SpecialLnk == VFD)
+			{
+				;	//Do nothing, handled elsewhere
 			}
 			else
 			{
@@ -7014,7 +7179,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 			if (NR_branchdata[NR_branch_reference].lnk_type == 3)	//Fuse
 			{
 				//Get the fuse
-				tmpobj = gl_get_object(NR_branchdata[NR_branch_reference].name);
+				tmpobj = NR_branchdata[NR_branch_reference].obj;
 
 				if (tmpobj == NULL)
 				{
@@ -7094,7 +7259,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 			else if (NR_branchdata[NR_branch_reference].lnk_type == 6)	//Recloser
 			{
 				//Get the recloser
-				tmpobj = gl_get_object(NR_branchdata[NR_branch_reference].name);
+				tmpobj = NR_branchdata[NR_branch_reference].obj;
 
 				if (tmpobj == NULL)
 				{
@@ -7174,7 +7339,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 				//Follows convention of safety devices above
 				//Extra coding - basically what would have happened below when it was classified as a safety device
 				//Get the switch
-				tmpobj = gl_get_object(NR_branchdata[NR_branch_reference].name);
+				tmpobj = NR_branchdata[NR_branch_reference].obj;
 
 				if (tmpobj == NULL)
 				{
@@ -7272,7 +7437,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 					}
 
 					//Get the swing bus value
-					tmpobj = gl_get_object(NR_busdata[temp_node].name);
+					tmpobj = NR_busdata[temp_node].obj;
 
 					if (tmpobj == NULL)
 					{
@@ -7322,7 +7487,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 							if (NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].lnk_type == 6)	//Recloser
 							{
 								//Get the recloser
-								tmpobj = gl_get_object(NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].name);
+								tmpobj = NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].obj;
 
 								if (tmpobj == NULL)
 								{
@@ -7402,7 +7567,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 							else if (NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].lnk_type == 5)	//Sectionalizer
 							{
 								//Get the sectionalizer
-								tmpobj = gl_get_object(NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].name);
+								tmpobj = NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].obj;
 
 								if (tmpobj == NULL)
 								{
@@ -7491,7 +7656,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 							else if (NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].lnk_type == 3)	//Fuse
 							{
 								//Get the fuse
-								tmpobj = gl_get_object(NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].name);
+								tmpobj = NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].obj;
 
 								if (tmpobj == NULL)
 								{
@@ -7568,7 +7733,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 							else if (NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].lnk_type == 4)	//Transformer - not really "protective" - we assume it explodes
 							{
 								//Get the transformer
-								tmpobj = gl_get_object(NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].name);
+								tmpobj = NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].obj;
 
 								if (tmpobj == NULL)
 								{
@@ -9822,7 +9987,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 			if (NR_branchdata[NR_branch_reference].lnk_type == 3)	//Fuse
 			{
 				//Get the fuse
-				tmpobj = gl_get_object(NR_branchdata[NR_branch_reference].name);
+				tmpobj = NR_branchdata[NR_branch_reference].obj;
 
 				if (tmpobj == NULL)
 				{
@@ -9902,7 +10067,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 			else if (NR_branchdata[NR_branch_reference].lnk_type == 6)	//Recloser
 			{
 				//Get the recloser
-				tmpobj = gl_get_object(NR_branchdata[NR_branch_reference].name);
+				tmpobj = NR_branchdata[NR_branch_reference].obj;
 
 				if (tmpobj == NULL)
 				{
@@ -9982,7 +10147,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 				//Follows convention of safety devices above
 				//Extra coding - basically what would have happened below when it was classified as a safety device
 				//Get the switch
-				tmpobj = gl_get_object(NR_branchdata[NR_branch_reference].name);
+				tmpobj = NR_branchdata[NR_branch_reference].obj;
 
 				if (tmpobj == NULL)
 				{
@@ -10080,7 +10245,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 					}
 
 					//Get the swing bus value
-					tmpobj = gl_get_object(NR_busdata[temp_node].name);
+					tmpobj = NR_busdata[temp_node].obj;
 
 					if (tmpobj == NULL)
 					{
@@ -10130,7 +10295,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 							if (NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].lnk_type == 6)	//Recloser
 							{
 								//Get the recloser
-								tmpobj = gl_get_object(NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].name);
+								tmpobj = NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].obj;
 
 								if (tmpobj == NULL)
 								{
@@ -10210,7 +10375,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 							else if (NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].lnk_type == 5)	//Sectionalizer
 							{
 								//Get the sectionalizer
-								tmpobj = gl_get_object(NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].name);
+								tmpobj = NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].obj;
 
 								if (tmpobj == NULL)
 								{
@@ -10299,7 +10464,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 							else if (NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].lnk_type == 3)	//Fuse
 							{
 								//Get the fuse
-								tmpobj = gl_get_object(NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].name);
+								tmpobj = NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].obj;
 
 								if (tmpobj == NULL)
 								{
@@ -10376,7 +10541,7 @@ int link_object::link_fault_on(OBJECT **protect_obj, char *fault_type, int *impl
 							else if (NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].lnk_type == 4)	//Transformer - not really "protective" - we assume it explodes
 							{
 								//Get the transformer
-								tmpobj = gl_get_object(NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].name);
+								tmpobj = NR_branchdata[NR_busdata[temp_node].Link_Table[temp_table_loc]].obj;
 
 								if (tmpobj == NULL)
 								{
@@ -10888,7 +11053,7 @@ int link_object::link_fault_off(int *implemented_fault, char *imp_fault_name, vo
 						if ((NR_branchdata[protect_locations[phaseidx]].lnk_type == 2) && (switch_val == true))	//Switch
 						{
 							//Get the switch
-							tmpobj = gl_get_object(NR_branchdata[protect_locations[phaseidx]].name);
+							tmpobj = NR_branchdata[protect_locations[phaseidx]].obj;
 
 							if (tmpobj == NULL)
 							{
@@ -11033,7 +11198,7 @@ int link_object::link_fault_off(int *implemented_fault, char *imp_fault_name, vo
 						else if (NR_branchdata[protect_locations[phaseidx]].lnk_type == 6)	//recloser
 						{
 							//Get the recloser
-							tmpobj = gl_get_object(NR_branchdata[protect_locations[phaseidx]].name);
+							tmpobj = NR_branchdata[protect_locations[phaseidx]].obj;
 
 							if (tmpobj == NULL)
 							{
@@ -11163,7 +11328,7 @@ int link_object::link_fault_off(int *implemented_fault, char *imp_fault_name, vo
 						else if (NR_branchdata[protect_locations[phaseidx]].lnk_type == 5)	//Sectionalizer
 						{
 							//Get the sectionalizer
-							tmpobj = gl_get_object(NR_branchdata[protect_locations[phaseidx]].name);
+							tmpobj = NR_branchdata[protect_locations[phaseidx]].obj;
 
 							if (tmpobj == NULL)
 							{
@@ -11293,7 +11458,7 @@ int link_object::link_fault_off(int *implemented_fault, char *imp_fault_name, vo
 						else if (NR_branchdata[protect_locations[phaseidx]].lnk_type == 3)	//fuse
 						{
 							//Get the fuse
-							tmpobj = gl_get_object(NR_branchdata[protect_locations[phaseidx]].name);
+							tmpobj = NR_branchdata[protect_locations[phaseidx]].obj;
 
 							if (tmpobj == NULL)
 							{
@@ -11899,7 +12064,7 @@ int link_object::link_fault_off(int *implemented_fault, char *imp_fault_name, vo
 						if ((NR_branchdata[protect_locations[phaseidx]].lnk_type == 2) && (switch_val == true))	//Switch
 						{
 							//Get the switch
-							tmpobj = gl_get_object(NR_branchdata[protect_locations[phaseidx]].name);
+							tmpobj = NR_branchdata[protect_locations[phaseidx]].obj;
 
 							if (tmpobj == NULL)
 							{
@@ -11964,7 +12129,7 @@ int link_object::link_fault_off(int *implemented_fault, char *imp_fault_name, vo
 						else if (NR_branchdata[protect_locations[phaseidx]].lnk_type == 6)	//recloser
 						{
 							//Get the recloser
-							tmpobj = gl_get_object(NR_branchdata[protect_locations[phaseidx]].name);
+							tmpobj = NR_branchdata[protect_locations[phaseidx]].obj;
 
 							if (tmpobj == NULL)
 							{
@@ -12094,7 +12259,7 @@ int link_object::link_fault_off(int *implemented_fault, char *imp_fault_name, vo
 						else if (NR_branchdata[protect_locations[phaseidx]].lnk_type == 5)	//Sectionalizer
 						{
 							//Get the sectionalizer
-							tmpobj = gl_get_object(NR_branchdata[protect_locations[phaseidx]].name);
+							tmpobj = NR_branchdata[protect_locations[phaseidx]].obj;
 
 							if (tmpobj == NULL)
 							{
@@ -12224,7 +12389,7 @@ int link_object::link_fault_off(int *implemented_fault, char *imp_fault_name, vo
 						else if (NR_branchdata[protect_locations[phaseidx]].lnk_type == 3)	//fuse
 						{
 							//Get the fuse
-							tmpobj = gl_get_object(NR_branchdata[protect_locations[phaseidx]].name);
+							tmpobj = NR_branchdata[protect_locations[phaseidx]].obj;
 
 							if (tmpobj == NULL)
 							{
@@ -12524,14 +12689,17 @@ void link_object::mesh_fault_current_calc(complex Zth[3][3],complex CV[3][3],com
 				//Populate fault current into the output
                                 if (fault_type == 111) {
 					If_out[0] = IVf[0];
+					Vf_out[0] = IVf[1];
 					//Assume lines for now -- input is the same (transformers will be different)
 					If_in[0] = If_out[0];
 				} else if (fault_type == 211) {
 					If_out[1] = IVf[0];
+					Vf_out[1] = IVf[1];
 					//Assume lines for now -- input is the same (transformers will be different)
 					If_in[1] = If_out[1];
 				} else if (fault_type == 311) {
 					If_out[2] = IVf[0];
+					Vf_out[2] = IVf[1];
 					//Assume lines for now -- input is the same (transformers will be different)
 					If_in[2] = If_out[2];
 				}
@@ -12604,7 +12772,8 @@ void link_object::mesh_fault_current_calc(complex Zth[3][3],complex CV[3][3],com
 					{
 						If_out[0] = IVf[0];
 						If_out[1] = IVf[1];
-
+						Vf_out[0] = IVf[2];
+						Vf_out[1] = IVf[3];
 						//Assume lines for now -- input is the same (transformers will be different)
 						If_in[0] = If_out[0];
 						If_in[1] = If_out[1];
@@ -12613,7 +12782,8 @@ void link_object::mesh_fault_current_calc(complex Zth[3][3],complex CV[3][3],com
 					{
 						If_out[1] = IVf[0];
 						If_out[2] = IVf[1];
-
+						Vf_out[1] = IVf[2];
+						Vf_out[2] = IVf[3];
 						//Assume lines for now -- input is the same (transformers will be different)
 						If_in[1] = If_out[1];
 						If_in[2] = If_out[2];
@@ -12622,7 +12792,8 @@ void link_object::mesh_fault_current_calc(complex Zth[3][3],complex CV[3][3],com
 					{
 						If_out[0] = IVf[0];
 						If_out[2] = IVf[1];
-
+						Vf_out[0] = IVf[2];
+						Vf_out[2] = IVf[3];
 						//Assume lines for now -- input is the same (transformers will be different)
 						If_in[0] = If_out[0];
 						If_in[2] = If_out[2];
@@ -12689,7 +12860,9 @@ void link_object::mesh_fault_current_calc(complex Zth[3][3],complex CV[3][3],com
 				If_out[0] = IVf[0];
 				If_out[1] = IVf[1];
 				If_out[2] = IVf[2];
-
+				Vf_out[0] = IVf[3];
+				Vf_out[1] = IVf[4];
+				Vf_out[2] = IVf[5];
 				//Assume lines for now -- input is the same (transformers will be different)
 				If_in[0] = If_out[0];
 				If_in[1] = If_out[1];
@@ -12777,7 +12950,7 @@ void link_object::fault_current_calc(complex C[7][7],unsigned int removed_phase,
 		temp_branch_phases = NR_branchdata[temp_branch_fc].phases & 0x07;
 		if(NR_branchdata[temp_branch_fc].lnk_type == 4){//transformer
 			temp_branch_name = NR_branchdata[temp_branch_fc].name;//get the name of the transformer object
-			temp_transformer = gl_get_object(temp_branch_name);//get the transformer object
+			temp_transformer = NR_branchdata[temp_branch_fc].obj;	//get the transformer object
 			if(gl_object_isa(temp_transformer, "transformer", "powerflow")){ // tranformer
 				temp_trans_config = gl_get_property(temp_transformer,"configuration");//get pointer to the configuration property
 				temp_transformer_configuration = gl_get_object_prop(temp_transformer, temp_trans_config);//get the transformer configuration object
@@ -12928,7 +13101,7 @@ void link_object::fault_current_calc(complex C[7][7],unsigned int removed_phase,
 	temp_branch_phases = removed_phase | NR_branchdata[temp_branch_fc].phases;
 	if(NR_branchdata[temp_branch_fc].lnk_type == 4){//transformer
 		temp_branch_name = NR_branchdata[temp_branch_fc].name;//get the name of the transformer object
-		temp_transformer = gl_get_object(temp_branch_name);//get the transformer object
+		temp_transformer = NR_branchdata[temp_branch_fc].obj;//get the transformer object
 		if(gl_object_isa(temp_transformer, "transformer", "powerflow")){ // tranformer
 			temp_trans_config = gl_get_property(temp_transformer,"configuration");//get pointer to the configuration property
 			temp_transformer_configuration = gl_get_object_prop(temp_transformer, temp_trans_config);//get the transformer configuration object
@@ -13196,7 +13369,7 @@ void link_object::fault_current_calc(complex C[7][7],unsigned int removed_phase,
 	{
 		if(NR_branchdata[temp_branch_fc].lnk_type == 4){//transformer
 			temp_branch_name = NR_branchdata[temp_branch_fc].name;//get the name of the transformer object
-			temp_transformer = gl_get_object(temp_branch_name);//get the transformer object
+			temp_transformer = NR_branchdata[temp_branch_fc].obj;//get the transformer object
 			if(gl_object_isa(temp_transformer, "transformer", "powerflow")){ // tranformer
 				temp_trans_config = gl_get_property(temp_transformer,"configuration");//get pointer to the configuration property
 				temp_transformer_configuration = gl_get_object_prop(temp_transformer, temp_trans_config);//get the transformer configuration object
@@ -13269,7 +13442,7 @@ void link_object::fault_current_calc(complex C[7][7],unsigned int removed_phase,
 	//update the fault current variables in link object connected to the swing bus
 	if(NR_branchdata[temp_branch_fc].lnk_type == 4){//transformer
 		temp_branch_name = NR_branchdata[temp_branch_fc].name;//get the name of the transformer object
-		temp_transformer = gl_get_object(temp_branch_name);//get the transformer object
+		temp_transformer = NR_branchdata[temp_branch_fc].obj;//get the transformer object
 		if(gl_object_isa(temp_transformer, "transformer", "powerflow")){ // tranformer
 			temp_trans_config = gl_get_property(temp_transformer,"configuration");//get pointer to the configuration property
 			temp_transformer_configuration = gl_get_object_prop(temp_transformer, temp_trans_config);//get the transformer configuration object
@@ -13677,4 +13850,3 @@ void lu_matrix_inverse(complex *input_mat, complex *output_mat, int size_val)
 
 
 /**@}*/
-
