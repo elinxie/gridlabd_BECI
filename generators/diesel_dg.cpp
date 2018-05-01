@@ -1999,7 +1999,7 @@ SIMULATIONMODE diesel_dg::inter_deltaupdate(unsigned int64 delta_time, unsigned 
 	// double temp_double;
 	// double deltat, deltath, delta_thresh;
 	double temp_double, temp_mag_val, temp_mag_diff;
-	double deltat, deltath;
+	double deltat, deltath, delta_thresh;
 	double omega_pu;
 	double x5a_now;
 	complex temp_rotation;

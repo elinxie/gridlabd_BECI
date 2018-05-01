@@ -25,6 +25,9 @@ inverter *inverter::defaults = NULL;
 static PASSCONFIG passconfig = PC_BOTTOMUP|PC_POSTTOPDOWN;
 static PASSCONFIG clockpass = PC_BOTTOMUP;
 
+
+
+
 /* Class registration is only called once to register the class with the core */
 inverter::inverter(MODULE *module)
 {	
@@ -2065,7 +2068,11 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 
 	//Assume always want TS_NEVER
 	tret_value = TS_NEVER;
-	gl_verbose("in sync %d", t1);
+	int hhmmss = t1%86400;
+	int hh = hhmmss/3600;
+	int mm = (hhmmss % 3600) / 60;
+	int ss = ((hhmmss % 3600) % 60);
+	gl_verbose("in sync %i, %i, %i", hh, mm, ss );
 
 	if(gen_status_v == OFFLINE){
 		power_A = complex(0);
