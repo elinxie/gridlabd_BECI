@@ -4,7 +4,7 @@
 	<version.major>4</version.major>
 	<version.minor>0</version.minor>
 	<version.patch>0</version.patch>
-	<version.build>17646</version.build>
+	<version.build>17652</version.build>
 	<version.branch>Keeler</version.branch>
 	<command_line>"/usr/local/bin/gridlabd.bin -o IEEE13_pv13.xml -v IEEE13_pv13.glm"</command_line>
 	<environment>batch</environment>
@@ -40,7 +40,7 @@
 	<strictnames>TRUE</strictnames>
 	<website>http://www.gridlabd.org/</website>
 	<urlbase>http://www.gridlabd.org/</urlbase>
-	<randomseed>3932843968</randomseed>
+	<randomseed>2460979954</randomseed>
 	<include>""</include>
 	<trace>""</trace>
 	<gdb_window>FALSE</gdb_window>
@@ -103,7 +103,7 @@
 	<deltamode_timestep>100000000</deltamode_timestep>
 	<deltamode_maximumtime>60000000000</deltamode_maximumtime>
 	<deltaclock>0</deltaclock>
-	<delta_current_clock>+0</delta_current_clock>
+	<delta_current_clock>+9.65268e+08</delta_current_clock>
 	<deltamode_updateorder>powerflow,tape,generators</deltamode_updateorder>
 	<deltamode_iteration_limit>1000</deltamode_iteration_limit>
 	<deltamode_forced_extra_timesteps>0</deltamode_forced_extra_timesteps>
@@ -880,9 +880,9 @@
 				<out_svc>NEVER</out_svc>
 				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m633</name>
-				<measured_real_energy>+9.72788e+06 Wh</measured_real_energy>
+				<measured_real_energy>+9.7295e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+7.19251e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+7.19545e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+405434+299881i VA</measured_power>
@@ -1026,9 +1026,9 @@
 				<out_svc>NEVER</out_svc>
 				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m630</name>
-				<measured_real_energy>+4.04505e+07 Wh</measured_real_energy>
+				<measured_real_energy>+6.73519e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+3.68992e+07 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+4.01523e+07 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+3.59513e+06+1.69721e+06j VA</measured_power>
@@ -1172,9 +1172,9 @@
 				<out_svc>NEVER</out_svc>
 				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m632</name>
-				<measured_real_energy>+3.91034e+07 Wh</measured_real_energy>
+				<measured_real_energy>+6.61447e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+3.25739e+07 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+3.62702e+07 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+3.5354e+06+1.5046e+06i VA</measured_power>
@@ -1318,9 +1318,9 @@
 				<out_svc>NEVER</out_svc>
 				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m650</name>
-				<measured_real_energy>+4.04524e+07 Wh</measured_real_energy>
+				<measured_real_energy>+6.73535e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+3.68992e+07 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+4.01523e+07 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+3.59521e+06+1.69721e+06i VA</measured_power>
@@ -1464,9 +1464,9 @@
 				<out_svc>NEVER</out_svc>
 				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m680</name>
-				<measured_real_energy>-4.67382e+07 Wh</measured_real_energy>
+				<measured_real_energy>-1.87926e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>-6.1452e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>-23663.2 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+0+0i VA</measured_power>
@@ -1610,9 +1610,9 @@
 				<out_svc>NEVER</out_svc>
 				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m684</name>
-				<measured_real_energy>+7.28567e+06 Wh</measured_real_energy>
+				<measured_real_energy>+7.16949e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+1.52649e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+1.3918e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+296505+53743.5i VA</measured_power>
@@ -1902,9 +1902,9 @@
 				<out_svc>NEVER</out_svc>
 				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m645</name>
-				<measured_real_energy>+9.95685e+06 Wh</measured_real_energy>
+				<measured_real_energy>+9.90082e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+6.37566e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+6.34348e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+411499+263717j VA</measured_power>
@@ -2048,9 +2048,9 @@
 				<out_svc>NEVER</out_svc>
 				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m646</name>
-				<measured_real_energy>+5.86366e+06 Wh</measured_real_energy>
+				<measured_real_energy>+5.80776e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+3.36524e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+3.33315e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+240958+138289j VA</measured_power>
@@ -2194,9 +2194,9 @@
 				<out_svc>NEVER</out_svc>
 				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m652</name>
-				<measured_real_energy>+3.14349e+06 Wh</measured_real_energy>
+				<measured_real_energy>+3.03549e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+2.11204e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+2.03947e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+123974+83295.2i VA</measured_power>
@@ -2340,9 +2340,9 @@
 				<out_svc>NEVER</out_svc>
 				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m671</name>
-				<measured_real_energy>+1.50311e+07 Wh</measured_real_energy>
+				<measured_real_energy>+4.24638e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+1.35607e+07 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+1.83698e+07 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+2.54569e+06+745897i VA</measured_power>
@@ -2488,7 +2488,7 @@
 				<name>m675</name>
 				<measured_real_energy>+2.0232e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>-4.05324e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>-3.66935e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+843000-145407i VA</measured_power>
@@ -2632,9 +2632,9 @@
 				<out_svc>NEVER</out_svc>
 				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m692</name>
-				<measured_real_energy>+2.4576e+07 Wh</measured_real_energy>
+				<measured_real_energy>+2.46115e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>-447573 VAh</measured_reactive_energy>
+				<measured_reactive_energy>-231928 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+1.0269e+06-6974.87i VA</measured_power>
@@ -2778,9 +2778,9 @@
 				<out_svc>NEVER</out_svc>
 				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m611</name>
-				<measured_real_energy>+4.11534e+06 Wh</measured_real_energy>
+				<measured_real_energy>+4.10749e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>-596299 VAh</measured_reactive_energy>
+				<measured_reactive_energy>-658661 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+171431-30017.4j VA</measured_power>
@@ -3306,22 +3306,22 @@
 				<status>CLOSED</status>
 				<from>m671</from>
 				<to>m680</to>
-				<power_in>+2.93485e-07-24.2078i VA</power_in>
-				<power_out>-5.14429e-09-7.28971e-09i VA</power_out>
-				<power_out_real>-5.14429e-09 W</power_out_real>
+				<power_in>+2.8561e-07-24.2078i VA</power_in>
+				<power_out>-1.30192e-08-5.1844e-09i VA</power_out>
+				<power_out_real>-1.30192e-08 W</power_out_real>
 				<power_losses>+2.62465-24.2078i VA</power_losses>
 				<power_in_A>-0.881216-8.47422i VA</power_in_A>
 				<power_in_B>+1.31232-8.68227j VA</power_in_B>
 				<power_in_C>-0.431107-7.05135j VA</power_in_C>
-				<power_out_A>+2.3995e-09-1.721e-09i VA</power_out_A>
-				<power_out_B>-4.25003e-09+2.10458e-09j VA</power_out_B>
-				<power_out_C>-3.29376e-09-7.67328e-09j VA</power_out_C>
+				<power_out_A>-5.74968e-09+1.57419e-09i VA</power_out_A>
+				<power_out_B>-7.1436e-09-5.87211e-09j VA</power_out_B>
+				<power_out_C>-1.25916e-10-8.86486e-10j VA</power_out_C>
 				<power_losses_A>+0.881216-8.47422i VA</power_losses_A>
 				<power_losses_B>+1.31232-8.68227j VA</power_losses_B>
 				<power_losses_C>+0.431107-7.05135j VA</power_losses_C>
-				<current_out_A>+1.07141e-12+6.27472e-13j A</current_out_A>
-				<current_out_B>+1.96237e-13+1.86627e-12j A</current_out_B>
-				<current_out_C>-2.31918e-12-2.68352e-12j A</current_out_C>
+				<current_out_A>-2.4684e-12-4.36027e-13j A</current_out_A>
+				<current_out_B>+3.4753e-12+1.14482e-12j A</current_out_B>
+				<current_out_C>-3.15228e-13-2.12769e-13j A</current_out_C>
 				<current_in_A>-4.01835e-05+0.00358225j A</current_in_A>
 				<current_in_B>+0.00262451-0.00227679j A</current_in_B>
 				<current_in_C>-0.00261338-0.00147452j A</current_in_C>
@@ -6007,15 +6007,15 @@
 				<power_in>+3.59521e+06+1.69721e+06i VA</power_in>
 				<power_out>+3.59513e+06+1.69721e+06j VA</power_out>
 				<power_out_real>+3.59513e+06 W</power_out_real>
-				<power_losses>+82.9581+1.74623e-10i VA</power_losses>
+				<power_losses>+82.9581-5.82077e-11i VA</power_losses>
 				<power_in_A>+1.26157e+06+678443i VA</power_in_A>
 				<power_in_B>+977207+373720j VA</power_in_B>
 				<power_in_C>+1.35643e+06+645046j VA</power_in_C>
 				<power_out_A>+1.26154e+06+678443j VA</power_out_A>
 				<power_out_B>+977189+373720j VA</power_out_B>
 				<power_out_C>+1.3564e+06+645046j VA</power_out_C>
-				<power_losses_A>+31.5079+0i VA</power_losses_A>
-				<power_losses_B>+17.2112+1.74623e-10j VA</power_losses_B>
+				<power_losses_A>+31.5079-1.16415e-10i VA</power_losses_A>
+				<power_losses_B>+17.2112+5.82077e-11j VA</power_losses_B>
 				<power_losses_C>+34.239+0j VA</power_losses_C>
 				<current_out_A>+494.366-265.859j A</current_out_A>
 				<current_out_B>-322.085-261.483i A</current_out_B>
@@ -6173,7 +6173,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m633</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:32</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6197,7 +6197,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m633</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:33</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6221,7 +6221,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m630</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:35</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6245,7 +6245,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m630</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:36</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6269,7 +6269,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m632</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:38</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6293,7 +6293,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m632</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:39</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6317,7 +6317,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m650</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:41</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6341,7 +6341,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m650</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:42</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6365,7 +6365,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m680</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:44</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6389,7 +6389,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m680</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:45</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6413,7 +6413,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m684</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:47</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6437,7 +6437,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m684</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:48</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6461,7 +6461,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m634</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:51</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6485,7 +6485,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m634</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:52</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6509,7 +6509,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m645</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:55</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6533,7 +6533,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m645</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:56</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6557,7 +6557,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m646</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:59</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6581,7 +6581,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m646</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:60</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6605,7 +6605,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m652</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:63</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6629,7 +6629,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m652</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:64</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6653,7 +6653,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m671</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:67</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6677,7 +6677,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m671</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:68</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6701,7 +6701,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m675</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:71</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6725,7 +6725,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m675</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:72</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6749,7 +6749,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m692</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:75</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6773,7 +6773,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m692</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:76</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6797,7 +6797,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m611</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:79</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6821,7 +6821,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m611</parent>
-				<clock>2000-08-02 00:00:00 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:80</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -7364,7 +7364,7 @@
 				<charge_off_threshold>+0 W</charge_off_threshold>
 				<discharge_on_threshold>+0 W</discharge_on_threshold>
 				<discharge_off_threshold>+0 W</discharge_off_threshold>
-				<excess_input_power>+0 W</excess_input_power>
+				<excess_input_power>+8.60462e+06 W</excess_input_power>
 				<charge_lockout_time>+0 s</charge_lockout_time>
 				<discharge_lockout_time>+0 s</discharge_lockout_time>
 				<pf_reg_activate>-2</pf_reg_activate>

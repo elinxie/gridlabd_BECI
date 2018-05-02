@@ -4294,10 +4294,13 @@ int64 solver_nr(unsigned int bus_count, BUSDATA *bus, unsigned int branch_count,
 				if (NR_islands_detected > 1)
 				{
 					gl_verbose("Power flow calculation for island %d converges at Iteration %d \n",(island_loop_index+1),(powerflow_values->island_matrix_values[island_loop_index].iteration_count+1));
+					gl_output("Power flow calculation for island %d converges at Iteration %d \n",(island_loop_index+1),(powerflow_values->island_matrix_values[island_loop_index].iteration_count+1));
+
 				}
 				else	//Singular
 				{
 					gl_verbose("Power flow calculation converges at Iteration %d \n",(powerflow_values->island_matrix_values[island_loop_index].iteration_count+1));
+					gl_output("Power flow calculation converges at Iteration %d \n",(powerflow_values->island_matrix_values[island_loop_index].iteration_count+1));
 				}
 
 				//Store the value as the return code

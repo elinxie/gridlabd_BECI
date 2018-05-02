@@ -4,9 +4,9 @@
 	<version.major>4</version.major>
 	<version.minor>0</version.minor>
 	<version.patch>0</version.patch>
-	<version.build>17646</version.build>
+	<version.build>17652</version.build>
 	<version.branch>Keeler</version.branch>
-	<command_line>"/usr/local/bin/gridlabd.bin -o IEEE13_pv10.xml -v IEEE13_pv10.glm"</command_line>
+	<command_line>"/usr/local/bin/gridlabd.bin -o IEEE13_pv4.xml -v IEEE13_pv4.glm"</command_line>
 	<environment>batch</environment>
 	<quiet>FALSE</quiet>
 	<warn>FALSE</warn>
@@ -26,7 +26,7 @@
 	<pauseatexit>FALSE</pauseatexit>
 	<testoutputfile>test.txt</testoutputfile>
 	<xml_encoding>8</xml_encoding>
-	<clock>2000-08-02 19:44:04 HDT</clock>
+	<clock>2000-08-03 00:00:00 HDT</clock>
 	<starttime>2000-08-02 00:00:00 HDT</starttime>
 	<stoptime>2000-08-03 00:00:00 HDT</stoptime>
 	<double_format>%+lg</double_format>
@@ -35,12 +35,12 @@
 	<object_scan>%[^:]:%d</object_scan>
 	<object_tree_balance>FALSE</object_tree_balance>
 	<kmlfile>""</kmlfile>
-	<modelname>IEEE13_pv10.glm</modelname>
+	<modelname>IEEE13_pv4.glm</modelname>
 	<execdir>/usr/local/bin</execdir>
 	<strictnames>TRUE</strictnames>
 	<website>http://www.gridlabd.org/</website>
 	<urlbase>http://www.gridlabd.org/</urlbase>
-	<randomseed>241101960</randomseed>
+	<randomseed>522157092</randomseed>
 	<include>""</include>
 	<trace>""</trace>
 	<gdb_window>FALSE</gdb_window>
@@ -89,8 +89,8 @@
 	<slave_port>6267</slave_port>
 	<slave_id>0</slave_id>
 	<return_code>0</return_code>
-	<exit_code>130</exit_code>
-	<module_compiler_flags></module_compiler_flags>
+	<exit_code>0</exit_code>
+	<module_compiler_flags>NONE</module_compiler_flags>
 	<init_max_defer>64</init_max_defer>
 	<mt_analysis>FALSE</mt_analysis>
 	<inline_block_size>1048576</inline_block_size>
@@ -878,11 +878,11 @@
 				<id>31</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m633</name>
-				<measured_real_energy>+8.00008e+06 Wh</measured_real_energy>
+				<measured_real_energy>+9.7295e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+5.91627e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+7.19546e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+405438+299887i VA</measured_power>
@@ -1003,7 +1003,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -1024,11 +1024,11 @@
 				<id>34</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m630</name>
-				<measured_real_energy>+4.72023e+07 Wh</measured_real_energy>
+				<measured_real_energy>+6.24618e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+3.4885e+07 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+4.22405e+07 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+3.57738e+06+1.72439e+06j VA</measured_power>
@@ -1149,7 +1149,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -1170,11 +1170,11 @@
 				<id>37</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m632</name>
-				<measured_real_energy>+4.62708e+07 Wh</measured_real_energy>
+				<measured_real_energy>+6.12756e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+3.1892e+07 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+3.84253e+07 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+3.51767e+06+1.53166e+06i VA</measured_power>
@@ -1295,7 +1295,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -1316,11 +1316,11 @@
 				<id>40</id>
 				<rank>7</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m650</name>
-				<measured_real_energy>+4.72036e+07 Wh</measured_real_energy>
+				<measured_real_energy>+6.24634e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+3.4885e+07 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+4.22405e+07 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+3.57747e+06+1.72439e+06i VA</measured_power>
@@ -1441,7 +1441,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -1462,7 +1462,7 @@
 				<id>43</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m680</name>
 				<measured_real_energy>-2.3412e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
@@ -1587,7 +1587,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -1608,11 +1608,11 @@
 				<id>46</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m684</name>
-				<measured_real_energy>+5.84382e+06 Wh</measured_real_energy>
+				<measured_real_energy>+7.08312e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+1.34863e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+1.6334e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+290536+66760.6i VA</measured_power>
@@ -1733,7 +1733,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -1754,11 +1754,11 @@
 				<id>49</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m634</name>
-				<measured_real_energy>+7.89378e+06 Wh</measured_real_energy>
+				<measured_real_energy>+9.6e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+5.72299e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+6.96e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+400000+290000j VA</measured_power>
@@ -1879,7 +1879,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -1900,11 +1900,11 @@
 				<id>53</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m645</name>
-				<measured_real_energy>+8.13442e+06 Wh</measured_real_energy>
+				<measured_real_energy>+9.88842e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+5.21219e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+6.33635e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+411201+263546j VA</measured_power>
@@ -2025,7 +2025,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -2046,11 +2046,11 @@
 				<id>57</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m646</name>
-				<measured_real_energy>+4.76884e+06 Wh</measured_real_energy>
+				<measured_real_energy>+5.79539e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+2.7369e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+3.32605e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+240659+138118j VA</measured_power>
@@ -2171,7 +2171,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -2192,11 +2192,11 @@
 				<id>61</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m652</name>
-				<measured_real_energy>+2.52397e+06 Wh</measured_real_energy>
+				<measured_real_energy>+3.05255e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+1.69579e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+2.05093e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+123918+83257.5i VA</measured_power>
@@ -2317,7 +2317,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -2338,11 +2338,11 @@
 				<id>65</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m671</name>
-				<measured_real_energy>+2.68205e+07 Wh</measured_real_energy>
+				<measured_real_energy>+3.76051e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+1.72297e+07 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+2.0528e+07 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+2.5283e+06+773242i VA</measured_power>
@@ -2463,7 +2463,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -2484,11 +2484,11 @@
 				<id>69</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m675</name>
-				<measured_real_energy>+1.66361e+07 Wh</measured_real_energy>
+				<measured_real_energy>+2.0232e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>-3.03089e+06 VAh</measured_reactive_energy>
+				<measured_reactive_energy>-3.64801e+06 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+843000-144674i VA</measured_power>
@@ -2609,7 +2609,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -2630,11 +2630,11 @@
 				<id>73</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m692</name>
-				<measured_real_energy>+2.0081e+07 Wh</measured_real_energy>
+				<measured_real_energy>+2.44127e+07 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>+6359.54 VAh</measured_reactive_energy>
+				<measured_reactive_energy>+37807.7 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+1.01551e+06+7372.59i VA</measured_power>
@@ -2755,7 +2755,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -2776,11 +2776,11 @@
 				<id>77</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>m611</name>
-				<measured_real_energy>+3.29838e+06 Wh</measured_real_energy>
+				<measured_real_energy>+4.00455e+06 Wh</measured_real_energy>
 				<measured_real_energy_delta>+0 Wh</measured_real_energy_delta>
-				<measured_reactive_energy>-355719 VAh</measured_reactive_energy>
+				<measured_reactive_energy>-427928 VAh</measured_reactive_energy>
 				<measured_reactive_energy_delta>+0 VAh</measured_reactive_energy_delta>
 				<measured_energy_delta_timestep>-1 s</measured_energy_delta_timestep>
 				<measured_power>+165552-16928.5j VA</measured_power>
@@ -2901,7 +2901,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -3049,7 +3049,7 @@
 				<id>20</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>line_632-645</name>
 				<configuration>lc603</configuration>
 				<length>+500 ft</length>
@@ -3099,7 +3099,7 @@
 				<id>21</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>line_645-646</name>
 				<configuration>lc603</configuration>
 				<length>+300 ft</length>
@@ -3149,7 +3149,7 @@
 				<id>22</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>line_630-632</name>
 				<configuration>lc601</configuration>
 				<length>+2000 ft</length>
@@ -3199,7 +3199,7 @@
 				<id>23</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>line_632-6321</name>
 				<configuration>lc601</configuration>
 				<length>+500 ft</length>
@@ -3249,7 +3249,7 @@
 				<id>24</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>line_6321-671</name>
 				<configuration>lc601</configuration>
 				<length>+1500 ft</length>
@@ -3299,29 +3299,29 @@
 				<id>25</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>line_671-680</name>
 				<configuration>lc601</configuration>
 				<length>+1000 ft</length>
 				<status>CLOSED</status>
 				<from>m671</from>
 				<to>m680</to>
-				<power_in>+3.05007e-07-24.1822i VA</power_in>
-				<power_out>+6.64259e-09+3.47823e-09i VA</power_out>
-				<power_out_real>+6.64259e-09 W</power_out_real>
+				<power_in>+3.06134e-07-24.1822i VA</power_in>
+				<power_out>+7.76987e-09+1.6829e-08i VA</power_out>
+				<power_out_real>+7.76987e-09 W</power_out_real>
 				<power_losses>+2.62795-24.1822i VA</power_losses>
 				<power_in_A>-0.886454-8.47167i VA</power_in_A>
 				<power_in_B>+1.31398-8.68984j VA</power_in_B>
 				<power_in_C>-0.427521-7.02068j VA</power_in_C>
-				<power_out_A>+5.73214e-09+5.03621e-09i VA</power_out_A>
-				<power_out_B>-1.84446e-09-1.41394e-10j VA</power_out_B>
-				<power_out_C>+2.7549e-09-1.41659e-09j VA</power_out_C>
+				<power_out_A>+6.90458e-09+1.03802e-08i VA</power_out_A>
+				<power_out_B>+2.77079e-09+9.79124e-09j VA</power_out_B>
+				<power_out_C>-1.90549e-09-3.34248e-09j VA</power_out_C>
 				<power_losses_A>+0.886454-8.47167i VA</power_losses_A>
 				<power_losses_B>+1.31398-8.68984j VA</power_losses_B>
 				<power_losses_C>+0.427521-7.02068j VA</power_losses_C>
-				<current_out_A>+2.20491e-12-2.3316e-12j A</current_out_A>
-				<current_out_B>+4.37415e-13+5.863e-13j A</current_out_B>
-				<current_out_C>-1.05672e-12+7.89382e-13j A</current_out_C>
+				<current_out_A>+2.48839e-12-4.61506e-12j A</current_out_A>
+				<current_out_B>-3.85726e-12+1.14556e-12j A</current_out_B>
+				<current_out_C>-9.2285e-13-1.35355e-12j A</current_out_C>
 				<current_in_A>-4.22709e-05+0.00358213j A</current_in_A>
 				<current_in_B>+0.00262521-0.00227723j A</current_in_B>
 				<current_in_C>-0.0026063-0.00147529j A</current_in_C>
@@ -3349,7 +3349,7 @@
 				<id>26</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>line_671-684</name>
 				<configuration>lc604</configuration>
 				<length>+300 ft</length>
@@ -3399,7 +3399,7 @@
 				<id>27</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>line_684-611</name>
 				<configuration>lc605</configuration>
 				<length>+300 ft</length>
@@ -3449,7 +3449,7 @@
 				<id>30</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>line_632-633</name>
 				<configuration>lc602</configuration>
 				<length>+500 ft</length>
@@ -3502,7 +3502,7 @@
 				<id>28</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>line_684-652</name>
 				<configuration>lc607</configuration>
 				<length>+800 ft</length>
@@ -3552,7 +3552,7 @@
 				<id>29</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>line_692-675</name>
 				<configuration>lc606</configuration>
 				<length>+500 ft</length>
@@ -3980,7 +3980,7 @@
 				<id>85</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>transformer_633-634</name>
 				<configuration>tc400</configuration>
 				<ambient_temperature>+0 degC</ambient_temperature>
@@ -4047,7 +4047,7 @@
 				<rank>4</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m634</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>l634</name>
 				<load_class>U</load_class>
 				<constant_power_A>+160000+110000j VA</constant_power_A>
@@ -4215,7 +4215,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -4238,7 +4238,7 @@
 				<rank>4</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m645</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>l645</name>
 				<load_class>U</load_class>
 				<constant_power_A>+0+0j VA</constant_power_A>
@@ -4406,7 +4406,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -4429,7 +4429,7 @@
 				<rank>4</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m646</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>l646</name>
 				<load_class>U</load_class>
 				<constant_power_A>+0+0j VA</constant_power_A>
@@ -4597,7 +4597,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -4620,7 +4620,7 @@
 				<rank>4</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m652</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>l652</name>
 				<load_class>U</load_class>
 				<constant_power_A>+0+0j VA</constant_power_A>
@@ -4788,7 +4788,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -4811,7 +4811,7 @@
 				<rank>4</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m671</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>l671</name>
 				<load_class>U</load_class>
 				<constant_power_A>+385000+220000j VA</constant_power_A>
@@ -4979,7 +4979,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -5002,7 +5002,7 @@
 				<rank>4</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m675</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>l675</name>
 				<load_class>U</load_class>
 				<constant_power_A>+485000+190000j VA</constant_power_A>
@@ -5170,7 +5170,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -5193,7 +5193,7 @@
 				<rank>4</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m692</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>l692</name>
 				<load_class>U</load_class>
 				<constant_power_A>+0+0j VA</constant_power_A>
@@ -5361,7 +5361,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -5384,7 +5384,7 @@
 				<rank>4</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m611</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>l611</name>
 				<load_class>U</load_class>
 				<constant_power_A>+0+0j VA</constant_power_A>
@@ -5552,7 +5552,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -5575,7 +5575,7 @@
 				<rank>4</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m671</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>l6711</name>
 				<load_class>U</load_class>
 				<constant_power_A>+5666.67+3333.33j VA</constant_power_A>
@@ -5743,7 +5743,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -5765,7 +5765,7 @@
 				<id>82</id>
 				<rank>5</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>l6321</name>
 				<load_class>U</load_class>
 				<constant_power_A>+11333.3+6666.67j VA</constant_power_A>
@@ -5933,7 +5933,7 @@
 				<service_status>IN_SERVICE</service_status>
 				<service_status_double>-1</service_status_double>
 				<previous_uptime>-1 min</previous_uptime>
-				<current_uptime>+1184.07 min</current_uptime>
+				<current_uptime>+1440 min</current_uptime>
 				<Norton_dynamic>FALSE</Norton_dynamic>
 				<generator_dynamic>FALSE</generator_dynamic>
 				<GFA_enable>FALSE</GFA_enable>
@@ -5991,7 +5991,7 @@
 				<id>87</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>fregm650m630</name>
 				<configuration>regconfig6506321</configuration>
 				<tap_A>10</tap_A>
@@ -6007,15 +6007,15 @@
 				<power_in>+3.57747e+06+1.72439e+06i VA</power_in>
 				<power_out>+3.57738e+06+1.72439e+06j VA</power_out>
 				<power_out_real>+3.57738e+06 W</power_out_real>
-				<power_losses>+82.8012-1.16415e-10i VA</power_losses>
+				<power_losses>+82.8012+5.82077e-11i VA</power_losses>
 				<power_in_A>+1.25167e+06+681556i VA</power_in_A>
 				<power_in_B>+977311+373360j VA</power_in_B>
 				<power_in_C>+1.34849e+06+669477j VA</power_in_C>
 				<power_out_A>+1.25164e+06+681556j VA</power_out_A>
 				<power_out_B>+977294+373360j VA</power_out_B>
 				<power_out_C>+1.34845e+06+669477j VA</power_out_C>
-				<power_losses_A>+31.191-1.16415e-10i VA</power_losses_A>
-				<power_losses_B>+17.2102+0j VA</power_losses_B>
+				<power_losses_A>+31.191+0i VA</power_losses_A>
+				<power_losses_B>+17.2102+5.82077e-11j VA</power_losses_B>
 				<power_losses_C>+34.4001+0j VA</power_losses_C>
 				<current_out_A>+490.488-267.079j A</current_out_A>
 				<current_out_B>-321.982-261.591i A</current_out_B>
@@ -6063,7 +6063,7 @@
 				<id>83</id>
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>switch_671-692</name>
 				<phase_A_state>CLOSED</phase_A_state>
 				<phase_B_state>CLOSED</phase_B_state>
@@ -6173,7 +6173,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m633</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:32</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6197,7 +6197,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m633</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:33</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6221,7 +6221,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m630</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:35</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6245,7 +6245,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m630</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:36</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6269,7 +6269,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m632</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:38</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6293,7 +6293,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m632</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:39</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6317,7 +6317,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m650</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:41</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6341,7 +6341,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m650</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:42</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6365,7 +6365,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m680</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:44</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6389,7 +6389,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m680</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:45</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6413,7 +6413,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m684</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:47</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6437,7 +6437,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m684</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:48</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6461,7 +6461,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m634</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:51</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6485,7 +6485,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m634</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:52</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6509,7 +6509,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m645</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:55</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6533,7 +6533,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m645</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:56</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6557,7 +6557,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m646</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:59</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6581,7 +6581,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m646</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:60</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6605,7 +6605,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m652</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:63</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6629,7 +6629,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m652</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:64</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6653,7 +6653,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m671</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:67</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6677,7 +6677,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m671</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:68</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6701,7 +6701,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m675</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:71</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6725,7 +6725,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m675</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:72</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6749,7 +6749,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m692</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:75</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6773,7 +6773,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m692</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:76</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6797,7 +6797,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m611</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:79</name>
 				<property>voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag</property>
 				<trigger>""</trigger>
@@ -6821,7 +6821,7 @@
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m611</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>recorder:80</name>
 				<property>measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag</property>
 				<trigger>""</trigger>
@@ -6852,7 +6852,7 @@
 				<id>90</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:90</name>
 				<file>time_results/powerA_pv4.csv</file>
 				<group>class=meter</group>
@@ -6869,7 +6869,7 @@
 				<id>91</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:91</name>
 				<file>time_results/powerB_pv4.csv</file>
 				<group>class=meter</group>
@@ -6886,7 +6886,7 @@
 				<id>92</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:92</name>
 				<file>time_results/powerC_pv4.csv</file>
 				<group>class=meter</group>
@@ -6903,7 +6903,7 @@
 				<id>93</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:93</name>
 				<file>time_results/voltageA_pv4.csv</file>
 				<group>class=meter</group>
@@ -6920,7 +6920,7 @@
 				<id>94</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:94</name>
 				<file>time_results/voltageB_pv4.csv</file>
 				<group>class=meter</group>
@@ -6937,7 +6937,7 @@
 				<id>95</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:95</name>
 				<file>time_results/voltageC_pv4.csv</file>
 				<group>class=meter</group>
@@ -6954,7 +6954,7 @@
 				<id>96</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:96</name>
 				<file>time_results/measured_current_A_pv4.csv</file>
 				<group>class=meter</group>
@@ -6971,7 +6971,7 @@
 				<id>97</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:97</name>
 				<file>time_results/measured_current_B_pv4.csv</file>
 				<group>class=meter</group>
@@ -6988,7 +6988,7 @@
 				<id>98</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:98</name>
 				<file>time_results/measured_current_C_pv4.csv</file>
 				<group>class=meter</group>
@@ -7005,7 +7005,7 @@
 				<id>99</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:99</name>
 				<file>time_results/inverter_pv4.csv</file>
 				<group>class=inverter</group>
@@ -7022,7 +7022,7 @@
 				<id>100</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:100</name>
 				<file>time_results/overhead_line_losses_pv4.csv</file>
 				<group>class=overhead_line</group>
@@ -7039,7 +7039,7 @@
 				<id>101</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:101</name>
 				<file>time_results/underground_line_losses_pv4.csv</file>
 				<group>class=underground_line</group>
@@ -7056,7 +7056,7 @@
 				<id>102</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:102</name>
 				<file>time_results/load_powerA_pv4.csv</file>
 				<group>class=load</group>
@@ -7073,7 +7073,7 @@
 				<id>103</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:103</name>
 				<file>time_results/load_powerB_pv4.csv</file>
 				<group>class=load</group>
@@ -7090,7 +7090,7 @@
 				<id>104</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:104</name>
 				<file>time_results/load_powerC_pv4.csv</file>
 				<group>class=load</group>
@@ -7107,7 +7107,7 @@
 				<id>105</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:105</name>
 				<file>time_results/regulator_power_loss_pv4.csv</file>
 				<group>class=regulator</group>
@@ -7124,7 +7124,7 @@
 				<id>106</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:106</name>
 				<file>time_results/transformer_power_loss_pv4.csv</file>
 				<group>class=transformer</group>
@@ -7141,7 +7141,7 @@
 				<id>107</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:107</name>
 				<file>time_results/switch_power_loss_pv4.csv</file>
 				<group>class=switch</group>
@@ -7158,7 +7158,7 @@
 				<id>108</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:108</name>
 				<file>time_results/inverter_power_A_pv4.csv</file>
 				<group>class=inverter</group>
@@ -7175,7 +7175,7 @@
 				<id>109</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:109</name>
 				<file>time_results/inverter_power_B_pv4.csv</file>
 				<group>class=inverter</group>
@@ -7192,7 +7192,7 @@
 				<id>110</id>
 				<rank>0</rank>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>group_recorder:110</name>
 				<file>time_results/inverter_power_C_pv4.csv</file>
 				<group>class=inverter</group>
@@ -7230,7 +7230,7 @@
 				<rank>2</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>m680</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>inverter:88</name>
 				<inverter_type>PWM</inverter_type>
 				<four_quadrant_control_mode>CONSTANT_PF</four_quadrant_control_mode>
@@ -7238,7 +7238,7 @@
 				<generator_status>ONLINE</generator_status>
 				<generator_mode>CONSTANT_PF</generator_mode>
 				<inverter_convergence_criterion>+0.001</inverter_convergence_criterion>
-				<V_In>+27.1096+0d V</V_In>
+				<V_In>+27.1181+0d V</V_In>
 				<I_In>+0+0j A</I_In>
 				<VA_In>+0+0j VA</VA_In>
 				<VA_Out>+0+0j VA</VA_Out>
@@ -7410,7 +7410,7 @@
 				<rank>1</rank>
 				<out_svc>NEVER</out_svc>
 				<parent>inverter:88</parent>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>solar:89</name>
 				<generator_mode>SUPPLY_DRIVEN</generator_mode>
 				<generator_status>ONLINE</generator_status>
@@ -7424,10 +7424,10 @@
 				<dT_coeff>+0 m*m*degC/kW</dT_coeff>
 				<T_coeff>-0.5 %/degC</T_coeff>
 				<NOCT>+118.4 degF</NOCT>
-				<Tmodule>+73.942 degF</Tmodule>
-				<Tambient>+23.3011 degC</Tambient>
-				<wind_speed>+9.17144 mph</wind_speed>
-				<ambient_temperature>+73.942 degF</ambient_temperature>
+				<Tmodule>+71.242 degF</Tmodule>
+				<Tambient>+21.8011 degC</Tambient>
+				<wind_speed>+7.60558 mph</wind_speed>
+				<ambient_temperature>+71.242 degF</ambient_temperature>
 				<Insolation>+0 W/sf</Insolation>
 				<Rinternal>+0.05 Ohm</Rinternal>
 				<Rated_Insolation>+92.902 W/sf</Rated_Insolation>
@@ -7435,7 +7435,7 @@
 				<Voc_temp_coeff>-0.000116272</Voc_temp_coeff>
 				<V_Max>+27.1+0d V</V_Max>
 				<Voc_Max>+34+0d V</Voc_Max>
-				<Voc>+34.0121+0d V</Voc>
+				<Voc>+34.0228+0d V</Voc>
 				<efficiency>+0.2 unit</efficiency>
 				<area>+612500 sf</area>
 				<soiling>+0.95 pu</soiling>
@@ -7444,7 +7444,7 @@
 				<Rated_kVA>+11380.5 kVA</Rated_kVA>
 				<rated_power>+1.13805e+07 W</rated_power>
 				<P_Out>+0+0j kW</P_Out>
-				<V_Out>+27.1096+0d V</V_Out>
+				<V_Out>+27.1181+0d V</V_Out>
 				<I_Out>+0+0j A</I_Out>
 				<VA_Out>+0+0j VA</VA_Out>
 				<weather>climate:0</weather>
@@ -7472,15 +7472,15 @@
 				<latitude>19N42:60.00</latitude>
 				<longitude>155W3:60.00</longitude>
 				<out_svc>NEVER</out_svc>
-				<clock>2000-08-02 19:44:04 HDT</clock>
+				<clock>2000-08-03 00:00:00 HDT</clock>
 				<name>climate:0</name>
-				<solar_elevation>-0.256789</solar_elevation>
+				<solar_elevation>-0.907445</solar_elevation>
 				<solar_azimuth>+0</solar_azimuth>
-				<solar_zenith>+1.82759</solar_zenith>
+				<solar_zenith>+2.47824</solar_zenith>
 				<city>""</city>
 				<tmyfile>hilo.tmy2</tmyfile>
-				<temperature>+73.942 degF</temperature>
-				<humidity>+0.84 pu</humidity>
+				<temperature>+71.242 degF</temperature>
+				<humidity>+0.86 pu</humidity>
 				<solar_flux>+0 W/sf</solar_flux>
 				<solar_direct>+0 W/sf</solar_direct>
 				<solar_diffuse>+0 W/sf</solar_diffuse>
@@ -7488,15 +7488,15 @@
 				<extraterrestrial_global_horizontal>+0 W/sf</extraterrestrial_global_horizontal>
 				<extraterrestrial_direct_normal>+0 W/sf</extraterrestrial_direct_normal>
 				<pressure>+1018 mbar</pressure>
-				<wind_speed>+9.17144 m/s</wind_speed>
-				<wind_dir>+120 deg</wind_dir>
+				<wind_speed>+7.60558 m/s</wind_speed>
+				<wind_dir>+230 deg</wind_dir>
 				<wind_gust>+0 mph</wind_gust>
 				<record.low>+57.922 degF</record.low>
 				<record.low_day>0</record.low_day>
 				<record.high>+87.982 degF</record.high>
 				<record.high_day>0</record.high_day>
 				<record.solar>+96.1791 W/sf</record.solar>
-				<rainfall>+1.45669 in/h</rainfall>
+				<rainfall>+1.37795 in/h</rainfall>
 				<snowdepth>+0 in</snowdepth>
 				<interpolate>NONE</interpolate>
 				<solar_horiz>+0</solar_horiz>
@@ -7513,7 +7513,7 @@
 				<forecast>""</forecast>
 				<cloud_model>NONE</cloud_model>
 				<cloud_opacity>+1 pu</cloud_opacity>
-				<opq_sky_cov>+1 pu</opq_sky_cov>
+				<opq_sky_cov>+0.7 pu</opq_sky_cov>
 				<cloud_speed_factor>+1 pu</cloud_speed_factor>
 				<solar_cloud_direct>+0 W/sf</solar_cloud_direct>
 				<solar_cloud_diffuse>+0 W/sf</solar_cloud_diffuse>
@@ -7521,7 +7521,7 @@
 				<cloud_alpha>+400 pu</cloud_alpha>
 				<cloud_num_layers>+40 pu</cloud_num_layers>
 				<cloud_aerosol_transmissivity>+0.95 pu</cloud_aerosol_transmissivity>
-				<update_time>+9.65278e+08</update_time>
+				<update_time>+9.65293e+08</update_time>
 			</climate>
 		</climate_list>
 		<weather_list>

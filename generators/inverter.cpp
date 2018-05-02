@@ -582,7 +582,7 @@ int inverter::init(OBJECT *parent)
 	if(parent != NULL){
 		if((parent->flags & OF_INIT) != OF_INIT){
 			char objname[256];
-			gl_verbose("inverter::init(): deferring initialization on %s", gl_name(parent, objname, 255));
+			gl_output("inverter::init(): deferring initialization on %s", gl_name(parent, objname, 255));
 			return 2; // defer
 		}
 	}
@@ -1744,7 +1744,12 @@ TIMESTAMP inverter::presync(TIMESTAMP t0, TIMESTAMP t1)
 {
 	TIMESTAMP t2 = TS_NEVER;
 	OBJECT *obj = OBJECTHDR(this);
-	gl_verbose("in presync %d", t1);
+
+	int hhmmss = t1%86400;
+	int hh = hhmmss/3600;
+	int mm = (hhmmss % 3600) / 60;
+	int ss = ((hhmmss % 3600) % 60);
+	gl_output("in presync %i, %i, %i", hh, mm, ss );
 	if(inverter_type_v != FOUR_QUADRANT){
 		phaseA_I_Out = phaseB_I_Out = phaseC_I_Out = 0.0;
 	} else {
@@ -2072,7 +2077,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 	int hh = hhmmss/3600;
 	int mm = (hhmmss % 3600) / 60;
 	int ss = ((hhmmss % 3600) % 60);
-	gl_verbose("in sync %i, %i, %i", hh, mm, ss );
+	gl_output("in sync %i, %i, %i", hh, mm, ss );
 
 	if(gen_status_v == OFFLINE){
 		power_A = complex(0);
@@ -2104,7 +2109,12 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 
 	if (first_sync_delta_enabled == true)	//Deltamode first pass
 	{
-		gl_verbose("in first pass %d", t1);
+		tret_value = TS_NEVER;
+		int hhmmss = t1%86400;
+		int hh = hhmmss/3600;
+		int mm = (hhmmss % 3600) / 60;
+		int ss = ((hhmmss % 3600) % 60);
+		gl_output("in first pass %i, %i, %i", hh, mm, ss );
 		//TODO: LOCKING!
 		if ((deltamode_inclusive == true) && (enable_subsecond_models == true))	//We want deltamode - see if it's populated yet
 		{
@@ -2342,10 +2352,16 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 	}//End first delta timestep
 	//default else - either not deltamode, or not the first timestep
 	
+	gl_output("voltage value %d", pCircuit_V[0]);
 	//Perform 1547 checks, if appropriate
 	if (enable_1547_compliance == true)
 	{
-		gl_verbose("check 1547 %d", t1);
+		tret_value = TS_NEVER;
+		int hhmmss = t1%86400;
+		int hh = hhmmss/3600;
+		int mm = (hhmmss % 3600) / 60;
+		int ss = ((hhmmss % 3600) % 60);
+		gl_output("check 1547 %i, %i, %i", hh, mm, ss );
 		//Extract the current timestamp, as a double
 		curr_ts_dbl = (double)gl_globalclock;
 
@@ -2360,8 +2376,8 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 
 			//Do the checks
 			ieee_1547_return_value = perform_1547_checks(diff_dbl);
-			gl_verbose("1547 value %d", ieee_1547_return_value);
-			gl_verbose("voltage value %f", pCircuit_V[0]);
+			gl_output("voltage value at check %f", pCircuit_V[0]);
+			gl_output("1547 value %d", ieee_1547_return_value);
 
 			//Check it
 			if (ieee_1547_return_value > 0.0)
@@ -2369,7 +2385,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 				//See which mode we're in
 				if (deltamode_inclusive == true)
 				{
-					gl_verbose("let's turn on delta?");
+					gl_output("let's turn on delta?");
 					new_ret_value = t1 + (TIMESTAMP)(floor(ieee_1547_return_value));
 
 					//Regardless of the return, schedule us for a delta transition - if it clears by then, we should
@@ -2378,7 +2394,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 				}
 				else	//Steady state
 				{
-					gl_verbose("don't do delta");
+					gl_output("don't do delta");
 					new_ret_value = t1 + (TIMESTAMP)(ceil(ieee_1547_return_value));
 				}
 
@@ -2395,7 +2411,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 	//Default else - 1547 checks are not enabled
 	if ((*pMeterStatus==1) && (inverter_1547_status == true))	//Make sure the meter is in service
 	{
-		gl_verbose("check voltage and modify current %f", pCircuit_V[0]);
+		gl_output("check voltage and modify current %f", pCircuit_V[0]);
 		phaseA_V_Out = pCircuit_V[0];	//Syncs the meter parent to the generator.
 		phaseB_V_Out = pCircuit_V[1];
 		phaseC_V_Out = pCircuit_V[2];
@@ -2591,7 +2607,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 					/* TROUBLESHOOT
 					This will be worked on at a later date and is not yet correctly implemented.
 					*/
-					gl_verbose("inverter sync: constant pq");
+					gl_output("inverter sync: constant pq");
 					//TODO
 					//gather V_Out for each phase
 					//gather V_In (DC) from line -- can not gather V_In, for now set equal to V_Out
@@ -2682,8 +2698,8 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 					V_In = filter_voltage_impact_source(I_In, V_In);
 					I_In = filter_current_impact_source(I_In, V_In);
 
-					gl_verbose("Inverter sync: V_In asked for by inverter is: (%f , %f)", V_In.Re(), V_In.Im());
-					gl_verbose("Inverter sync: I_In asked for by inverter is: (%f , %f)", I_In.Re(), I_In.Im());
+					gl_output("Inverter sync: V_In asked for by inverter is: (%f , %f)", V_In.Re(), V_In.Im());
+					gl_output("Inverter sync: I_In asked for by inverter is: (%f , %f)", I_In.Re(), I_In.Im());
 
 
 					pLine_I[0] += phaseA_I_Out;
@@ -2702,7 +2718,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 					/* TROUBLESHOOT
 					This will be worked on at a later date and is not yet correctly implemented.
 					*/
-					gl_verbose("inverter sync: constant v");
+					gl_output("inverter sync: constant v");
 					bool changed = false;
 					
 					//TODO
@@ -2833,7 +2849,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 					I_In = VA_In / V_In;
 					I_In  = ~I_In;
 					
-					gl_verbose("Inverter sync: I_In asked for by inverter is: (%f , %f)", I_In.Re(), I_In.Im());
+					gl_output("Inverter sync: I_In asked for by inverter is: (%f , %f)", I_In.Re(), I_In.Im());
 
 					V_In = filter_voltage_impact_source(I_In, V_In);
 					I_In = filter_current_impact_source(I_In, V_In);
@@ -3771,7 +3787,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 		{
 			if (inverter_type_v != FOUR_QUADRANT)
 			{
-				gl_verbose("what are we doing not updating current%d", t1);
+				gl_output("what are we doing not updating current%d", t1);
 				//Will only get here on true NR_cycle, if meter is in service
 				if ((phases & 0x10) == 0x10)
 				{
@@ -3801,7 +3817,7 @@ TIMESTAMP inverter::sync(TIMESTAMP t0, TIMESTAMP t1)
 		}
 		else
 		{
-			gl_verbose("doing nothing %d", t1);
+			gl_output("doing nothing %d", t1);
 			//No contributions, but zero the last_current, just to be safe
 			last_current[0] = 0.0;
 			last_current[1] = 0.0;
@@ -3838,7 +3854,11 @@ TIMESTAMP inverter::postsync(TIMESTAMP t0, TIMESTAMP t1)
 	double new_pf_reg_distpatch_VAR, curr_real_power_val, curr_reactive_power_val, curr_pf, available_VA, new_Q_out, Q_out, Q_required, Q_available, Q_load;
 	double scaling_factor, Q_target;
 
-	gl_verbose("in postsync %d", t1);
+	int hhmmss = t1%86400;
+	int hh = hhmmss/3600;
+	int mm = (hhmmss % 3600) / 60;
+	int ss = ((hhmmss % 3600) % 60);
+	gl_output("in postsync %i, %i, %i", hh, mm, ss );
 
 	complex temp_current_val[3];
 	complex power_val[3];
@@ -3901,7 +3921,7 @@ TIMESTAMP inverter::postsync(TIMESTAMP t0, TIMESTAMP t1)
 			}//End Battery has room
 			else	//Battery full, no charging allowed
 			{
-				gl_verbose("inverter:%s - charge desired, but battery full!",obj->name);
+				gl_output("inverter:%s - charge desired, but battery full!",obj->name);
 				/*  TROUBLESHOOT
 				An inverter in LOAD_FOLLOWING mode currently wants to charge the battery more, but the battery
 				is full.  Consider using a larger battery and trying again.
@@ -3930,7 +3950,7 @@ TIMESTAMP inverter::postsync(TIMESTAMP t0, TIMESTAMP t1)
 				}//End Battery has room
 				else	//Battery full, no charging allowed
 				{
-					gl_verbose("inverter:%s - charge desired, but battery full!",obj->name);
+					gl_output("inverter:%s - charge desired, but battery full!",obj->name);
 					//Defined above
 
 					new_lf_status = IDLE;			//Can't do anything, so we're idle
@@ -3957,7 +3977,7 @@ TIMESTAMP inverter::postsync(TIMESTAMP t0, TIMESTAMP t1)
 				}
 				else	//At or below reserve, go to idle
 				{
-					gl_verbose("inverter:%s - discharge desired, but not enough battery capacity!",obj->name);
+					gl_output("inverter:%s - discharge desired, but not enough battery capacity!",obj->name);
 					/*  TROUBLESHOOT
 					An inverter in LOAD_FOLLOWING mode currently wants to discharge the battery more, but the battery
 					is at or below the SOC reserve margin.  Consider using a larger battery and trying again.
@@ -4013,7 +4033,7 @@ TIMESTAMP inverter::postsync(TIMESTAMP t0, TIMESTAMP t1)
 			}
 			else	//At or below reserve, go to idle
 			{
-				gl_verbose("inverter:%s - discharge desired, but not enough battery capacity!",obj->name);
+				gl_output("inverter:%s - discharge desired, but not enough battery capacity!",obj->name);
 				//Defined above
 
 				new_lf_status = IDLE;			//Can't do anything, so we're idle
@@ -4144,7 +4164,7 @@ TIMESTAMP inverter::postsync(TIMESTAMP t0, TIMESTAMP t1)
 			}//End Battery has room
 			else	//Battery full, no charging allowed
 			{
-				gl_verbose("inverter:%s - charge desired, but battery full!",obj->name);
+				gl_output("inverter:%s - charge desired, but battery full!",obj->name);
 				/*  TROUBLESHOOT
 				An inverter in LOAD_FOLLOWING mode currently wants to charge the battery more, but the battery
 				is full.  Consider using a larger battery and trying again.
@@ -4198,7 +4218,7 @@ TIMESTAMP inverter::postsync(TIMESTAMP t0, TIMESTAMP t1)
 			}
 			else	//At or below reserve, go to idle
 			{
-				gl_verbose("inverter:%s - discharge desired, but not enough battery capacity!",obj->name);
+				gl_output("inverter:%s - discharge desired, but not enough battery capacity!",obj->name);
 				//Defined above
 
 				new_lf_status = IDLE;			//Can't do anything, so we're idle
@@ -4830,7 +4850,7 @@ STATUS inverter::pre_deltaupdate(TIMESTAMP t0, unsigned int64 delta_time)
 {
 	STATUS stat_val;
 
-	gl_verbose("preupdate");
+	gl_output("preupdate");
 
 	FUNCTIONADDR funadd = NULL;
 	OBJECT *hdr = OBJECTHDR(this);
@@ -4941,8 +4961,8 @@ SIMULATIONMODE inverter::inter_deltaupdate(unsigned int64 delta_time, unsigned l
 	{
 		//Do the checks
 		ieee_1547_double = perform_1547_checks(deltat);
-		gl_verbose("my other ieee 1547 check %d", ieee_1547_double);
-		gl_verbose("update");
+		gl_output("my other ieee 1547 check %d", ieee_1547_double);
+		gl_output("update delta");
 	}
 
 	//See if we are actually enabled
@@ -6691,7 +6711,7 @@ SIMULATIONMODE inverter::inter_deltaupdate(unsigned int64 delta_time, unsigned l
 
 STATUS inverter::post_deltaupdate(complex *useful_value, unsigned int mode_pass)
 {
-	gl_verbose("postsync");
+	gl_output("postupdate");
 	complex temp_current_val[3];
 	complex power_val[3];
 
@@ -7448,8 +7468,8 @@ double inverter::perform_1547_checks(double timestepvalue)
 	return_time_freq = -1.0;
 	return_time_volt = -1.0;
 	return_value = -1.0;
-	gl_verbose("doing 1547 at %d", timestepvalue);
-	gl_verbose("voltage %f", pCircuit_V[0].Mag()/node_nominal_voltage);
+	gl_output("doing 1547 at %d", timestepvalue);
+	gl_output("voltage %f", pCircuit_V[0].Mag()/node_nominal_voltage);
 
 
 	//Perform frequency check - overlapping bands set so we don't care about size anyore
@@ -7749,7 +7769,7 @@ double inverter::perform_1547_checks(double timestepvalue)
 	//See if anything was hit - if so, reconcile it
 	if (voltage_violation == true)
 	{
-		gl_verbose("we violated %f", pCircuit_V[0].Mag()/node_nominal_voltage);
+		gl_output("we violated %f", pCircuit_V[0].Mag()/node_nominal_voltage);
 		//Reconcile the violation times and see how we need to break
 		if (uv_low_hit == true)
 		{
@@ -7927,7 +7947,7 @@ double inverter::perform_1547_checks(double timestepvalue)
 		{
 			//Set us back into service
 			inverter_1547_status = true;
-			gl_verbose("we are back on %f", pCircuit_V[0].Mag()/node_nominal_voltage);
+			gl_output("we are back on %f", pCircuit_V[0].Mag()/node_nominal_voltage);
 
 			//Flag us as no reason
 			ieee_1547_trip_method = IEEE_1547_NONE;
@@ -7938,7 +7958,7 @@ double inverter::perform_1547_checks(double timestepvalue)
 		else	//Still delayed, just reaffirm our status
 		{
 			inverter_1547_status = false;
-			gl_verbose("we are still off %f", pCircuit_V[0].Mag()/node_nominal_voltage);
+			gl_output("we are still off %f", pCircuit_V[0].Mag()/node_nominal_voltage);
 
 			//calculate the new update time
 			return_value = reconnect_time - out_of_violation_time_total;
@@ -7952,14 +7972,14 @@ double inverter::perform_1547_checks(double timestepvalue)
 		if (trigger_disconnect == true)
 		{
 			inverter_1547_status = false;	//Trigger
-			gl_verbose("we are now off %f", pCircuit_V[0].Mag()/node_nominal_voltage);
+			gl_output("we are now off %f", pCircuit_V[0].Mag()/node_nominal_voltage);
 
 			//Return our expected next status interval
 			return return_value;
 		}
 		else
 		{
-			gl_verbose("still on %f", pCircuit_V[0].Mag()/node_nominal_voltage);
+			gl_output("still on %f", pCircuit_V[0].Mag()/node_nominal_voltage);
 			//Flag us as no reason
 			ieee_1547_trip_method = IEEE_1547_NONE;
 
