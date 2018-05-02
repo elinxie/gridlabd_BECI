@@ -13,7 +13,7 @@ clock {
 	timezone US/HI/Honolulu;
 	starttime '2000-08-02 0:00:00';
 	stoptime '2000-08-03 0:00:00';
-	//starttime '2000-08-02 12:00:00';
+	//starttime '2000-08-02 11:50:00';
 	//stoptime '2000-08-02 13:00:00';
 }
 
@@ -21,17 +21,17 @@ module powerflow {
 	solver_method NR;
 	line_capacitance true;
 	//Deltamode
-	enable_subsecond_models true;
-	deltamode_timestep 10.0 ms;	//10 ms
-	all_powerflow_delta true;
+	//enable_subsecond_models true;
+	//deltamode_timestep 10.0 ms;	//10 ms
+	//all_powerflow_delta true;
 	}
 
 module tape;
 
 //Deltamode
 module generators {
-	enable_subsecond_models true;
-	deltamode_timestep 10 ms;
+	//enable_subsecond_models true;
+	//deltamode_timestep 10 ms;
 }
 
 module climate;
@@ -334,18 +334,18 @@ object meter {
   voltage_C -1200.8886+2080.000j;
   nominal_voltage 2401.7771;
 
-  flags DELTAMODE;
+  //flags Deltamode;
   object recorder {
 		file time_results/meter_data_ctrl/voltage/m633.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
   object recorder {
 		file time_results/meter_data_ctrl/current/m633.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -359,18 +359,18 @@ object meter {
   voltage_C -1200.8886+2080.000j;
   nominal_voltage 2401.7771;
 
-  flags DELTAMODE;
+  //flags Deltamode;
   object recorder {
 		file time_results/meter_data_ctrl/voltage/m630.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
   object recorder {
 		file time_results/meter_data_ctrl/current/m630.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -384,18 +384,18 @@ object meter {
   voltage_C -1200.8886+2080.000j;
   nominal_voltage 2401.7771;
 
-  flags DELTAMODE;
+  //flags Deltamode;
   object recorder {
 		file time_results/meter_data_ctrl/voltage/m632.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
   object recorder {
 		file time_results/meter_data_ctrl/current/m632.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -410,18 +410,18 @@ object meter {
   voltage_C -1200.8886+2080.000j;
   nominal_voltage 2401.7771;
 
-  flags DELTAMODE;
+  //flags Deltamode;
   object recorder {
 		file time_results/meter_data_ctrl/voltage/m650.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
   object recorder {
 		file time_results/meter_data_ctrl/current/m650.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -435,18 +435,18 @@ object meter {
   voltage_C -1200.8886+2080.000j;
   nominal_voltage 2401.7771;
 
-  flags DELTAMODE;
+  //flags Deltamode;
   object recorder {
 		file time_results/meter_data_ctrl/voltage/m680.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
   object recorder {
 		file time_results/meter_data_ctrl/current/m680.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -461,18 +461,18 @@ object meter {
   voltage_C -1200.8886+2080.000j;
   nominal_voltage 2401.7771;
 
-  flags DELTAMODE;
+  //flags Deltamode;
   object recorder {
 		file time_results/meter_data_ctrl/voltage/m684.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
   object recorder {
 		file time_results/meter_data_ctrl/current/m684.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -497,22 +497,22 @@ object meter {
 	    constant_power_C 120000+90000j;
 		nominal_voltage 480.000;
 
-		flags DELTAMODE;
+		//flags Deltamode;
 	};
 
-	flags DELTAMODE;
+	//flags Deltamode;
 
 	object recorder {
 		file time_results/meter_data_ctrl/voltage/m634.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
     object recorder {
 		file time_results/meter_data_ctrl/current/m634.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -531,21 +531,21 @@ object meter {
 		constant_power_B 170000+125000j;
 		nominal_voltage 2401.7771;
 
-		flags DELTAMODE;
+		//flags Deltamode;
 	};
 
-	flags DELTAMODE;
+	//flags Deltamode;
 	object recorder {
 		file time_results/meter_data_ctrl/voltage/m645.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
     object recorder {
 		file time_results/meter_data_ctrl/current/m645.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -563,22 +563,22 @@ object meter {
 		constant_impedance_B 56.5993+32.4831j;
 		nominal_voltage 2401.7771;
 
-		flags DELTAMODE;
+		//flags Deltamode;
 	};
 
-	flags DELTAMODE;
+	//flags Deltamode;
 
 	object recorder {
 		file time_results/meter_data_ctrl/voltage/m646.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
     object recorder {
 		file time_results/meter_data_ctrl/current/m646.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -598,22 +598,22 @@ object meter {
 		constant_impedance_A 31.0501+20.8618j;
 	  nominal_voltage 2401.7771;
 
-	  flags DELTAMODE;
+	  //flags Deltamode;
 	};
 
-	flags DELTAMODE;
+	//flags Deltamode;
 
 	object recorder {
 		file time_results/meter_data_ctrl/voltage/m652.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
     object recorder {
 		file time_results/meter_data_ctrl/current/m652.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -634,21 +634,21 @@ object meter {
 	  constant_power_C 385000+220000j;
 		nominal_voltage 2401.7771;
 
-		flags DELTAMODE;
+		//flags Deltamode;
 	};
 
-	flags DELTAMODE;
+	//flags Deltamode;
 	object recorder {
 		file time_results/meter_data_ctrl/voltage/m671.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
     object recorder {
 		file time_results/meter_data_ctrl/current/m671.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -672,21 +672,21 @@ object meter {
 		constant_impedance_C 0.00-28.8427j;
 		nominal_voltage 2401.7771;
 
-		flags DELTAMODE;
+		//flags Deltamode;
 	};
 
-	flags DELTAMODE;
+	//flags Deltamode;
 	object recorder {
 		file time_results/meter_data_ctrl/voltage/m675.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
 	object recorder {
 		file time_results/meter_data_ctrl/current/m675.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -707,21 +707,21 @@ object meter {
 	  constant_current_C -17.2414+51.8677j;
 	  nominal_voltage 2401.7771;
 
-	  flags DELTAMODE;
+	  //flags Deltamode;
 	};
 
-	flags DELTAMODE;
+	//flags Deltamode;
 	object recorder {
 		file time_results/meter_data_ctrl/voltage/m692.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
 	object recorder {
 		file time_results/meter_data_ctrl/current/m692.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -741,21 +741,21 @@ object meter {
 		constant_impedance_C 0.00-57.6854j;         //Shunt Capacitor
 		nominal_voltage 2401.7771;
 
-		flags DELTAMODE;
+		//flags Deltamode;
 	};
 
-	flags DELTAMODE;
+	//flags Deltamode;
 	object recorder {
 		file time_results/meter_data_ctrl/voltage/m611.csv;
 		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
 	object recorder {
 		file time_results/meter_data_ctrl/current/m611.csv;
 		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_current_C.real,measured_current_C.imag;
-		flags DELTAMODE;
+		//flags Deltamode;
 		//interval -1;
 		interval 1;
 	};
@@ -775,7 +775,7 @@ object load {
   constant_power_C 39000+22666.6667j;
   nominal_voltage 2401.7771;
 
-  flags DELTAMODE;
+  //flags Deltamode;
 }
 
 object load {
@@ -789,18 +789,18 @@ object load {
 	constant_power_C 78000+45333.3333j;
   nominal_voltage 2401.7771;
 
-  flags DELTAMODE;
+  //flags Deltamode;
 //  object recorder {
 //		file time_results/meter_data_ctrl/voltage/l6321.csv;
 //		property voltage_A.real,voltage_A.imag,voltage_B.real,voltage_B.imag,voltage_C.real,voltage_C.imag;
-//		flags DELTAMODE;
+//		//flags Deltamode;
 //		//interval -1;
 //		interval 1;
 //	};
 //  object recorder {
 //		file time_results/meter_data_ctrl/current/l6321.csv;
 //		property measured_current_A.real,measured_current_A.imag,measured_current_B.real,measured_current_B.imag,measured_//current_C.real,measured_current_C.imag;
-//		flags DELTAMODE;
+//		//flags Deltamode;
 //		//interval -1;
 //		interval 1;
 //	};
@@ -882,7 +882,7 @@ object inverter {
   inverter_type PWM;
   power_factor 1.0;
   parent m680;
-  flags DELTAMODE;
+  //flags Deltamode;
   object solar {
 		generator_mode SUPPLY_DRIVEN;
 		generator_status ONLINE;
